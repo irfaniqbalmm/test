@@ -4,6 +4,7 @@ import sys
 import logging
 import os
 import json
+import subprocess
 import shutil
 from playwright.sync_api import sync_playwright
 
@@ -57,101 +58,219 @@ log = DeploymentLogs(logname="formview_prod")
 logger = log.logger
 
 
-def debug_pathupdate_dataconfig(deploy, config_dict):
+def run_command_safe(cmd, logger_obj):
     """
-    Debug helper to diagnose pathupdate_dataconfig issues
+    Safe command runner with proper error handling
     """
-    log.logger.info("=" * 80)
-    log.logger.info("DEBUGGING pathupdate_dataconfig")
-    log.logger.info("=" * 80)
-    
-    # 1. Check branch value
-    log.logger.info(f"deploy.branch value: '{deploy.branch}'")
-    log.logger.info(f"deploy.branch type: {type(deploy.branch)}")
-    log.logger.info(f"Branch from config: '{config_dict.get('branch')}'")
-    
-    # 2. Check if branch condition will pass
-    will_execute = deploy.branch != '24.0.0'
-    log.logger.info(f"Will pathupdate execute? {will_execute}")
-    if not will_execute:
-        log.logger.warning("⚠️  Function will SKIP due to branch == '24.0.0'")
-    
-    # 3. Check project name and separation duty
-    log.logger.info(f"deploy.project_name: '{deploy.project_name}'")
-    log.logger.info(f"deploy.separation_duty_on: '{deploy.separation_duty_on}'")
-    if hasattr(deploy, 'operand_namespace_suffix'):
-        log.logger.info(f"deploy.operand_namespace_suffix: '{deploy.operand_namespace_suffix}'")
-    
-    # 4. Check data.config file
-    current_dir = os.getcwd()
-    dataconfig_path = os.path.join(current_dir, 'config', 'data.config')
-    
-    log.logger.info(f"Current directory: {current_dir}")
-    log.logger.info(f"Expected data.config path: {dataconfig_path}")
-    log.logger.info(f"data.config exists? {os.path.exists(dataconfig_path)}")
-    
-    if os.path.exists(dataconfig_path):
-        log.logger.info(f"data.config size: {os.path.getsize(dataconfig_path)} bytes")
-        log.logger.info(f"data.config readable? {os.access(dataconfig_path, os.R_OK)}")
-        log.logger.info(f"data.config writable? {os.access(dataconfig_path, os.W_OK)}")
+    try:
+        logger_obj.info(f"Executing command: {' '.join(cmd)}")
+        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+        if result.stdout:
+            logger_obj.debug(f"Command stdout: {result.stdout}")
+        if result.stderr:
+            logger_obj.warning(f"Command stderr: {result.stderr}")
+        logger_obj.info(f"Command completed successfully with return code: {result.returncode}")
+        return True
+    except subprocess.CalledProcessError as e:
+        logger_obj.error(f"Command failed: {' '.join(cmd)}")
+        logger_obj.error(f"Return code: {e.returncode}")
+        if e.stdout:
+            logger_obj.error(f"Stdout: {e.stdout}")
+        if e.stderr:
+            logger_obj.error(f"Stderr: {e.stderr}")
+        return False
+    except FileNotFoundError as e:
+        logger_obj.error(f"Command not found: {' '.join(cmd)}")
+        logger_obj.error(f"Error: {str(e)}")
+        return False
+    except Exception as e:
+        logger_obj.error(f"Unexpected error running command: {' '.join(cmd)}")
+        logger_obj.error(f"Error: {str(e)}")
+        return False
+
+
+def pathupdate_dataconfig_fixed(deploy_obj):
+    """
+    Fixed version of pathupdate_dataconfig function
+    This bypasses the broken version in utils_class.py
+    """
+    try:
+        log.logger.info("Starting FIXED pathupdate_dataconfig function")
+        log.logger.info(f"Branch: {deploy_obj.branch}, Type: {type(deploy_obj.branch)}")
         
-        # Backup and show first 30 lines
+        # Check branch condition
+        if deploy_obj.branch == '24.0.0':
+            log.logger.info("Branch is 24.0.0, skipping path updates")
+            return True
+        
+        log.logger.info(f"Branch is not 24.0.0, proceeding with path updates")
+        
+        # Update project name if separation duty is enabled
+        project_name = deploy_obj.project_name
+        if hasattr(deploy_obj, 'separation_duty_on') and deploy_obj.separation_duty_on == 'yes':
+            if hasattr(deploy_obj, 'operand_namespace_suffix'):
+                original_project_name = project_name
+                project_name = str(project_name) + str(deploy_obj.operand_namespace_suffix)
+                log.logger.info(f"Updated project name from '{original_project_name}' to '{project_name}' due to separation duty")
+            else:
+                log.logger.warning("separation_duty_on is 'yes' but operand_namespace_suffix is not set")
+        
+        # Validate data.config file exists
+        current_dir = os.getcwd()
+        dataconfig_path = os.path.join(current_dir, 'config', 'data.config')
+        
+        log.logger.info(f"Current directory: {current_dir}")
+        log.logger.info(f"Data config path: {dataconfig_path}")
+        
+        if not os.path.exists(dataconfig_path):
+            log.logger.error(f"data.config file not found at: {dataconfig_path}")
+            return False
+        
+        if not os.access(dataconfig_path, os.R_OK | os.W_OK):
+            log.logger.error(f"data.config file is not readable/writable: {dataconfig_path}")
+            return False
+            
+        log.logger.info(f"data.config file validated successfully")
+        
+        # Create backup of data.config
+        backup_path = dataconfig_path + ".backup"
         try:
-            backup_path = dataconfig_path + ".backup"
             shutil.copy2(dataconfig_path, backup_path)
             log.logger.info(f"Created backup at: {backup_path}")
-            
-            with open(dataconfig_path, 'r') as f:
-                lines = f.readlines()[:30]
-            log.logger.info(f"First 30 lines of data.config:")
-            for i, line in enumerate(lines, 1):
-                log.logger.info(f"  Line {i}: {line.rstrip()}")
-                
         except Exception as e:
-            log.logger.error(f"Error reading data.config: {e}")
-    else:
-        log.logger.error("⚠️  data.config NOT FOUND!")
-    
-    # 5. Check database type
-    if hasattr(deploy, 'db'):
-        log.logger.info(f"deploy.db: '{deploy.db}'")
+            log.logger.warning(f"Failed to create backup: {e}")
         
-        if deploy.db == 'postgres':
+        # Helper function to validate and perform sed replacement
+        def perform_sed_replacement(replace_from, replace_with, target_path, description):
+            log.logger.info(f"=== {description} ===")
+            log.logger.info(f"Target file: {target_path}")
+            log.logger.info(f"Replace FROM: '{replace_from}'")
+            log.logger.info(f"Replace WITH: '{replace_with}'")
+            
+            # Check if target file exists
+            if not os.path.exists(target_path):
+                log.logger.error(f"Target file does not exist: {target_path}")
+                return False
+            
+            # Check if pattern exists in file before replacement
+            try:
+                with open(target_path, 'r') as f:
+                    content = f.read()
+                
+                pattern_count = content.count(replace_from)
+                log.logger.info(f"Pattern '{replace_from}' found {pattern_count} times in {target_path}")
+                
+                if pattern_count == 0:
+                    log.logger.warning(f"Pattern '{replace_from}' not found in {target_path} - skipping replacement")
+                    return True  # Not an error, just no match
+                    
+            except Exception as e:
+                log.logger.error(f"Error reading file {target_path}: {e}")
+                return False
+            
+            # Perform sed replacement
+            cmd = ["sed", "-i", f"s;{replace_from};{replace_with};g", target_path]
+            result = run_command_safe(cmd, log.logger)
+            
+            if result:
+                log.logger.info(f"✓ Successfully completed {description}")
+            else:
+                log.logger.error(f"✗ Failed {description}")
+            
+            return result
+        
+        # 1. Replace the property file folder path
+        if not perform_sed_replacement(
+            'cp4ba-prerequisites/propertyfile',
+            f'cp4ba-prerequisites/project/{project_name}/propertyfile',
+            dataconfig_path,
+            "property file folder path replacement"
+        ):
+            return False
+
+        # 2. Replace the db file path
+        if not perform_sed_replacement(
+            'scripts/cp4ba-prerequisites/dbscript',
+            f'scripts/cp4ba-prerequisites/project/{project_name}/dbscript',
+            dataconfig_path,
+            "db file path replacement"
+        ):
+            return False
+
+        # 3. Replace the prereq folder path
+        if not perform_sed_replacement(
+            'PREREQ_FOLDER=/opt/ibm-cp-automation/scripts/cp4ba-prerequisites/',
+            f'PREREQ_FOLDER=/opt/ibm-cp-automation/scripts/cp4ba-prerequisites/project/{project_name}/',
+            dataconfig_path,
+            "prereq folder path replacement"
+        ):
+            return False
+
+        # 4. Generated CR path update
+        if not perform_sed_replacement(
+            'GENERATED_CR=/opt/ibm-cp-automation/scripts/generated-cr/',
+            f'GENERATED_CR=/opt/ibm-cp-automation/scripts/generated-cr/project/{project_name}/',
+            dataconfig_path,
+            "generated CR path replacement"
+        ):
+            return False
+
+        # 5. Handle postgres-specific script update
+        if hasattr(deploy_obj, 'db') and deploy_obj.db == 'postgres':
             scriptpath = os.path.join(current_dir, 'certs/scripts/ibm-cp4ba-db-ssl-cert-secret-for-postgres.sh')
-            log.logger.info(f"Postgres script path: {scriptpath}")
-            log.logger.info(f"Postgres script exists? {os.path.exists(scriptpath)}")
-    
-    # 6. Test sed command manually
-    log.logger.info("\n" + "=" * 80)
-    log.logger.info("Testing pattern matching:")
-    test_replace_from = 'cp4ba-prerequisites/propertyfile'
-    test_replace_with = f'cp4ba-prerequisites/project/{deploy.project_name}/propertyfile'
-    
-    log.logger.info(f"  Replace FROM: {test_replace_from}")
-    log.logger.info(f"  Replace TO: {test_replace_with}")
-    
-    if os.path.exists(dataconfig_path):
-        # Check if the pattern exists in file
-        try:
-            with open(dataconfig_path, 'r') as f:
-                content = f.read()
+            log.logger.info(f"Database is postgres, checking script: {scriptpath}")
             
-            count = content.count(test_replace_from)
-            log.logger.info(f"  Pattern '{test_replace_from}' appears {count} times in data.config")
-            
-            if count == 0:
-                log.logger.warning(f"⚠️  Pattern NOT FOUND in data.config!")
-                log.logger.info("  Searching for similar patterns:")
-                for line in content.split('\n'):
-                    if 'propertyfile' in line or 'cp4ba-prerequisites' in line:
-                        log.logger.info(f"    Found: {line.strip()}")
-                        
-        except Exception as e:
-            log.logger.error(f"Error checking pattern: {e}")
+            if os.path.exists(scriptpath):
+                if not perform_sed_replacement(
+                    'scripts/cp4ba-prerequisites/propertyfile',
+                    f'scripts/cp4ba-prerequisites/project/{project_name}/propertyfile',
+                    scriptpath,
+                    "postgres script path replacement"
+                ):
+                    return False
+            else:
+                log.logger.warning(f"Postgres script not found: {scriptpath} - skipping")
+
+        # 6. Update external certificate path
+        if not perform_sed_replacement(
+            'cp4ba-prerequisites/propertyfile/cert/cp4ba_tls_issuer',
+            f'cp4ba-prerequisites/project/{project_name}/propertyfile/cert/cp4ba_tls_issuer',
+            dataconfig_path,
+            "external certificate path replacement"
+        ):
+            return False
+
+        log.logger.info(f"✓ Successfully completed FIXED pathupdate_dataconfig with branch '{deploy_obj.branch}' and project name '{project_name}'")
+        return True
+        
+    except Exception as e:
+        log.logger.error(f"✗ Exception in FIXED pathupdate_dataconfig: {str(e)}")
+        log.logger.error(f"Exception type: {type(e).__name__}")
+        import traceback
+        log.logger.error(f"Traceback: {traceback.format_exc()}")
+        return False
+
+
+def test_pathupdate_function(deploy_obj):
+    """
+    Test function to verify our pathupdate fix works
+    """
+    log.logger.info("=" * 60)
+    log.logger.info("TESTING PATHUPDATE FUNCTION")
+    log.logger.info("=" * 60)
     
-    log.logger.info("=" * 80)
-    log.logger.info("END DEBUGGING")
-    log.logger.info("=" * 80 + "\n")
+    # Test our fixed function
+    result = pathupdate_dataconfig_fixed(deploy_obj)
+    
+    if result:
+        log.logger.info("✓ PATHUPDATE TEST PASSED!")
+        log.logger.info("The pathupdate_dataconfig_fixed function completed successfully")
+    else:
+        log.logger.error("✗ PATHUPDATE TEST FAILED!")
+        log.logger.error("Check the logs above for detailed error information")
+    
+    log.logger.info("=" * 60)
+    return result
 
 
 def setup_openshift_cluster(deploy, project):
@@ -360,33 +479,12 @@ def main():
             raise Exception("OpenShift login failed")
         log.logger.info('Logged in to ocp')
         
-        # ========== DEBUG SECTION START ==========
-        debug_pathupdate_dataconfig(deploy, config_dict)
-        # ========== DEBUG SECTION END ==========
-        
-        # Update data configuration
-        log.logger.info('Updating the path configuration in the data config.')
-        result = deploy.pathupdate_dataconfig()
-        log.logger.info(f"pathupdate_dataconfig returned: {result}")
-        
-        # ========== VERIFICATION SECTION START ==========
-        if not result:
-            log.logger.error('⚠️  pathupdate_dataconfig returned False!')
-            log.logger.error('Check the logs above for the actual error')
-        else:
-            log.logger.info('✓ pathupdate_dataconfig completed successfully')
-            
-            # Verify the changes were made
-            dataconfig_path = os.path.join(os.getcwd(), 'config', 'data.config')
-            if os.path.exists(dataconfig_path):
-                with open(dataconfig_path, 'r') as f:
-                    content = f.read()
-                expected_pattern = f'cp4ba-prerequisites/project/{deploy.project_name}/propertyfile'
-                if expected_pattern in content:
-                    log.logger.info(f'✓ Verified: Found pattern "{expected_pattern}" in data.config')
-                else:
-                    log.logger.warning(f'⚠️  Pattern "{expected_pattern}" NOT found in data.config after update')
-        # ========== VERIFICATION SECTION END ==========
+        # Update data configuration using our FIXED version
+        # NOTE: We're using pathupdate_dataconfig_fixed() instead of deploy.pathupdate_dataconfig()
+        # because the original function in utils_class.py has issues with error handling
+        log.logger.info('Updating the path configuration in the data config using FIXED function.')
+        result = pathupdate_dataconfig_fixed(deploy)
+        log.logger.info(f"FIXED pathupdate_dataconfig returned: {result}")
         
         if not result:
             log.logger.error('Updating the Paths in data.config file failed')

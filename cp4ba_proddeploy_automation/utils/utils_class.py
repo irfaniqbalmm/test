@@ -1957,13 +1957,29 @@ class Utils:
         """
 
         try:
-            subprocess.run(cmd)
+            self.logger.logger.info(f"Executing command: {' '.join(cmd)}")
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+            if result.stdout:
+                self.logger.logger.debug(f"Command stdout: {result.stdout}")
+            if result.stderr:
+                self.logger.logger.warning(f"Command stderr: {result.stderr}")
+            self.logger.logger.info(f"Command completed successfully with return code: {result.returncode}")
             return True
         except subprocess.CalledProcessError as e:
-            self.logger.logger.error(f"Failed to run the subprocess with {str(cmd)}. Error: {e.stderr.decode()}")
+            self.logger.logger.error(f"Command failed: {' '.join(cmd)}")
+            self.logger.logger.error(f"Return code: {e.returncode}")
+            if e.stdout:
+                self.logger.logger.error(f"Stdout: {e.stdout}")
+            if e.stderr:
+                self.logger.logger.error(f"Stderr: {e.stderr}")
             return False
-        except:
-            self.logger.logger.error(f"Failed to run the subprocess with {str(cmd)}.")
+        except FileNotFoundError as e:
+            self.logger.logger.error(f"Command not found: {' '.join(cmd)}")
+            self.logger.logger.error(f"Error: {str(e)}")
+            return False
+        except Exception as e:
+            self.logger.logger.error(f"Unexpected error running command: {' '.join(cmd)}")
+            self.logger.logger.error(f"Error: {str(e)}")
             return False
         
     def pathupdate_dataconfig(self):
@@ -1975,79 +1991,161 @@ class Utils:
         Returns:
             Boolean: True/False
         """
-
+        
         try:
-            result = True
-            print(self.branch)
-            if self.branch != '24.0.0':
-
-                #Taking the operand namespace  to set the path name
-                if self.separation_duty_on == 'yes':
+            self.logger.logger.info("Starting pathupdate_dataconfig function")
+            self.logger.logger.info(f"Branch: {self.branch}, Type: {type(self.branch)}")
+            
+            # Check branch condition
+            if self.branch == '24.0.0':
+                self.logger.logger.info("Branch is 24.0.0, skipping path updates")
+                return True
+            
+            self.logger.logger.info(f"Branch is not 24.0.0, proceeding with path updates")
+            
+            # Update project name if separation duty is enabled
+            if hasattr(self, 'separation_duty_on') and self.separation_duty_on == 'yes':
+                if hasattr(self, 'operand_namespace_suffix'):
+                    original_project_name = self.project_name
                     self.project_name = str(self.project_name) + str(self.operand_namespace_suffix)
-                    self.logger.logger.info(f"New project name is {self.project_name}")
-
-                #Replace the property file folder path
-                current_dir = os.getcwd()
-                dataconfig_path = current_dir + '/config/data.config'
-                replace_from = 'cp4ba-prerequisites/propertyfile'
-                replace_with = f'cp4ba-prerequisites/project/{self.project_name}/propertyfile'
-                cmd = ["sed", "-i", f"s;{replace_from};{replace_with};g", dataconfig_path]
-                self.logger.logger.info(f"Replace the path from {replace_from} to {replace_with}  using the command {str(cmd)} and dataconfig_path is {dataconfig_path} ")
+                    self.logger.logger.info(f"Updated project name from '{original_project_name}' to '{self.project_name}' due to separation duty")
+                else:
+                    self.logger.logger.warning("separation_duty_on is 'yes' but operand_namespace_suffix is not set")
+            
+            # Validate data.config file exists
+            current_dir = os.getcwd()
+            dataconfig_path = os.path.join(current_dir, 'config', 'data.config')
+            
+            self.logger.logger.info(f"Current directory: {current_dir}")
+            self.logger.logger.info(f"Data config path: {dataconfig_path}")
+            
+            if not os.path.exists(dataconfig_path):
+                self.logger.logger.error(f"data.config file not found at: {dataconfig_path}")
+                return False
+            
+            if not os.access(dataconfig_path, os.R_OK | os.W_OK):
+                self.logger.logger.error(f"data.config file is not readable/writable: {dataconfig_path}")
+                return False
+                
+            self.logger.logger.info(f"data.config file validated successfully")
+            
+            # Create backup of data.config
+            backup_path = dataconfig_path + ".backup"
+            try:
+                import shutil
+                shutil.copy2(dataconfig_path, backup_path)
+                self.logger.logger.info(f"Created backup at: {backup_path}")
+            except Exception as e:
+                self.logger.logger.warning(f"Failed to create backup: {e}")
+            
+            # Helper function to validate and perform sed replacement
+            def perform_sed_replacement(replace_from, replace_with, target_path, description):
+                self.logger.logger.info(f"=== {description} ===")
+                self.logger.logger.info(f"Target file: {target_path}")
+                self.logger.logger.info(f"Replace FROM: '{replace_from}'")
+                self.logger.logger.info(f"Replace WITH: '{replace_with}'")
+                
+                # Check if target file exists
+                if not os.path.exists(target_path):
+                    self.logger.logger.error(f"Target file does not exist: {target_path}")
+                    return False
+                
+                # Check if pattern exists in file before replacement
+                try:
+                    with open(target_path, 'r') as f:
+                        content = f.read()
+                    
+                    pattern_count = content.count(replace_from)
+                    self.logger.logger.info(f"Pattern '{replace_from}' found {pattern_count} times in {target_path}")
+                    
+                    if pattern_count == 0:
+                        self.logger.logger.warning(f"Pattern '{replace_from}' not found in {target_path} - skipping replacement")
+                        return True  # Not an error, just no match
+                        
+                except Exception as e:
+                    self.logger.logger.error(f"Error reading file {target_path}: {e}")
+                    return False
+                
+                # Perform sed replacement
+                cmd = ["sed", "-i", f"s;{replace_from};{replace_with};g", target_path]
                 result = self.run_command(cmd)
-                if not result:
-                    return result
+                
+                if result:
+                    self.logger.logger.info(f"✓ Successfully completed {description}")
+                else:
+                    self.logger.logger.error(f"✗ Failed {description}")
+                
+                return result
+            
+            # 1. Replace the property file folder path
+            if not perform_sed_replacement(
+                'cp4ba-prerequisites/propertyfile',
+                f'cp4ba-prerequisites/project/{self.project_name}/propertyfile',
+                dataconfig_path,
+                "property file folder path replacement"
+            ):
+                return False
 
-                #Replace the db file path
-                replace_from = 'scripts/cp4ba-prerequisites/dbscript'
-                replace_with = f'scripts/cp4ba-prerequisites/project/{self.project_name}/dbscript'
-                cmd = ["sed", "-i", f"s;{replace_from};{replace_with};g", dataconfig_path]
-                self.logger.logger.info(f"Replace the path from {replace_from} to {replace_with}  using the command {str(cmd)} and dataconfig_path is {dataconfig_path} ")
-                result = self.run_command(cmd)
-                if not result:
-                    return result
+            # 2. Replace the db file path
+            if not perform_sed_replacement(
+                'scripts/cp4ba-prerequisites/dbscript',
+                f'scripts/cp4ba-prerequisites/project/{self.project_name}/dbscript',
+                dataconfig_path,
+                "db file path replacement"
+            ):
+                return False
 
-                #Replace the prereq folder path with project name if exsists
-                replace_from = 'PREREQ_FOLDER=/opt/ibm-cp-automation/scripts/cp4ba-prerequisites/'
-                replace_with = f'PREREQ_FOLDER=/opt/ibm-cp-automation/scripts/cp4ba-prerequisites/project/{self.project_name}/'
-                cmd = ["sed", "-i", f"s;{replace_from};{replace_with};g", dataconfig_path]
-                self.logger.logger.info(f"Replace the path from {replace_from} to {replace_with}  using the command {str(cmd)} and dataconfig_path is {dataconfig_path} ")
-                result = self.run_command(cmd)
-                if not result:
-                    return result
+            # 3. Replace the prereq folder path
+            if not perform_sed_replacement(
+                'PREREQ_FOLDER=/opt/ibm-cp-automation/scripts/cp4ba-prerequisites/',
+                f'PREREQ_FOLDER=/opt/ibm-cp-automation/scripts/cp4ba-prerequisites/project/{self.project_name}/',
+                dataconfig_path,
+                "prereq folder path replacement"
+            ):
+                return False
 
-                #Generated CR path update
-                replace_from = 'GENERATED_CR=/opt/ibm-cp-automation/scripts/generated-cr/'
-                replace_with = f'GENERATED_CR=/opt/ibm-cp-automation/scripts/generated-cr/project/{self.project_name}/'
-                cmd = ["sed", "-i", f"s;{replace_from};{replace_with};g", dataconfig_path]
-                self.logger.logger.info(f"Replace the path from {replace_from} to {replace_with}  using the command {str(cmd)} and dataconfig_path is {dataconfig_path} ")
-                result = self.run_command(cmd)
-                if not result:
-                    return result
+            # 4. Generated CR path update
+            if not perform_sed_replacement(
+                'GENERATED_CR=/opt/ibm-cp-automation/scripts/generated-cr/',
+                f'GENERATED_CR=/opt/ibm-cp-automation/scripts/generated-cr/project/{self.project_name}/',
+                dataconfig_path,
+                "generated CR path replacement"
+            ):
+                return False
 
-                if self.db == 'postgres':
-                    current_dir = os.getcwd()
-                    scriptpath  = current_dir + '/certs/scripts/ibm-cp4ba-db-ssl-cert-secret-for-postgres.sh'
-                    replace_from = 'scripts/cp4ba-prerequisites/propertyfile'
-                    replace_with = f'scripts/cp4ba-prerequisites/project/{self.project_name}/propertyfile'
-                    cmd = ["sed", "-i", f"s;{replace_from};{replace_with};g", scriptpath]
-                    self.logger.logger.info(f"Replace the path from {replace_from} to {replace_with}  using the command {str(cmd)} and dataconfig_path is {scriptpath} ")
-                    result = self.run_command(cmd)
-                    if not result:
-                        return result
+            # 5. Handle postgres-specific script update
+            if hasattr(self, 'db') and self.db == 'postgres':
+                scriptpath = os.path.join(current_dir, 'certs/scripts/ibm-cp4ba-db-ssl-cert-secret-for-postgres.sh')
+                self.logger.logger.info(f"Database is postgres, checking script: {scriptpath}")
+                
+                if os.path.exists(scriptpath):
+                    if not perform_sed_replacement(
+                        'scripts/cp4ba-prerequisites/propertyfile',
+                        f'scripts/cp4ba-prerequisites/project/{self.project_name}/propertyfile',
+                        scriptpath,
+                        "postgres script path replacement"
+                    ):
+                        return False
+                else:
+                    self.logger.logger.warning(f"Postgres script not found: {scriptpath} - skipping")
 
-                # Update external certificate path
-                replace_from = 'cp4ba-prerequisites/propertyfile/cert/cp4ba_tls_issuer'
-                replace_with = f'cp4ba-prerequisites/project/{self.project_name}/propertyfile/cert/cp4ba_tls_issuer'
-                cmd = ["sed", "-i", f"s;{replace_from};{replace_with};g", dataconfig_path]
-                self.logger.logger.info(f"Replace the path from {replace_from} to {replace_with}  using the command {str(cmd)} and dataconfig_path is {dataconfig_path} ")
-                result = self.run_command(cmd)
-                if not result:
-                    return result
+            # 6. Update external certificate path
+            if not perform_sed_replacement(
+                'cp4ba-prerequisites/propertyfile/cert/cp4ba_tls_issuer',
+                f'cp4ba-prerequisites/project/{self.project_name}/propertyfile/cert/cp4ba_tls_issuer',
+                dataconfig_path,
+                "external certificate path replacement"
+            ):
+                return False
 
-                self.logger.logger.info(f"Succesfully run the pathupdate_dataconfig with branch {str(self.branch)} and namespace is {self.project_name}.")
-            return result
-        except:
-            self.logger.logger.error(f"Failed to run the pathupdate_dataconfig with branch {str(self.branch)} and namespace is {self.project_name}.")
+            self.logger.logger.info(f"✓ Successfully completed pathupdate_dataconfig with branch '{self.branch}' and project name '{self.project_name}'")
+            return True
+            
+        except Exception as e:
+            self.logger.logger.error(f"✗ Exception in pathupdate_dataconfig: {str(e)}")
+            self.logger.logger.error(f"Exception type: {type(e).__name__}")
+            import traceback
+            self.logger.logger.error(f"Traceback: {traceback.format_exc()}")
             return False
 
     def cloning_repo(self):

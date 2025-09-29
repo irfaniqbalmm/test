@@ -4,7 +4,6 @@ import sys
 import logging
 import os
 import json
-import shutil
 from playwright.sync_api import sync_playwright
 
 # Configuration
@@ -55,103 +54,6 @@ with open(CLUSTERS_FILE, "r") as f:
 # Original logging setup
 log = DeploymentLogs(logname="formview_prod")
 logger = log.logger
-
-
-def debug_pathupdate_dataconfig(deploy, config_dict):
-    """
-    Debug helper to diagnose pathupdate_dataconfig issues
-    """
-    log.logger.info("=" * 80)
-    log.logger.info("DEBUGGING pathupdate_dataconfig")
-    log.logger.info("=" * 80)
-    
-    # 1. Check branch value
-    log.logger.info(f"deploy.branch value: '{deploy.branch}'")
-    log.logger.info(f"deploy.branch type: {type(deploy.branch)}")
-    log.logger.info(f"Branch from config: '{config_dict.get('branch')}'")
-    
-    # 2. Check if branch condition will pass
-    will_execute = deploy.branch != '24.0.0'
-    log.logger.info(f"Will pathupdate execute? {will_execute}")
-    if not will_execute:
-        log.logger.warning("⚠️  Function will SKIP due to branch == '24.0.0'")
-    
-    # 3. Check project name and separation duty
-    log.logger.info(f"deploy.project_name: '{deploy.project_name}'")
-    log.logger.info(f"deploy.separation_duty_on: '{deploy.separation_duty_on}'")
-    if hasattr(deploy, 'operand_namespace_suffix'):
-        log.logger.info(f"deploy.operand_namespace_suffix: '{deploy.operand_namespace_suffix}'")
-    
-    # 4. Check data.config file
-    current_dir = os.getcwd()
-    dataconfig_path = os.path.join(current_dir, 'config', 'data.config')
-    
-    log.logger.info(f"Current directory: {current_dir}")
-    log.logger.info(f"Expected data.config path: {dataconfig_path}")
-    log.logger.info(f"data.config exists? {os.path.exists(dataconfig_path)}")
-    
-    if os.path.exists(dataconfig_path):
-        log.logger.info(f"data.config size: {os.path.getsize(dataconfig_path)} bytes")
-        log.logger.info(f"data.config readable? {os.access(dataconfig_path, os.R_OK)}")
-        log.logger.info(f"data.config writable? {os.access(dataconfig_path, os.W_OK)}")
-        
-        # Backup and show first 30 lines
-        try:
-            backup_path = dataconfig_path + ".backup"
-            shutil.copy2(dataconfig_path, backup_path)
-            log.logger.info(f"Created backup at: {backup_path}")
-            
-            with open(dataconfig_path, 'r') as f:
-                lines = f.readlines()[:30]
-            log.logger.info(f"First 30 lines of data.config:")
-            for i, line in enumerate(lines, 1):
-                log.logger.info(f"  Line {i}: {line.rstrip()}")
-                
-        except Exception as e:
-            log.logger.error(f"Error reading data.config: {e}")
-    else:
-        log.logger.error("⚠️  data.config NOT FOUND!")
-    
-    # 5. Check database type
-    if hasattr(deploy, 'db'):
-        log.logger.info(f"deploy.db: '{deploy.db}'")
-        
-        if deploy.db == 'postgres':
-            scriptpath = os.path.join(current_dir, 'certs/scripts/ibm-cp4ba-db-ssl-cert-secret-for-postgres.sh')
-            log.logger.info(f"Postgres script path: {scriptpath}")
-            log.logger.info(f"Postgres script exists? {os.path.exists(scriptpath)}")
-    
-    # 6. Test sed command manually
-    log.logger.info("\n" + "=" * 80)
-    log.logger.info("Testing pattern matching:")
-    test_replace_from = 'cp4ba-prerequisites/propertyfile'
-    test_replace_with = f'cp4ba-prerequisites/project/{deploy.project_name}/propertyfile'
-    
-    log.logger.info(f"  Replace FROM: {test_replace_from}")
-    log.logger.info(f"  Replace TO: {test_replace_with}")
-    
-    if os.path.exists(dataconfig_path):
-        # Check if the pattern exists in file
-        try:
-            with open(dataconfig_path, 'r') as f:
-                content = f.read()
-            
-            count = content.count(test_replace_from)
-            log.logger.info(f"  Pattern '{test_replace_from}' appears {count} times in data.config")
-            
-            if count == 0:
-                log.logger.warning(f"⚠️  Pattern NOT FOUND in data.config!")
-                log.logger.info("  Searching for similar patterns:")
-                for line in content.split('\n'):
-                    if 'propertyfile' in line or 'cp4ba-prerequisites' in line:
-                        log.logger.info(f"    Found: {line.strip()}")
-                        
-        except Exception as e:
-            log.logger.error(f"Error checking pattern: {e}")
-    
-    log.logger.info("=" * 80)
-    log.logger.info("END DEBUGGING")
-    log.logger.info("=" * 80 + "\n")
 
 
 def setup_openshift_cluster(deploy, project):
@@ -360,33 +262,10 @@ def main():
             raise Exception("OpenShift login failed")
         log.logger.info('Logged in to ocp')
         
-        # ========== DEBUG SECTION START ==========
-        debug_pathupdate_dataconfig(deploy, config_dict)
-        # ========== DEBUG SECTION END ==========
-        
         # Update data configuration
         log.logger.info('Updating the path configuration in the data config.')
         result = deploy.pathupdate_dataconfig()
         log.logger.info(f"pathupdate_dataconfig returned: {result}")
-        
-        # ========== VERIFICATION SECTION START ==========
-        if not result:
-            log.logger.error('⚠️  pathupdate_dataconfig returned False!')
-            log.logger.error('Check the logs above for the actual error')
-        else:
-            log.logger.info('✓ pathupdate_dataconfig completed successfully')
-            
-            # Verify the changes were made
-            dataconfig_path = os.path.join(os.getcwd(), 'config', 'data.config')
-            if os.path.exists(dataconfig_path):
-                with open(dataconfig_path, 'r') as f:
-                    content = f.read()
-                expected_pattern = f'cp4ba-prerequisites/project/{deploy.project_name}/propertyfile'
-                if expected_pattern in content:
-                    log.logger.info(f'✓ Verified: Found pattern "{expected_pattern}" in data.config')
-                else:
-                    log.logger.warning(f'⚠️  Pattern "{expected_pattern}" NOT found in data.config after update')
-        # ========== VERIFICATION SECTION END ==========
         
         if not result:
             log.logger.error('Updating the Paths in data.config file failed')

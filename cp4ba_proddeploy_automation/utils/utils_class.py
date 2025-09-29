@@ -1987,8 +1987,8 @@ class Utils:
                     self.logger.logger.info(f"New project name is {self.project_name}")
 
                 #Replace the property file folder path
-                current_dir = os.getcwd()
-                dataconfig_path = current_dir + '/config/data.config'
+                base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+                dataconfig_path = os.path.join(base_dir, 'config', 'data.config')
                 replace_from = 'cp4ba-prerequisites/propertyfile'
                 replace_with = f'cp4ba-prerequisites/project/{self.project_name}/propertyfile'
                 cmd = ["sed", "-i", f"s;{replace_from};{replace_with};g", dataconfig_path]
@@ -2025,8 +2025,7 @@ class Utils:
                     return result
 
                 if self.db == 'postgres':
-                    current_dir = os.getcwd()
-                    scriptpath  = current_dir + '/certs/scripts/ibm-cp4ba-db-ssl-cert-secret-for-postgres.sh'
+                    scriptpath = os.path.join(base_dir, 'certs', 'scripts', 'ibm-cp4ba-db-ssl-cert-secret-for-postgres.sh')
                     replace_from = 'scripts/cp4ba-prerequisites/propertyfile'
                     replace_with = f'scripts/cp4ba-prerequisites/project/{self.project_name}/propertyfile'
                     cmd = ["sed", "-i", f"s;{replace_from};{replace_with};g", scriptpath]

@@ -1,0 +1,15 @@
+
+- name: "Login via openshift client to OCP Cluster"
+  ansible.builtin.command: oc login -u {{ hostvars['deployment_cluster']['ocp_username'] }} -p {{ hostvars['deployment_cluster']['ocp_password'] }} --server=https://{{ hostvars['deployment_cluster']['ocp_cluster'] }}:6443 --insecure-skip-tls-verify
+
+- name: "Use deploy operator script with silent install variables set"
+  ansible.builtin.command: /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/cp4a-clusteradmin-setup.sh dev
+  environment:
+    CP4BA_AUTO_PLATFORM: 'OCP' 
+    CP4BA_AUTO_DEPLOYMENT_TYPE: "production"
+    CP4BA_AUTO_NAMESPACE: "{{ adpVars.deploymentNamespace }}"
+    CP4BA_AUTO_CLUSTER_USER: "{{ adpVars.cluster_user }}"
+    CP4BA_AUTO_ALL_NAMESPACE: 'No'
+    CP4BA_AUTO_ENTITLEMENT_KEY: "{{ adpVars.staging_key }}"
+    CP4BA_AUTO_STORAGE_CLASS_OCP: "{{ adpVars.storage_class }}"
+    

@@ -1,0 +1,6 @@
+deployment_cluster
+
+[databases]
+dbserver1 ansible_host=cp4ba-auto1.fyre.ibm.com ansible_user=root ansible_ssh_password=Admin@123123123
+
+

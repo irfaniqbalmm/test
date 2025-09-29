@@ -1,0 +1,25 @@
+## Please input the value for the multiple database server/instance name, this key supports comma-separated lists. ##
+## (NOTES: The value (CAN NOT CONTAIN DOT CHARACTER) is alias name for database server/instance, it is not real database server/instance host name.) ##
+DB_SERVER_LIST="sql"
+
+####################################################
+## Property for Database Server "sql" required by IBM Cloud Pak for Business Automation on sqlserver type database ##
+####################################################
+## Provide the database type from your infrastructure. The possible values are "db2" or "db2HADR" or "oracle" or "sqlserver" "postgresql".
+sql.DATABASE_TYPE="sqlserver"
+
+## Provide the database server name or IP address of the database server.
+sql.DATABASE_SERVERNAME="mssql1.fyre.ibm.com"
+
+## Provide the database server port. For Db2, the default is "50000". For Oracle, the default is "1521"
+sql.DATABASE_PORT="1433"
+
+## The parameter is used to support database connection over SSL for database. Default value is "true"
+sql.DATABASE_SSL_ENABLE="True"
+
+## The name of the secret that contains the DB2/Oracle/MSSQLServer/PostgreSQL SSL certificate.
+sql.DATABASE_SSL_SECRET_NAME="ibm-cp4ba-db-ssl-secret-for-sql"
+
+## If enabled DB SSL, you need copy the SSL certificate file (named db-cert.crt) into this directory. Default value is "/opt/cp2103/ibm-cp-automation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/scripts/cp4ba-prerequisites/propertyfile/cert/db/sql"
+sql.DATABASE_SSL_CERT_FILE_FOLDER="/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/propertyfile/cert/db/sql"
+

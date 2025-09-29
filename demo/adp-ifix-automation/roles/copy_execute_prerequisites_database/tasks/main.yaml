@@ -1,0 +1,36 @@
+- name: "Make DB directory on db server: /home/db2inst1/{{ adpVars.deploymentNamespace }}"
+  file:
+    path: /home/db2inst1/{{ adpVars.deploymentNamespace }}
+    state: directory
+    owner: db2inst1
+    group: db2iadm1
+
+- name: "Copy cp4ba-prerequisites to the dbserver"
+  ansible.builtin.copy:
+    src: ./cp4a-prerequisites-property/deployment_cluster/cp4ba-prerequisites
+    dest: /home/db2inst1/{{ adpVars.deploymentNamespace }}
+    owner: db2inst1
+    group: db2iadm1
+
+- name: "Make silent-pre-req-auto-dbs.sh executable"
+  file:
+    dest: /home/db2inst1/{{ adpVars.deploymentNamespace }}/cp4ba-prerequisites/dbscript/silent-pre-req-auto-dbs.sh
+    mode: a+x
+
+- name: "Check that specified DB alias in adpVars matches what is inside template pre-req files; checking inside 'fncm' db directory folder."
+  stat:
+    path: /home/db2inst1/{{ adpVars.deploymentNamespace }}/cp4ba-prerequisites/dbscript/fncm/db2/{{ adpVars.dbserver_alias }}/
+  register: db_path
+
+- name: "Fail if db alias not found in fncm db directory"
+  fail:
+    msg: "There is no corresponding ../dbscript/fncm/db2/{{ adpVars.dbserver_alias }} directory in your copied template cp4ba-prerequisites/dbscript files on your db server, verify your dbserver_alias in adpVars is correct."
+  when: db_path.stat.exists == false
+
+- name: "Go to cp4ba-prerequisites/dbscripts and execute script:./silent-pre-req-auto-dbs.sh {{ adpVars.dbserver_alias }}"
+  ansible.builtin.shell:
+    ./silent-pre-req-auto-dbs.sh {{ adpVars.dbserver_alias }}
+  args:
+    chdir: /home/db2inst1/{{ adpVars.deploymentNamespace }}/cp4ba-prerequisites/dbscript
+
+

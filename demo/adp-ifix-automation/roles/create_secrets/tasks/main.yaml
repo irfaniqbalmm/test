@@ -1,0 +1,28 @@
+- name: "Make create_secret.sh executable"
+  file:
+    dest: /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/cp4ba-prerequisites/create_secret.sh
+    mode: a+x
+
+- name: "Make ibm-aca-db-secret.sh executable"
+  file:
+    dest: /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/adp/ibm-aca-db-secret.sh
+    mode: a+x
+
+- name: "Update create_secrets.sh base directory path"
+  ansible.builtin.command: sed -i -E 's|[^,]*cert-kubernetes|kubectl apply -f "/opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes|g' /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/cp4ba-prerequisites/create_secret.sh
+
+- name: "Strip aca secret comment in script"
+  ansible.builtin.command: sed -i -E 's|[^,]*ibm-aca-db-secret.sh["]||g' /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/cp4ba-prerequisites/create_secret.sh
+
+- name: "Update create_secrets.sh aca secret script path"
+  ansible.builtin.command: sed -i -E 's|[^,]*ibm-aca-db-secret.sh|/opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/adp/ibm-aca-db-secret.sh|g' /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/cp4ba-prerequisites/create_secret.sh
+
+- name: "Run 'create_secret.sh' script to create ADP secrets"
+  ansible.builtin.shell:
+    ./create_secret.sh
+  args:
+    chdir: /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/cp4ba-prerequisites/
+
+- name: "Create 'github-cert' secret"
+  ansible.builtin.command: kubectl create secret generic github-cert --from-file=tls.crt="./certs/github/github.pem" -n "{{ adpVars.deploymentNamespace }}"
+

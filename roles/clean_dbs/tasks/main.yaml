@@ -1,0 +1,41 @@
+- name: "Check that project's DB directory exists on DB server already"
+  stat:
+    path: /home/db2inst1/{{ adpVars.deploymentNamespace }}
+  register: project_path
+
+- name: "Fail if project DB does not exist on DB server"
+  fail:
+    msg: "There is no corresponding project directory on your DB server specified in your 'inventory' file that matches the project specified in adpVars. Looks like you are attempting to clean DBs (1) not created with this automation script. Automation only cleans DBs that have created with this automation. Or (2) on incorrect DB server. Review need to use this clean_db option/settings."
+  when: project_path.stat.exists == false
+
+- name: "Copy 'dropDBs.sh' script to the dbserver"
+  ansible.builtin.copy:
+    src: util_scripts/dropDBs.sh
+    dest: /home/db2inst1/{{ adpVars.deploymentNamespace }}
+    owner: db2inst1
+    group: db2iadm1
+ 
+- name: "Copy 'forceDropDB.sh' script to the dbserver"
+  ansible.builtin.copy:
+    src: util_scripts/forceDropDB.sh
+    dest: /home/db2inst1/{{ adpVars.deploymentNamespace }}
+    owner: db2inst1
+    group: db2iadm1
+
+- name: "Make 'dropDBs.sh' executable"
+  file:
+    dest: /home/db2inst1/{{ adpVars.deploymentNamespace }}/dropDBs.sh
+    mode: a+x
+
+- name: "Make 'forceDropDB.sh' executable"
+  file:
+    dest: /home/db2inst1/{{ adpVars.deploymentNamespace }}/forceDropDB.sh
+    mode: a+x
+
+- name: "Go to /home/db2inst1/{{ adpVars.deploymentNamespace }}/ and execute dropDBs.sh script to drop all DBs specified in script"
+  ansible.builtin.shell:
+    ./dropDBs.sh
+  args:
+    chdir: /home/db2inst1/{{ adpVars.deploymentNamespace }}/
+
+

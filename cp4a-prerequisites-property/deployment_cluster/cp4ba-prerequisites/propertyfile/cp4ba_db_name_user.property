@@ -1,0 +1,36 @@
+==================================================================================================================
+NOTES: Please change the "<DB_SERVER_NAME>" variable to assign each database to a database server or instance.
+       The "<DB_SERVER_NAME>" must be in [sql]
+==================================================================================================================
+
+####################################################
+## FNCM's Property for GCD Database Name and User on sqlserver type database ##
+####################################################
+## Provide the name of the database for the GCD of P8Domain. For example: "GCDDB"
+sql.GCD_DB_NAME="GCDemer"
+## Provide the user name of the database for the GCD of P8Domain. For example: "dbuser1"
+sql.GCD_DB_USER_NAME="cpeadmin"
+## Provide the password of the database user for the GCD of P8Domain.
+sql.GCD_DB_USER_PASSWORD="Password1"
+
+###################################################
+## FNCM's Property for Object store Database Name and User on sqlserver type database ##
+###################################################
+## Provide the name of the database for the Object Store of P8Domain. For example: "OS1DB"
+sql.OS1_DB_NAME="OS1emer"
+## Provide the user name of the database for the Object Store of P8Domain. For example: "dbuser1"
+sql.OS1_DB_USER_NAME="cpeadmin"
+## Provide the password of the database user for the Object Store of P8Domain. 
+sql.OS1_DB_USER_PASSWORD="Password1"
+
+
+####################################################
+## BAN's Property for ICN Database Name and User on sqlserver type database ##
+####################################################
+## Provide the name of the database for ICN (Navigator). For example: "ICNDB"
+sql.ICN_DB_NAME="ICNemer"
+## Provide the user name of the database for ICN (Navigator). For example: "dbuser1"
+sql.ICN_DB_USER_NAME="cpeadmin"
+## Provide the password of the database user for ICN (Navigator). 
+sql.ICN_DB_USER_PASSWORD="Password1"
+

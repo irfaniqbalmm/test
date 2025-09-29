@@ -1,0 +1,62 @@
+- name: "Import variables from adpVars"
+  hosts:
+    - all
+    - localhost
+
+  tasks:
+    - name: "Include adpVars.yaml"
+      ansible.builtin.include_vars:
+        file: adpVars.yaml
+
+    - name: "Set fact for adpVars"
+      ansible.builtin.set_fact:
+        adpVars: "{{ adpVars }}"
+
+- name: "Clean Existing (dedicated CS) deployment if clean_dedicated_proj == 'true', else skip"
+  hosts: localhost
+  roles:
+    - role: clean_adp_project_dedicated
+      when: adpVars.clean_dedicated_proj == "true"
+
+- name: "Clean Existing (shared CS) deployment if clean_shared_proj == 'true', else skip"
+  hosts: localhost
+  roles:
+    - role: clean_adp_project_shared
+      when: adpVars.clean_shared_proj == "true"
+
+- name: "Clean Existing DBs when clean_db == 'true', else skip"
+  hosts: dbserver1
+  roles:
+    - role: clean_dbs
+      when: adpVars.clean_db == "true"
+
+- name: "Clone cert-kubernetes repository"
+  hosts: localhost
+  roles:
+    - clone_cert-kubernetes
+
+- name: "Copy the designated cp4ba_prerequisites folder to local project directory"
+  hosts: localhost
+  roles:
+    - copy_cp4a_prerequisites_templates
+  
+- name: "Copy DB scripts to DB server and execute scripts"
+  hosts: dbserver1
+  roles:
+    - copy_execute_prerequisites_database
+
+- name: "Deploy operator with silent install"
+  hosts: localhost
+  roles:
+    - deploy_operator
+
+- name: "Create required ADP Secrets & Github secret"
+  hosts: localhost
+  roles:
+    - create_secrets
+
+- name: "Apply the generated CR"
+  hosts: localhost
+  roles:
+    - generated_cr
+

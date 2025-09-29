@@ -1,0 +1,84 @@
+####################################################
+## USER Property for CP4BA ##
+####################################################
+## Use this parameter to specify the license for the CP4A deployment and
+## the possible values are: non-production and production and if not set, the license will
+## be defaulted to production.  This value could be different from the other licenses in the CR.
+CP4BA.CP4BA_LICENSE="production"
+
+## FileNet Content Manager (FNCM) license and possible values are: user, non-production, and production.
+## This value could be different from the rest of the licenses.
+CP4BA.FNCM_LICENSE="production"
+
+## Business Automation Workflow (BAW) license and possible values are: user, non-production, and production.
+## This value could be different from the other licenses in the CR.
+CP4BA.BAW_LICENSE="production"
+
+## On OCP 3.x and 4.x, the User script will populate these three (3) parameters based on your input for "production" deployment.
+## If you manually deploying without using the User script, then you would provide the different storage classes for the slow, medium
+## and fast storage parameters below.  If you only have 1 storage class defined, then you can use that 1 storage class for all 3 parameters.
+## sc_block_storage_classname is for Zen, Zen requires/recommends block storage (RWO) for metastoreDB
+CP4BA.SLOW_FILE_STORAGE_CLASSNAME="managed-nfs-storage"
+CP4BA.MEDIUM_FILE_STORAGE_CLASSNAME="managed-nfs-storage"
+CP4BA.FAST_FILE_STORAGE_CLASSNAME="managed-nfs-storage"
+CP4BA.BLOCK_STORAGE_CLASS_NAME="managed-nfs-storage"
+
+####################################################
+## USER Property for FNCM ##
+####################################################
+## Provide the user name for P8Domain. For example: "CEAdmin"
+CONTENT.APPLOGIN_USER="group0001usr0001"
+
+## Provide the user password for P8Domain.
+CONTENT.APPLOGIN_PASSWORD="passw0rd"
+
+## Provide LTPA key password for FNCM deployment.
+CONTENT.LTPA_PASSWORD="changeit"
+
+## Provide keystore password for FNCM deployment.
+CONTENT.KEYSTORE_PASSWORD="changeit"
+
+## Provide ARCHIVE_USERID for ICC SAP deployment.
+ICCSAP.ARCHIVE_USER_ID="group0001usr0001"
+
+## Provide ARCHIVE_PASSWORD for ICC SAP deployment.
+ICCSAP.ARCHIVE_USER_PASSWORD="passw0rd"
+
+####################################################
+## USER Property for Content initialization ##
+####################################################
+## Enable/disable ECM (FNCM) / BAN initialization (e.g., creation of P8 domain, creation/configuration of object stores,
+## creation/configuration of CSS servers, and initialization of Navigator (ICN).
+## The default valuse is "Yes", set "No" to disable.
+CONTENT_INITIALIZATION.ENABLE="Yes"
+
+## user name for P8 domain admin, for example, "CEAdmin". This parameter accepts comma-separated lists, for example, "CEAdmin1, CEAdmin2"
+CONTENT_INITIALIZATION.LDAP_ADMIN_USER_NAME="group0001usr0001"
+
+## group name for P8 domain admin, for example, "P8Administrators". This parameter accepts comma-separated lists, for example, "P8Group1, P8Group2"
+CONTENT_INITIALIZATION.LDAP_ADMINS_GROUPS_NAME="group0001"
+
+## user name and group name for object store admin, for example, "CEAdmin" or "P8Administrators". This parameter accepts comma-separated lists, for example, "P8Group1, P8Group2"
+CONTENT_INITIALIZATION.CPE_OBJ_STORE_ADMIN_USER_GROUPS="group0001"
+
+####################################################
+## USER Property for BAN ##
+####################################################
+## Provide the user name for BAN. For example: "BANAdmin"
+BAN.APPLOGIN_USER="group0001usr0001"
+
+## Provide the user password for BAN.
+BAN.APPLOGIN_PASSWORD="passw0rd"
+
+## Provide LTPA key password for BAN deployment.
+BAN.LTPA_PASSWORD="changeit"
+
+## Provide keystore password for BAN deployment.
+BAN.KEYSTORE_PASSWORD="changeit"
+
+## Provide the user name for jMail used by BAN. For example: "jMailAdmin"
+BAN.JMAIL_USER_NAME="<Optional>"
+
+## Provide the user password for jMail used by BAN.
+BAN.JMAIL_USER_PASSWORD="<Optional>"
+

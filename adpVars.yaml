@@ -1,0 +1,17 @@
+adpVars:
+    LDAPSSLEnabled: False
+    LDAPType: AD
+    cluster: 'lucky'
+    dbSSLEnabled: 'false'
+    db_type: db2
+    iFixVersion: 22.0.2 #Valid values are existing branches on cert-kubernetes
+    deploymentNamespace: adp-2202-if001-auto
+    platform: OCP
+    staging_key: #Paste your staging IBM Entitlement Registry key here
+    storage_class: managed-nfs-storage #Change if needed to the storage class on your cluster you will use to deploy with
+    cluster_user: dbauser #Change to your cluster's non-admin/or admin user you would select while running cp4a-cluster-admin-setup.sh script
+    dbserver_alias: dbserver1 #Change to your dbserver alias inside your generated cp4ba-pre-requisites/dbscript/ directory
+    clean_db: 'false'
+    clean_dedicated_proj: 'false'
+    clean_shared_proj: 'false'
+

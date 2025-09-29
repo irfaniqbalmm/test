@@ -1,0 +1,1176 @@
+2024-08-12 07:43:29,317 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:29,318 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get secret -n cp2400
+2024-08-12 07:43:29,726 - log - INFO - util.py:25 - run_oc_command - oc command oc get secret -n cp2400 output: 
+NAME                                                              TYPE                                  DATA   AGE
+admin-user-details                                                Opaque                                1      7d6h
+bts-operator-dockercfg-92f62                                      kubernetes.io/dockercfg               1      7d8h
+bts-operator-token-hw9vh                                          kubernetes.io/service-account-token   4      7d8h
+builder-dockercfg-c46mx                                           kubernetes.io/dockercfg               1      7d8h
+builder-token-wwv4r                                               kubernetes.io/service-account-token   4      7d8h
+cloud-native-postgresql-catalog-dockercfg-7mqk5                   kubernetes.io/dockercfg               1      7d8h
+cloud-native-postgresql-catalog-token-2tf2h                       kubernetes.io/service-account-token   4      7d8h
+common-service-db-app                                             kubernetes.io/basic-auth              9      7d6h
+common-service-db-dockercfg-hh44d                                 kubernetes.io/dockercfg               1      7d6h
+common-service-db-im-tls-secret                                   kubernetes.io/tls                     3      7d6h
+common-service-db-replica-tls-secret                              kubernetes.io/tls                     3      7d6h
+common-service-db-superuser                                       kubernetes.io/basic-auth              9      7d6h
+common-service-db-tls-secret                                      kubernetes.io/tls                     3      7d6h
+common-service-db-token-j5dlv                                     kubernetes.io/service-account-token   4      7d6h
+common-service-db-zen-tls-secret                                  kubernetes.io/tls                     3      7d6h
+common-web-ui-cert                                                kubernetes.io/tls                     3      7d6h
+content-bai-sa-dockercfg-sndg5                                    kubernetes.io/dockercfg               1      7d4h
+content-bai-sa-token-s755r                                        kubernetes.io/service-account-token   4      7d4h
+content-ban-credential-secret                                     Opaque                                1      7d4h
+content-ban-custom-ssl-secret                                     Opaque                                6      7d4h
+content-ban-ext-tls-secret                                        Opaque                                4      7d4h
+content-cpe-credential-secret                                     Opaque                                1      7d5h
+content-cpe-oidc-secret                                           Opaque                                2      7d4h
+content-cpe-zen-oidc-secret                                       Opaque                                2      7d5h
+content-ecm-ldap-ssl                                              Opaque                                5      7d5h
+content-ecm-ltpa                                                  Opaque                                4      7d5h
+content-fncm-custom-ssl-secret                                    Opaque                                6      7d5h
+content-fncm-ext-tls-secret                                       Opaque                                4      7d5h
+content-fncm-service-account-dockercfg-pmnfw                      kubernetes.io/dockercfg               1      7d5h
+content-fncm-service-account-token-st5kv                          kubernetes.io/service-account-token   4      7d5h
+content-global-function-id-secret                                 Opaque                                5      7d5h
+content-iccsap-custom-ssl-secret                                  Opaque                                8      7d3h
+content-iccsap-ext-tls-secret                                     Opaque                                4      7d3h
+content-iccsap-service-account-dockercfg-nhcgq                    kubernetes.io/dockercfg               1      7d5h
+content-iccsap-service-account-token-6kvx6                        kubernetes.io/service-account-token   4      7d5h
+content-ier-custom-ssl-secret                                     Opaque                                8      7d3h
+content-ier-ext-tls-secret                                        Opaque                                4      7d3h
+content-insights-engine-cockpit-cert                              kubernetes.io/tls                     3      7d5h
+content-insights-engine-cockpit-secret                            Opaque                                5      7d5h
+content-insights-engine-flink-admin-user                          kubernetes.io/basic-auth              2      7d5h
+content-insights-engine-flink-cert                                kubernetes.io/tls                     3      7d5h
+content-insights-engine-flink-dockercfg-nq4nf                     kubernetes.io/dockercfg               1      7d5h
+content-insights-engine-flink-token-lwk4b                         kubernetes.io/service-account-token   4      7d5h
+content-insights-engine-management-auth                           Opaque                                2      7d5h
+content-insights-engine-management-cert                           kubernetes.io/tls                     3      7d5h
+content-insights-engine-sa-dockercfg-wvhgs                        kubernetes.io/dockercfg               1      7d5h
+content-insights-engine-sa-token-28464                            kubernetes.io/service-account-token   4      7d5h
+content-insights-engine-secret-internal                           Opaque                                14     7d5h
+content-kafka-certificate-secret                                  Opaque                                1      7d7h
+content-nav-oidc-secret                                           Opaque                                2      7d4h
+content-rr-admin-secret                                           Opaque                                5      7d6h
+content-rr-client-tls-secret                                      kubernetes.io/tls                     2      7d6h
+content-rr-crendentials                                           Opaque                                3      7d6h
+content-rr-jwt-secret                                             Opaque                                2      7d6h
+content-rr-sa-dockercfg-qj5gp                                     kubernetes.io/dockercfg               1      7d6h
+content-rr-sa-token-2rp7b                                         kubernetes.io/service-account-token   4      7d6h
+content-tm-credential-secret                                      Opaque                                1      7d4h
+cpd-oidcclient-secret                                             Opaque                                2      7d6h
+cs-ca-certificate-secret                                          kubernetes.io/tls                     3      7d8h
+default-dockercfg-bcvtn                                           kubernetes.io/dockercfg               1      7d8h
+default-ssl                                                       Opaque                                2      7d6h
+default-token-f7gww                                               kubernetes.io/service-account-token   4      7d8h
+deployer-dockercfg-c4msp                                          kubernetes.io/dockercfg               1      7d8h
+deployer-token-n8nxm                                              kubernetes.io/service-account-token   4      7d8h
+edb-license-sa-dockercfg-cxhg6                                    kubernetes.io/dockercfg               1      7d6h
+edb-license-sa-token-6l9f8                                        kubernetes.io/service-account-token   4      7d6h
+external-im-route-certficate                                      Opaque                                1      7d5h
+external-tls-secret                                               Opaque                                3      7d6h
+flink-dockercfg-bwwmc                                             kubernetes.io/dockercfg               1      7d5h
+flink-kubernetes-operator-service-cert                            kubernetes.io/tls                     3      7d5h
+flink-operator-cert                                               Opaque                                5      7d5h
+flink-operator-dockercfg-qlnnf                                    kubernetes.io/dockercfg               1      7d5h
+flink-operator-token-m2fkl                                        kubernetes.io/service-account-token   4      7d5h
+flink-operator-webhook-secret                                     Opaque                                1      7d5h
+flink-token-ldpn9                                                 kubernetes.io/service-account-token   4      7d5h
+foundation-iaf-automationbase-ab-ss-ca                            kubernetes.io/tls                     3      7d7h
+iaf-system-automationui-aui-zen-ca                                kubernetes.io/tls                     3      7d6h
+iaf-system-automationui-aui-zen-cert                              kubernetes.io/tls                     3      7d6h
+iaf-system-clients-ca                                             Opaque                                1      7d7h
+iaf-system-clients-ca-cert                                        Opaque                                3      7d7h
+iaf-system-cluster-ca                                             Opaque                                1      7d7h
+iaf-system-cluster-ca-cert                                        Opaque                                1      7d7h
+iaf-system-cluster-operator-certs                                 Opaque                                4      7d7h
+iaf-system-entity-operator-dockercfg-9fg4v                        kubernetes.io/dockercfg               1      7d7h
+iaf-system-entity-operator-token-xgjwx                            kubernetes.io/service-account-token   4      7d7h
+iaf-system-entity-topic-operator-certs                            Opaque                                4      7d7h
+iaf-system-entity-user-operator-certs                             Opaque                                4      7d7h
+iaf-system-kafka-brokers                                          Opaque                                4      7d7h
+iaf-system-kafka-dockercfg-8p89v                                  kubernetes.io/dockercfg               1      7d7h
+iaf-system-kafka-token-6z4lm                                      kubernetes.io/service-account-token   4      7d7h
+iaf-system-zookeeper-dockercfg-8nfrs                              kubernetes.io/dockercfg               1      7d7h
+iaf-system-zookeeper-nodes                                        Opaque                                4      7d7h
+iaf-system-zookeeper-token-nqdqz                                  kubernetes.io/service-account-token   4      7d7h
+ibm-ads-operator-sa-dockercfg-mh9vz                               kubernetes.io/dockercfg               1      7d8h
+ibm-ads-operator-sa-token-sf5k4                                   kubernetes.io/service-account-token   4      7d8h
+ibm-ban-secret                                                    Opaque                                8      7d5h
+ibm-bts-ca-secret                                                 kubernetes.io/tls                     3      7d5h
+ibm-bts-cnpg-cp2400-cp4ba-bts-app                                 kubernetes.io/basic-auth              9      7d5h
+ibm-bts-cnpg-cp2400-cp4ba-bts-ca                                  Opaque                                2      7d5h
+ibm-bts-cnpg-cp2400-cp4ba-bts-dockercfg-zhhjf                     kubernetes.io/dockercfg               1      7d5h
+ibm-bts-cnpg-cp2400-cp4ba-bts-replication                         kubernetes.io/tls                     2      7d5h
+ibm-bts-cnpg-cp2400-cp4ba-bts-server                              kubernetes.io/tls                     2      7d5h
+ibm-bts-cnpg-cp2400-cp4ba-bts-superuser                           kubernetes.io/basic-auth              9      7d5h
+ibm-bts-cnpg-cp2400-cp4ba-bts-token-xdgwt                         kubernetes.io/service-account-token   4      7d5h
+ibm-bts-internal-secret                                           Opaque                                7      7d5h
+ibm-bts-oidc-client-secret                                        Opaque                                2      7d5h
+ibm-bts-operator-dockercfg-lpflt                                  kubernetes.io/dockercfg               1      7d5h
+ibm-bts-operator-token-9tj7k                                      kubernetes.io/service-account-token   4      7d5h
+ibm-bts-sa-dockercfg-n6rwj                                        kubernetes.io/dockercfg               1      7d5h
+ibm-bts-sa-token-tf9gf                                            kubernetes.io/service-account-token   4      7d5h
+ibm-bts-tls-secret                                                kubernetes.io/tls                     3      7d5h
+ibm-common-service-operator-dockercfg-48xcw                       kubernetes.io/dockercfg               1      7d8h
+ibm-common-service-operator-service-cert                          kubernetes.io/tls                     3      7d8h
+ibm-common-service-operator-token-vt9b6                           kubernetes.io/service-account-token   4      7d8h
+ibm-commonui-operand-dockercfg-dxzkm                              kubernetes.io/dockercfg               1      7d6h
+ibm-commonui-operand-token-bzvpq                                  kubernetes.io/service-account-token   4      7d6h
+ibm-commonui-operator-dockercfg-xs8qq                             kubernetes.io/dockercfg               1      7d6h
+ibm-commonui-operator-token-4vjm2                                 kubernetes.io/service-account-token   4      7d6h
+ibm-cp4a-content-operator-dockercfg-46hds                         kubernetes.io/dockercfg               1      7d8h
+ibm-cp4a-content-operator-token-kp7zg                             kubernetes.io/service-account-token   4      7d8h
+ibm-cp4a-dpe-operator-dockercfg-6sdwv                             kubernetes.io/dockercfg               1      7d8h
+ibm-cp4a-dpe-operator-token-hv9ds                                 kubernetes.io/service-account-token   4      7d8h
+ibm-cp4a-operator-catalog-dockercfg-fblbz                         kubernetes.io/dockercfg               1      7d8h
+ibm-cp4a-operator-catalog-token-w459l                             kubernetes.io/service-account-token   4      7d8h
+ibm-cp4a-operator-dockercfg-cpnqt                                 kubernetes.io/dockercfg               1      7d8h
+ibm-cp4a-operator-token-7t8fs                                     kubernetes.io/service-account-token   4      7d8h
+ibm-cp4a-wfps-operator-sa-dockercfg-ljcp7                         kubernetes.io/dockercfg               1      7d8h
+ibm-cp4a-wfps-operator-sa-token-t5mv8                             kubernetes.io/service-account-token   4      7d8h
+ibm-cp4a-wfps-operator-service-cert                               kubernetes.io/tls                     3      7d8h
+ibm-cp4ba-db-ssl-secret-for-db2                                   Opaque                                1      7d5h
+ibm-cp4ba-ldap-ssl-secret                                         Opaque                                1      7d5h
+ibm-cs-install-catalog-v4-6-4-dockercfg-mlrt8                     kubernetes.io/dockercfg               1      7d8h
+ibm-cs-install-catalog-v4-6-4-token-pb8z6                         kubernetes.io/service-account-token   4      7d8h
+ibm-cs-opensearch-catalog-dockercfg-vwzhn                         kubernetes.io/dockercfg               1      7d8h
+ibm-cs-opensearch-catalog-token-zsfqq                             kubernetes.io/service-account-token   4      7d8h
+ibm-elasticsearch-operator-ibm-cpo-ela-9338d939-dockercfg-28svz   kubernetes.io/dockercfg               1      7d6h
+ibm-elasticsearch-operator-ibm-cpo-elasticsearch-sa-token-5dknh   kubernetes.io/service-account-token   4      7d6h
+ibm-elasticsearch-operator-ibm-cpo-elasticsearch-sa-token-csknc   kubernetes.io/service-account-token   4      7d6h
+ibm-entitlement-key                                               kubernetes.io/dockerconfigjson        1      7d8h
+ibm-events-operator-catalog-dockercfg-njjvk                       kubernetes.io/dockercfg               1      7d8h
+ibm-events-operator-catalog-token-646vp                           kubernetes.io/service-account-token   4      7d8h
+ibm-events-operator-dockercfg-z8sg9                               kubernetes.io/dockercfg               1      7d7h
+ibm-events-operator-token-k4z9v                                   kubernetes.io/service-account-token   4      7d7h
+ibm-fncm-operator-catalog-dockercfg-2ttbv                         kubernetes.io/dockercfg               1      7d8h
+ibm-fncm-operator-catalog-token-tbfwq                             kubernetes.io/service-account-token   4      7d8h
+ibm-fncm-secret                                                   Opaque                                8      7d5h
+ibm-iam-bindinfo-ibmcloud-cluster-ca-cert                         Opaque                                1      7d6h
+ibm-iam-bindinfo-oauth-client-secret                              Opaque                                2      7d6h
+ibm-iam-bindinfo-platform-auth-idp-credentials                    Opaque                                2      7d6h
+ibm-iam-bindinfo-platform-auth-scim-credentials                   Opaque                                2      7d6h
+ibm-iam-bindinfo-platform-auth-secret                             kubernetes.io/tls                     3      7d6h
+ibm-iam-bindinfo-platform-oidc-credentials                        Opaque                                6      7d6h
+ibm-iam-operand-restricted-dockercfg-d5c8m                        kubernetes.io/dockercfg               1      7d6h
+ibm-iam-operand-restricted-token-lfbbw                            kubernetes.io/service-account-token   4      7d6h
+ibm-iam-operator-catalog-dockercfg-5j2qb                          kubernetes.io/dockercfg               1      7d8h
+ibm-iam-operator-catalog-token-xf7wc                              kubernetes.io/service-account-token   4      7d8h
+ibm-iam-operator-dockercfg-b9fqz                                  kubernetes.io/dockercfg               1      7d6h
+ibm-iam-operator-token-8zgnd                                      kubernetes.io/service-account-token   4      7d6h
+ibm-icc-secret                                                    Opaque                                2      7d5h
+ibm-iccsap-secret                                                 Opaque                                1      7d5h
+ibm-ier-secret                                                    Opaque                                1      7d5h
+ibm-insights-engine-operator-dockercfg-jcxtt                      kubernetes.io/dockercfg               1      7d8h
+ibm-insights-engine-operator-token-sbt6j                          kubernetes.io/service-account-token   4      7d8h
+ibm-nginx-internal-tls-ca                                         Opaque                                2      7d6h
+ibm-odm-operator-controller-manager-dockercfg-j25wz               kubernetes.io/dockercfg               1      7d8h
+ibm-odm-operator-controller-manager-token-pkxsz                   kubernetes.io/service-account-token   4      7d8h
+ibm-opencontent-flink-dockercfg-sx6kr                             kubernetes.io/dockercfg               1      7d8h
+ibm-opencontent-flink-token-j5lpj                                 kubernetes.io/service-account-token   4      7d8h
+ibm-pfs-operator-sa-dockercfg-kb4lb                               kubernetes.io/dockercfg               1      7d8h
+ibm-pfs-operator-sa-token-xhb6r                                   kubernetes.io/service-account-token   4      7d8h
+ibm-workflow-operator-sa-dockercfg-8dvnj                          kubernetes.io/dockercfg               1      7d8h
+ibm-workflow-operator-sa-token-5qs6d                              kubernetes.io/service-account-token   4      7d8h
+ibm-zen-file-store-encryption-key                                 Opaque                                2      7d6h
+ibm-zen-metastore-edb-secret                                      kubernetes.io/tls                     3      7d6h
+ibm-zen-objectstore-cert                                          kubernetes.io/tls                     3      7d6h
+ibm-zen-objectstore-secret                                        Opaque                                2      7d6h
+ibm-zen-operator-catalog-dockercfg-rlxvg                          kubernetes.io/dockercfg               1      7d8h
+ibm-zen-operator-catalog-token-c68qx                              kubernetes.io/service-account-token   4      7d8h
+ibm-zen-operator-serviceaccount-dockercfg-z2rmg                   kubernetes.io/dockercfg               1      7d6h
+ibm-zen-operator-serviceaccount-token-68bt6                       kubernetes.io/service-account-token   4      7d6h
+ibm-zen-operator-serviceaccount-token-r69q8                       kubernetes.io/service-account-token   4      7d6h
+ibm-zen-secret-jwks                                               Opaque                                2      7d6h
+ibm-zen-secret-jwt                                                Opaque                                2      7d6h
+ibm-zen-secret-jwt-private                                        Opaque                                1      7d6h
+ibmcloud-cluster-ca-cert                                          Opaque                                1      7d6h
+icp4a-foundation-operator-dockercfg-4dp5m                         kubernetes.io/dockercfg               1      7d8h
+icp4a-foundation-operator-token-4mrvp                             kubernetes.io/service-account-token   4      7d8h
+icp4a-root-ca                                                     kubernetes.io/tls                     2      7d7h
+icp4ba-kafka-auth-0                                               Opaque                                2      7d7h
+identity-provider-secret                                          kubernetes.io/tls                     3      7d6h
+im-datastore-edb-secret                                           kubernetes.io/tls                     3      7d6h
+internal-tls                                                      kubernetes.io/tls                     3      7d6h
+internal-tls-pkcs12                                               kubernetes.io/tls                     5      7d6h
+internal-tls-pkcs8                                                kubernetes.io/tls                     3      7d6h
+kafka-iaf-connection-secret                                       Opaque                                3      7d7h
+ldap-bind-secret                                                  Opaque                                2      7d7h
+management-ingress-ibmcloud-cluster-ca-cert                       Opaque                                1      7d6h
+meta-api-broker-secret                                            Opaque                                1      7d6h
+meta-jwt                                                          Opaque                                6      7d6h
+meta-tls                                                          Opaque                                6      7d6h
+oauth-client-secret                                               Opaque                                2      7d6h
+opensearch-ibm-elasticsearch-cred-secret                          Opaque                                1      7d6h
+opensearch-ibm-elasticsearch-haproxy-config                       Opaque                                1      7d6h
+opensearch-ibm-elasticsearch-service-account-dockercfg-mc2qc      kubernetes.io/dockercfg               1      7d6h
+opensearch-ibm-elasticsearch-service-account-token-88bjm          kubernetes.io/service-account-token   4      7d6h
+opensearch-ibm-elasticsearch-tls-secret                           kubernetes.io/tls                     3      7d6h
+opensearch-tls-secret-route                                       kubernetes.io/tls                     3      7d6h
+operand-deployment-lifecycle-manager-dockercfg-qnslh              kubernetes.io/dockercfg               1      7d8h
+operand-deployment-lifecycle-manager-token-wlh9z                  kubernetes.io/service-account-token   4      7d8h
+pkcs12-password-secret                                            Opaque                                1      7d6h
+platform-auth-ibmid-jwk                                           Opaque                                1      7d6h
+platform-auth-ibmid-ssl-chain                                     Opaque                                1      7d6h
+platform-auth-idp-credentials                                     Opaque                                2      7d6h
+platform-auth-idp-encryption                                      Opaque                                5      7d6h
+platform-auth-ldaps-ca-cert                                       Opaque                                1      7d6h
+platform-auth-scim-credentials                                    Opaque                                2      7d6h
+platform-auth-secret                                              kubernetes.io/tls                     3      7d6h
+platform-identity-management                                      kubernetes.io/tls                     3      7d6h
+platform-oidc-credentials                                         Opaque                                6      7d6h
+postgresql-operator-controller-manager-1-18-12-service-cert       kubernetes.io/tls                     3      7d6h
+postgresql-operator-controller-manager-config                     Opaque                                1      7d6h
+postgresql-operator-manager-dockercfg-rrz7f                       kubernetes.io/dockercfg               1      7d6h
+postgresql-operator-manager-token-7t4vp                           kubernetes.io/service-account-token   4      7d6h
+saml-auth-secret                                                  kubernetes.io/tls                     3      7d6h
+zen-admin-sa-dockercfg-27htp                                      kubernetes.io/dockercfg               1      7d6h
+zen-admin-sa-token-pdw7g                                          kubernetes.io/service-account-token   4      7d6h
+zen-ca-cert-secret                                                kubernetes.io/tls                     3      7d6h
+zen-editor-sa-dockercfg-thwf7                                     kubernetes.io/dockercfg               1      7d6h
+zen-editor-sa-token-2gr4j                                         kubernetes.io/service-account-token   4      7d6h
+zen-metastore-edb-app                                             kubernetes.io/basic-auth              9      7d6h
+zen-metastore-edb-dockercfg-6nc2g                                 kubernetes.io/dockercfg               1      7d6h
+zen-metastore-edb-replica-client                                  kubernetes.io/tls                     3      7d6h
+zen-metastore-edb-server                                          kubernetes.io/tls                     3      7d6h
+zen-metastore-edb-superuser                                       kubernetes.io/basic-auth              9      7d6h
+zen-metastore-edb-token-rw22p                                     kubernetes.io/service-account-token   4      7d6h
+zen-norbac-sa-dockercfg-mxhcx                                     kubernetes.io/dockercfg               1      7d6h
+zen-norbac-sa-token-k5r9m                                         kubernetes.io/service-account-token   4      7d6h
+zen-runtime-sa-dockercfg-678zh                                    kubernetes.io/dockercfg               1      7d6h
+zen-runtime-sa-token-jfm8h                                        kubernetes.io/service-account-token   4      7d6h
+zen-secrets-aes-key                                               Opaque                                1      7d6h
+zen-service-broker-secret                                         Opaque                                1      7d6h
+zen-viewer-sa-dockercfg-5zbgl                                     kubernetes.io/dockercfg               1      7d6h
+zen-viewer-sa-token-8r89k                                         kubernetes.io/service-account-token   4      7d6h
+
+2024-08-12 07:43:29,728 - log - INFO - util.py:38 - run_oc_command - oc command oc get secret -n cp2400 executed successfully
+2024-08-12 07:43:29,728 - log - INFO - util.py:86 - verify_results - All the expected values: ['ibm-ban-secret', ' ibm-icc-secret', ' ibm-iccsap-secret', ' ibm-ier-secret', ' ibm-fncm-secret', ' ldap-bind-secret', ' ibm-cp4ba-db-ssl-secret', ' ibm-cp4ba-ldap-ssl-secret', ' ibm-entitlement-key'] are present in the OC command output
+2024-08-12 07:43:29,728 - log - INFO - util.py:144 - verify_partial_result - oc command oc get secret -n cp2400 verified sucessfully
+2024-08-12 07:43:29,728 - log - INFO - util.py:161 - verify_exact_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:29,728 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get secret ibm-fncm-secret -o=jsonpath='{@.data.appLoginUsername}'| base64 --decode ;echo
+2024-08-12 07:43:29,891 - log - INFO - util.py:25 - run_oc_command - oc command oc get secret ibm-fncm-secret -o=jsonpath='{@.data.appLoginUsername}'| base64 --decode ;echo output: 
+group0001usr0001
+
+2024-08-12 07:43:29,892 - log - INFO - util.py:38 - run_oc_command - oc command oc get secret ibm-fncm-secret -o=jsonpath='{@.data.appLoginUsername}'| base64 --decode ;echo executed successfully
+2024-08-12 07:43:29,892 - log - INFO - util.py:114 - verify_result - The actual result group0001usr0001 and expected result group0001usr0001 are matching
+2024-08-12 07:43:29,892 - log - INFO - util.py:175 - verify_exact_result - oc command oc get secret ibm-fncm-secret -o=jsonpath='{@.data.appLoginUsername}'| base64 --decode ;echo verified sucessfully
+2024-08-12 07:43:29,892 - log - INFO - util.py:161 - verify_exact_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:29,892 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get secret ibm-fncm-secret -o=jsonpath='{@.data.appLoginPassword}'| base64 --decode ;echo
+2024-08-12 07:43:30,057 - log - INFO - util.py:25 - run_oc_command - oc command oc get secret ibm-fncm-secret -o=jsonpath='{@.data.appLoginPassword}'| base64 --decode ;echo output: 
+passw0rd
+
+2024-08-12 07:43:30,057 - log - INFO - util.py:38 - run_oc_command - oc command oc get secret ibm-fncm-secret -o=jsonpath='{@.data.appLoginPassword}'| base64 --decode ;echo executed successfully
+2024-08-12 07:43:30,057 - log - INFO - util.py:114 - verify_result - The actual result passw0rd and expected result passw0rd are matching
+2024-08-12 07:43:30,057 - log - INFO - util.py:175 - verify_exact_result - oc command oc get secret ibm-fncm-secret -o=jsonpath='{@.data.appLoginPassword}'| base64 --decode ;echo verified sucessfully
+2024-08-12 07:43:30,057 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:30,057 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get secret ibm-fncm-secret -o=jsonpath='{@}'
+2024-08-12 07:43:30,208 - log - INFO - util.py:25 - run_oc_command - oc command oc get secret ibm-fncm-secret -o=jsonpath='{@}' output: 
+{"apiVersion":"v1","data":{"appLoginPassword":"cGFzc3cwcmQ=","appLoginUsername":"Z3JvdXAwMDAxdXNyMDAwMQ==","gcdDBPassword":"V0ZRQTIweno=","gcdDBUsername":"ZGIyaW5zdDE=","keystorePassword":"Y2hhbmdlaXQkY2hhbmdlaXQ=","ltpaPassword":"Y2hhbmdlaXQkY2hhbmdlaXQ=","os1DBPassword":"V0ZRQTIweno=","os1DBUsername":"ZGIyaW5zdDE="},"kind":"Secret","metadata":{"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Secret\",\"metadata\":{\"annotations\":{},\"labels\":{\"db-name\":\"ibm-fncm-secret\",\"gcd-db-server\":\"db2\"},\"name\":\"ibm-fncm-secret\",\"namespace\":\"cp2400\"},\"stringData\":{\"appLoginPassword\":\"passw0rd\",\"appLoginUsername\":\"group0001usr0001\",\"gcdDBPassword\":\"WFQA20zz\",\"gcdDBUsername\":\"db2inst1\",\"keystorePassword\":\"changeit$changeit\",\"ltpaPassword\":\"changeit$changeit\",\"os1DBPassword\":\"WFQA20zz\",\"os1DBUsername\":\"db2inst1\"},\"type\":\"Opaque\"}\n"},"creationTimestamp":"2024-08-05T09:30:21Z","labels":{"db-name":"ibm-fncm-secret","gcd-db-server":"db2"},"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:data":{".":{},"f:appLoginPassword":{},"f:appLoginUsername":{},"f:gcdDBPassword":{},"f:gcdDBUsername":{},"f:keystorePassword":{},"f:ltpaPassword":{},"f:os1DBPassword":{},"f:os1DBUsername":{}},"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}},"f:labels":{".":{},"f:db-name":{},"f:gcd-db-server":{}}},"f:type":{}},"manager":"kubectl-client-side-apply","operation":"Update","time":"2024-08-05T09:30:21Z"}],"name":"ibm-fncm-secret","namespace":"cp2400","resourceVersion":"139237428","uid":"d455b53f-b790-4466-823e-d35468caf246"},"type":"Opaque"}
+2024-08-12 07:43:30,208 - log - INFO - util.py:38 - run_oc_command - oc command oc get secret ibm-fncm-secret -o=jsonpath='{@}' executed successfully
+2024-08-12 07:43:30,208 - log - INFO - util.py:86 - verify_results - All the expected values: ['"kind":"Secret', ' "db-name":"ibm-fncm-secret"', ' "name":"ibm-fncm-secret"', ' "type":"Opaque"'] are present in the OC command output
+2024-08-12 07:43:30,209 - log - INFO - util.py:144 - verify_partial_result - oc command oc get secret ibm-fncm-secret -o=jsonpath='{@}' verified sucessfully
+2024-08-12 07:43:30,209 - log - INFO - util.py:161 - verify_exact_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:30,209 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get secret ibm-iam-bindinfo-platform-auth-idp-credentials -o jsonpath='{.data.admin_username}' | base64 --decode; echo
+2024-08-12 07:43:30,350 - log - INFO - util.py:25 - run_oc_command - oc command oc get secret ibm-iam-bindinfo-platform-auth-idp-credentials -o jsonpath='{.data.admin_username}' | base64 --decode; echo output: 
+cpadmin
+
+2024-08-12 07:43:30,350 - log - INFO - util.py:38 - run_oc_command - oc command oc get secret ibm-iam-bindinfo-platform-auth-idp-credentials -o jsonpath='{.data.admin_username}' | base64 --decode; echo executed successfully
+2024-08-12 07:43:30,350 - log - INFO - util.py:114 - verify_result - The actual result cpadmin and expected result cpadmin are matching
+2024-08-12 07:43:30,350 - log - INFO - util.py:175 - verify_exact_result - oc command oc get secret ibm-iam-bindinfo-platform-auth-idp-credentials -o jsonpath='{.data.admin_username}' | base64 --decode; echo verified sucessfully
+2024-08-12 07:43:30,350 - log - INFO - util.py:161 - verify_exact_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:30,351 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get secret ibm-iam-bindinfo-platform-auth-idp-credentials -o 'jsonpath={.data.admin_password}'| base64 --decode ;echo
+2024-08-12 07:43:30,505 - log - INFO - util.py:25 - run_oc_command - oc command oc get secret ibm-iam-bindinfo-platform-auth-idp-credentials -o 'jsonpath={.data.admin_password}'| base64 --decode ;echo output: 
+ZCLcmh8nkc1pnhqBqZ679L8hUtE3YMr0
+
+2024-08-12 07:43:30,505 - log - INFO - util.py:38 - run_oc_command - oc command oc get secret ibm-iam-bindinfo-platform-auth-idp-credentials -o 'jsonpath={.data.admin_password}'| base64 --decode ;echo executed successfully
+2024-08-12 07:43:30,505 - log - INFO - util.py:114 - verify_result - The actual result ZCLcmh8nkc1pnhqBqZ679L8hUtE3YMr0 and expected result ZCLcmh8nkc1pnhqBqZ679L8hUtE3YMr0 are matching
+2024-08-12 07:43:30,505 - log - INFO - util.py:175 - verify_exact_result - oc command oc get secret ibm-iam-bindinfo-platform-auth-idp-credentials -o 'jsonpath={.data.admin_password}'| base64 --decode ;echo verified sucessfully
+2024-08-12 07:43:30,505 - log - INFO - util.py:161 - verify_exact_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:30,505 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].spec.appVersion}' -n cp2400
+2024-08-12 07:43:30,757 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].spec.appVersion}' -n cp2400 output: 
+24.0.0
+2024-08-12 07:43:30,757 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].spec.appVersion}' -n cp2400 executed successfully
+2024-08-12 07:43:30,757 - log - INFO - util.py:114 - verify_result - The actual result 24.0.0 and expected result 24.0.0 are matching
+2024-08-12 07:43:30,757 - log - INFO - util.py:175 - verify_exact_result - oc command oc get Content -o=jsonpath='{.items[*].spec.appVersion}' -n cp2400 verified sucessfully
+2024-08-12 07:43:30,758 - log - INFO - util.py:161 - verify_exact_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:30,758 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].spec.license}' -n cp2400
+2024-08-12 07:43:30,975 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].spec.license}' -n cp2400 output: 
+{"accept":true}
+2024-08-12 07:43:30,976 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].spec.license}' -n cp2400 executed successfully
+2024-08-12 07:43:30,976 - log - INFO - util.py:114 - verify_result - The actual result {"accept":true} and expected result {"accept":true} are matching
+2024-08-12 07:43:30,976 - log - INFO - util.py:175 - verify_exact_result - oc command oc get Content -o=jsonpath='{.items[*].spec.license}' -n cp2400 verified sucessfully
+2024-08-12 07:43:30,976 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:30,976 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.cmis}' -n cp2400
+2024-08-12 07:43:31,176 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.cmis}' -n cp2400 output: 
+{"cmisDeployment":"Ready","cmisRoute":"Ready","cmisService":"Ready","cmisStorage":"Ready","cmisZenIntegration":"Ready","lastTransitionTime":"2024-08-11T02:16:28Z","message":"","reason":""}
+2024-08-12 07:43:31,176 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.cmis}' -n cp2400 executed successfully
+2024-08-12 07:43:31,176 - log - INFO - util.py:86 - verify_results - All the expected values: ['"cmisDeployment":"Ready"', '"cmisRoute":"Ready"', '"cmisService":"Ready"', '"cmisStorage":"Ready"', '"cmisZenIntegration":"Ready"'] are present in the OC command output
+2024-08-12 07:43:31,176 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.cmis}' -n cp2400 verified sucessfully
+2024-08-12 07:43:31,177 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:31,177 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.contentDesignerRepoAPI}' -n cp2400
+2024-08-12 07:43:31,350 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.contentDesignerRepoAPI}' -n cp2400 output: 
+{"cdraDeployment":"NotInstalled","cdraPersistentVolume":"NotInstalled","cdraService":"NotInstalled","cdraZenIntegration":"NotInstalled","lastTransitionTime":"2024-08-12T14:29:23Z","message":"","reason":""}
+2024-08-12 07:43:31,350 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.contentDesignerRepoAPI}' -n cp2400 executed successfully
+2024-08-12 07:43:31,351 - log - INFO - util.py:86 - verify_results - All the expected values: ['"cdraDeployment":"NotInstalled"', '"cdraPersistentVolume":"NotInstalled"', '"cdraService":"NotInstalled"', '"cdraZenIntegration":"NotInstalled"'] are present in the OC command output
+2024-08-12 07:43:31,351 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.contentDesignerRepoAPI}' -n cp2400 verified sucessfully
+2024-08-12 07:43:31,351 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:31,351 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.contentDesignerService}' -n cp2400
+2024-08-12 07:43:31,528 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.contentDesignerService}' -n cp2400 output: 
+{"cdsDeployment":"NotInstalled","cdsPersistentVolume":"NotInstalled","cdsService":"NotInstalled","cdsZenIntegration":"NotInstalled","lastTransitionTime":"2024-08-12T14:29:23Z","message":"","reason":""}
+2024-08-12 07:43:31,529 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.contentDesignerService}' -n cp2400 executed successfully
+2024-08-12 07:43:31,529 - log - INFO - util.py:86 - verify_results - All the expected values: ['"cdsDeployment":"NotInstalled"', '"cdsPersistentVolume":"NotInstalled"', '"cdsService":"NotInstalled"', '"cdsZenIntegration":"NotInstalled"'] are present in the OC command output
+2024-08-12 07:43:31,529 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.contentDesignerService}' -n cp2400 verified sucessfully
+2024-08-12 07:43:31,529 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:31,529 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.contentProjectDeploymentService}' -n cp2400
+2024-08-12 07:43:31,717 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.contentProjectDeploymentService}' -n cp2400 output: 
+{"cpdsDeployment":"NotInstalled","cpdsPersistentVolume":"NotInstalled","cpdsService":"NotInstalled","cpdsZenIntegration":"NotInstalled","lastTransitionTime":"2024-08-12T14:29:23Z","message":"","reason":""}
+2024-08-12 07:43:31,717 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.contentProjectDeploymentService}' -n cp2400 executed successfully
+2024-08-12 07:43:31,717 - log - INFO - util.py:86 - verify_results - All the expected values: ['"cpdsDeployment":"NotInstalled"', '"cpdsPersistentVolume":"NotInstalled"', '"cpdsService":"NotInstalled"', '"cpdsZenIntegration":"NotInstalled"'] are present in the OC command output
+2024-08-12 07:43:31,717 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.contentProjectDeploymentService}' -n cp2400 verified sucessfully
+2024-08-12 07:43:31,717 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:31,717 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.css}' -n cp2400
+2024-08-12 07:43:31,886 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.css}' -n cp2400 output: 
+{"cssDeployment":"Ready","cssService":"Ready","cssStorage":"Ready","lastTransitionTime":"2024-08-12T14:29:23Z","message":"","reason":""}
+2024-08-12 07:43:31,887 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.css}' -n cp2400 executed successfully
+2024-08-12 07:43:31,887 - log - INFO - util.py:86 - verify_results - All the expected values: ['"cssDeployment":"Ready"', '"cssService":"Ready"', '"cssStorage":"Ready"'] are present in the OC command output
+2024-08-12 07:43:31,887 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.css}' -n cp2400 verified sucessfully
+2024-08-12 07:43:31,887 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:31,887 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.cpe}' -n cp2400
+2024-08-12 07:43:32,058 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.cpe}' -n cp2400 output: 
+{"cpeDeployment":"Ready","cpeJDBCDriver":"Ready","cpeRoute":"Ready","cpeService":"Ready","cpeStorage":"Ready","cpeZenIntegration":"Ready","lastTransitionTime":"2024-08-11T02:16:28Z","message":"","reason":""}
+2024-08-12 07:43:32,059 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.cpe}' -n cp2400 executed successfully
+2024-08-12 07:43:32,059 - log - INFO - util.py:86 - verify_results - All the expected values: ['"cpeDeployment":"Ready"', '"cpeJDBCDriver":"Ready"', '"cpeRoute":"Ready"', '"cpeService":"Ready"', '"cpeStorage":"Ready"', '"cpeZenIntegration":"Ready"'] are present in the OC command output
+2024-08-12 07:43:32,059 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.cpe}' -n cp2400 verified sucessfully
+2024-08-12 07:43:32,059 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:32,059 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.extshare}' -n cp2400
+2024-08-12 07:43:32,238 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.extshare}' -n cp2400 output: 
+{"extshareDeployment":"NotInstalled","extshareRoute":"NotInstalled","extshareService":"NotInstalled","extshareStorage":"NotInstalled","lastTransitionTime":"2024-08-12T14:29:23Z","message":"","reason":""}
+2024-08-12 07:43:32,239 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.extshare}' -n cp2400 executed successfully
+2024-08-12 07:43:32,239 - log - INFO - util.py:86 - verify_results - All the expected values: ['"extshareDeployment":"NotInstalled"', '"extshareRoute":"NotInstalled"', '"extshareService":"NotInstalled"', '"extshareStorage":"NotInstalled"'] are present in the OC command output
+2024-08-12 07:43:32,239 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.extshare}' -n cp2400 verified sucessfully
+2024-08-12 07:43:32,239 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:32,239 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.graphql}' -n cp2400
+2024-08-12 07:43:32,411 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.graphql}' -n cp2400 output: 
+{"graphqlDeployment":"Ready","graphqlRoute":"Ready","graphqlService":"Ready","graphqlStorage":"Ready","lastTransitionTime":"2024-08-05T09:33:32Z","message":"","reason":""}
+2024-08-12 07:43:32,412 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.graphql}' -n cp2400 executed successfully
+2024-08-12 07:43:32,412 - log - INFO - util.py:86 - verify_results - All the expected values: ['"graphqlDeployment":"Ready"', '"graphqlRoute":"Ready"', '"graphqlService":"Ready"', '"graphqlStorage":"Ready"'] are present in the OC command output
+2024-08-12 07:43:32,412 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.graphql}' -n cp2400 verified sucessfully
+2024-08-12 07:43:32,412 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:32,412 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.iccsap}' -n cp2400
+2024-08-12 07:43:32,625 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.iccsap}' -n cp2400 output: 
+{"conditions":[],"iccsapDeployment":"Ready","iccsapRoute":"Ready","iccsapService":"Ready","iccsapStorageCheck":"Ready"}
+2024-08-12 07:43:32,625 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.iccsap}' -n cp2400 executed successfully
+2024-08-12 07:43:32,625 - log - INFO - util.py:86 - verify_results - All the expected values: ['"iccsapDeployment":"Ready"', '"iccsapRoute":"Ready"', '"iccsapService":"Ready"', '"iccsapStorageCheck":"Ready"'] are present in the OC command output
+2024-08-12 07:43:32,625 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.iccsap}' -n cp2400 verified sucessfully
+2024-08-12 07:43:32,626 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:32,626 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.ier}' -n cp2400
+2024-08-12 07:43:32,798 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.ier}' -n cp2400 output: 
+{"conditions":[],"ierDeployment":"Ready","ierRoute":"Ready","ierService":"Ready","ierStorageCheck":"Ready"}
+2024-08-12 07:43:32,798 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.ier}' -n cp2400 executed successfully
+2024-08-12 07:43:32,798 - log - INFO - util.py:86 - verify_results - All the expected values: ['"ierDeployment":"Ready"', '"ierRoute":"Ready"', '"ierService":"Ready"', '"ierStorageCheck":"Ready"'] are present in the OC command output
+2024-08-12 07:43:32,798 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.ier}' -n cp2400 verified sucessfully
+2024-08-12 07:43:32,799 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:32,799 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.navigator}' -n cp2400
+2024-08-12 07:43:32,994 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.navigator}' -n cp2400 output: 
+{"lastTransitionTime":"2024-08-12T14:29:23Z","message":"Status code was 400 and not [200]: HTTP Error 400: Bad Request","navigatorDeployment":"Ready","navigatorService":"Ready","navigatorStorage":"Ready","navigatorZenIntegration":"Ready","reason":"Navigator Post Deployment failed! Pls check Ansible log for details. "}
+2024-08-12 07:43:32,994 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.navigator}' -n cp2400 executed successfully
+2024-08-12 07:43:32,994 - log - INFO - util.py:86 - verify_results - All the expected values: ['"navigatorDeployment":"Ready"', '"navigatorService":"Ready"', '"navigatorStorage":"Ready"', '"navigatorZenIntegration":"Ready"'] are present in the OC command output
+2024-08-12 07:43:32,995 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.navigator}' -n cp2400 verified sucessfully
+2024-08-12 07:43:32,995 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:32,995 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.gitgatewayService}' -n cp2400
+2024-08-12 07:43:33,161 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.gitgatewayService}' -n cp2400 output: 
+{"gitsvcDeployment":"NotInstalled","gitsvcPersistentVolume":"NotInstalled","gitsvcService":"NotInstalled","lastTransitionTime":"2024-08-12T14:29:23Z","message":"","reason":""}
+2024-08-12 07:43:33,161 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.gitgatewayService}' -n cp2400 executed successfully
+2024-08-12 07:43:33,161 - log - INFO - util.py:86 - verify_results - All the expected values: ['"gitsvcDeployment":"NotInstalled"', '"gitsvcPersistentVolume":"NotInstalled"', '"gitsvcService":"NotInstalled"'] are present in the OC command output
+2024-08-12 07:43:33,161 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.gitgatewayService}' -n cp2400 verified sucessfully
+2024-08-12 07:43:33,161 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:33,161 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.tm}' -n cp2400
+2024-08-12 07:43:33,326 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.tm}' -n cp2400 output: 
+{"lastTransitionTime":"2024-08-12T14:29:23Z","message":"","reason":"","tmDeployment":"Ready","tmRoute":"Ready","tmService":"Ready","tmStorage":"Ready"}
+2024-08-12 07:43:33,326 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.tm}' -n cp2400 executed successfully
+2024-08-12 07:43:33,326 - log - INFO - util.py:86 - verify_results - All the expected values: ['"tmDeployment":"Ready"', '"tmRoute":"Ready"', '"tmService":"Ready"', '"tmStorage":"Ready"'] are present in the OC command output
+2024-08-12 07:43:33,326 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.tm}' -n cp2400 verified sucessfully
+2024-08-12 07:43:33,326 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:33,326 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.components.viewone}' -n cp2400
+2024-08-12 07:43:33,489 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.viewone}' -n cp2400 output: 
+{"viewoneDeployment":"NotInstalled","viewoneRRIntegration":"NotInstalled","viewoneRoute":"NotInstalled","viewoneService":"NotInstalled","viewoneStorage":"NotInstalled"}
+2024-08-12 07:43:33,489 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.components.viewone}' -n cp2400 executed successfully
+2024-08-12 07:43:33,490 - log - INFO - util.py:86 - verify_results - All the expected values: ['"viewoneDeployment":"NotInstalled"', '"viewoneRRIntegration":"NotInstalled"', '"viewoneRoute":"NotInstalled"', '"viewoneService":"NotInstalled"', '"viewoneStorage":"NotInstalled"'] are present in the OC command output
+2024-08-12 07:43:33,490 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.components.viewone}' -n cp2400 verified sucessfully
+2024-08-12 07:43:33,490 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:33,490 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.conditions}' -n cp2400
+2024-08-12 07:43:33,640 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.conditions}' -n cp2400 output: 
+[{"message":"Running reconciliation","reason":"Running","status":"True","type":"Running"},{"message":"","reason":"Successful","status":"True","type":"Ready"}]
+2024-08-12 07:43:33,640 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.conditions}' -n cp2400 executed successfully
+2024-08-12 07:43:33,640 - log - INFO - util.py:86 - verify_results - All the expected values: ['"message":"Running reconciliation"', '"reason":"Running"', '"status":"True"', '"type":"Running"', ' "message":""', '"reason":"Successful"', '"status":"True"', '"type":"Ready"'] are present in the OC command output
+2024-08-12 07:43:33,640 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.conditions}' -n cp2400 verified sucessfully
+2024-08-12 07:43:33,640 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:33,640 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get Content -o=jsonpath='{.items[*].status.endpoints[*]}' -n cp2400
+2024-08-12 07:43:33,806 - log - INFO - util.py:25 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.endpoints[*]}' -n cp2400 output: 
+{"name":"CSS Health Check URL","scope":"External","type":"UI","uri":"https://cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com/cpe/P8CE/Health/CBRDashboard"} {"name":"Task Manager Login URL","scope":"External","type":"UI","uri":"https://cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com/tm/api/v1"} {"name":"IER Login URL","scope":"External","type":"UI","uri":"https://cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com/ier/EnterpriseRecordsPlugin/IERApplicationPlugin.jar"} {"name":"ICCSAP Login URL","scope":"External","type":"UI","uri":"https://cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com/iccsap"} {"name":"ICCSAP Plugin URL","scope":"External","type":"UI","uri":"https://cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com/iccsap/files"}
+2024-08-12 07:43:33,807 - log - INFO - util.py:38 - run_oc_command - oc command oc get Content -o=jsonpath='{.items[*].status.endpoints[*]}' -n cp2400 executed successfully
+2024-08-12 07:43:33,807 - log - INFO - util.py:86 - verify_results - All the expected values: ['"name":"CSS Health Check URL"', ' "uri":"https://cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com/cpe/P8CE/Health/CBRDashboard"', '"name":"Task Manager Login URL"', ' "uri":"https://cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com/tm/api/v1"', '"name":"IER Login URL"', ' "uri":"https://cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com/ier/EnterpriseRecordsPlugin/IERApplicationPlugin.jar"', '"name":"ICCSAP Login URL"', ' "uri":"https://cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com/iccsap"', '"name":"ICCSAP Plugin URL"', ' "uri":"https://cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com/iccsap/files"'] are present in the OC command output
+2024-08-12 07:43:33,807 - log - INFO - util.py:144 - verify_partial_result - oc command oc get Content -o=jsonpath='{.items[*].status.endpoints[*]}' -n cp2400 verified sucessfully
+2024-08-12 07:43:33,807 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:33,807 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get events
+2024-08-12 07:43:34,153 - log - INFO - util.py:25 - run_oc_command - oc command oc get events output: 
+LAST SEEN   TYPE      REASON                            OBJECT                                                                MESSAGE
+62m         Normal    Scheduled                         pod/bts-operator-4srf4                                                Successfully assigned cp2400/bts-operator-4srf4 to worker1.captainamerica.cp.fyre.ibm.com
+62m         Normal    AddedInterface                    pod/bts-operator-4srf4                                                Add eth0 [10.254.13.141/22] from ovn-kubernetes
+62m         Normal    Pulled                            pod/bts-operator-4srf4                                                Container image "icr.io/cpopen/ibm-bts-operator-catalog@sha256:866f0212eab7bc70cc7fcf7ebdbb4dfac561991f6d25900bd52f33cd90846adf" already present on machine
+62m         Normal    Created                           pod/bts-operator-4srf4                                                Created container registry-server
+62m         Normal    Started                           pod/bts-operator-4srf4                                                Started container registry-server
+61m         Normal    Killing                           pod/bts-operator-4srf4                                                Stopping container registry-server
+16m         Normal    Scheduled                         pod/bts-operator-bmk4k                                                Successfully assigned cp2400/bts-operator-bmk4k to worker1.captainamerica.cp.fyre.ibm.com
+16m         Normal    AddedInterface                    pod/bts-operator-bmk4k                                                Add eth0 [10.254.13.148/22] from ovn-kubernetes
+16m         Normal    Pulled                            pod/bts-operator-bmk4k                                                Container image "icr.io/cpopen/ibm-bts-operator-catalog@sha256:866f0212eab7bc70cc7fcf7ebdbb4dfac561991f6d25900bd52f33cd90846adf" already present on machine
+16m         Normal    Created                           pod/bts-operator-bmk4k                                                Created container registry-server
+16m         Normal    Started                           pod/bts-operator-bmk4k                                                Started container registry-server
+16m         Normal    Killing                           pod/bts-operator-bmk4k                                                Stopping container registry-server
+152m        Normal    Scheduled                         pod/bts-operator-htvhw                                                Successfully assigned cp2400/bts-operator-htvhw to worker1.captainamerica.cp.fyre.ibm.com
+152m        Normal    AddedInterface                    pod/bts-operator-htvhw                                                Add eth0 [10.254.13.124/22] from ovn-kubernetes
+152m        Normal    Pulled                            pod/bts-operator-htvhw                                                Container image "icr.io/cpopen/ibm-bts-operator-catalog@sha256:866f0212eab7bc70cc7fcf7ebdbb4dfac561991f6d25900bd52f33cd90846adf" already present on machine
+152m        Normal    Created                           pod/bts-operator-htvhw                                                Created container registry-server
+152m        Normal    Started                           pod/bts-operator-htvhw                                                Started container registry-server
+151m        Normal    Killing                           pod/bts-operator-htvhw                                                Stopping container registry-server
+107m        Normal    Scheduled                         pod/bts-operator-tplrz                                                Successfully assigned cp2400/bts-operator-tplrz to worker2.captainamerica.cp.fyre.ibm.com
+107m        Normal    AddedInterface                    pod/bts-operator-tplrz                                                Add eth0 [10.254.19.129/22] from ovn-kubernetes
+107m        Normal    Pulled                            pod/bts-operator-tplrz                                                Container image "icr.io/cpopen/ibm-bts-operator-catalog@sha256:866f0212eab7bc70cc7fcf7ebdbb4dfac561991f6d25900bd52f33cd90846adf" already present on machine
+107m        Normal    Created                           pod/bts-operator-tplrz                                                Created container registry-server
+107m        Normal    Started                           pod/bts-operator-tplrz                                                Started container registry-server
+106m        Normal    Killing                           pod/bts-operator-tplrz                                                Stopping container registry-server
+153m        Normal    Scheduled                         pod/cloud-native-postgresql-catalog-gq2j5                             Successfully assigned cp2400/cloud-native-postgresql-catalog-gq2j5 to worker2.captainamerica.cp.fyre.ibm.com
+153m        Normal    AddedInterface                    pod/cloud-native-postgresql-catalog-gq2j5                             Add eth0 [10.254.19.111/22] from ovn-kubernetes
+153m        Normal    Pulled                            pod/cloud-native-postgresql-catalog-gq2j5                             Container image "icr.io/cpopen/ibm-cpd-cloud-native-postgresql-operator-catalog@sha256:0b46a3ec66622dd4a96d96243602a21d7a29cd854f67a876ad745ec524337a1f" already present on machine
+153m        Normal    Created                           pod/cloud-native-postgresql-catalog-gq2j5                             Created container registry-server
+153m        Normal    Started                           pod/cloud-native-postgresql-catalog-gq2j5                             Started container registry-server
+153m        Normal    Killing                           pod/cloud-native-postgresql-catalog-gq2j5                             Stopping container registry-server
+18m         Normal    Scheduled                         pod/cloud-native-postgresql-catalog-hwg2g                             Successfully assigned cp2400/cloud-native-postgresql-catalog-hwg2g to worker1.captainamerica.cp.fyre.ibm.com
+18m         Normal    AddedInterface                    pod/cloud-native-postgresql-catalog-hwg2g                             Add eth0 [10.254.13.146/22] from ovn-kubernetes
+18m         Normal    Pulled                            pod/cloud-native-postgresql-catalog-hwg2g                             Container image "icr.io/cpopen/ibm-cpd-cloud-native-postgresql-operator-catalog@sha256:0b46a3ec66622dd4a96d96243602a21d7a29cd854f67a876ad745ec524337a1f" already present on machine
+18m         Normal    Created                           pod/cloud-native-postgresql-catalog-hwg2g                             Created container registry-server
+18m         Normal    Started                           pod/cloud-native-postgresql-catalog-hwg2g                             Started container registry-server
+18m         Normal    Killing                           pod/cloud-native-postgresql-catalog-hwg2g                             Stopping container registry-server
+108m        Normal    Scheduled                         pod/cloud-native-postgresql-catalog-lv8mj                             Successfully assigned cp2400/cloud-native-postgresql-catalog-lv8mj to worker2.captainamerica.cp.fyre.ibm.com
+108m        Normal    AddedInterface                    pod/cloud-native-postgresql-catalog-lv8mj                             Add eth0 [10.254.19.127/22] from ovn-kubernetes
+108m        Normal    Pulled                            pod/cloud-native-postgresql-catalog-lv8mj                             Container image "icr.io/cpopen/ibm-cpd-cloud-native-postgresql-operator-catalog@sha256:0b46a3ec66622dd4a96d96243602a21d7a29cd854f67a876ad745ec524337a1f" already present on machine
+108m        Normal    Created                           pod/cloud-native-postgresql-catalog-lv8mj                             Created container registry-server
+108m        Normal    Started                           pod/cloud-native-postgresql-catalog-lv8mj                             Started container registry-server
+108m        Normal    Killing                           pod/cloud-native-postgresql-catalog-lv8mj                             Stopping container registry-server
+63m         Normal    Scheduled                         pod/cloud-native-postgresql-catalog-xz8lb                             Successfully assigned cp2400/cloud-native-postgresql-catalog-xz8lb to worker1.captainamerica.cp.fyre.ibm.com
+63m         Normal    AddedInterface                    pod/cloud-native-postgresql-catalog-xz8lb                             Add eth0 [10.254.13.140/22] from ovn-kubernetes
+63m         Normal    Pulled                            pod/cloud-native-postgresql-catalog-xz8lb                             Container image "icr.io/cpopen/ibm-cpd-cloud-native-postgresql-operator-catalog@sha256:0b46a3ec66622dd4a96d96243602a21d7a29cd854f67a876ad745ec524337a1f" already present on machine
+63m         Normal    Created                           pod/cloud-native-postgresql-catalog-xz8lb                             Created container registry-server
+63m         Normal    Started                           pod/cloud-native-postgresql-catalog-xz8lb                             Started container registry-server
+63m         Normal    Killing                           pod/cloud-native-postgresql-catalog-xz8lb                             Stopping container registry-server
+110s        Warning   FailedToRetrieveImagePullSecret   pod/content-dba-rr-2b6d3469fe                                         Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+62m         Normal    Scheduled                         pod/content-navigator-watcher-65fdf5f5b9-9j9c6                        Successfully assigned cp2400/content-navigator-watcher-65fdf5f5b9-9j9c6 to worker0.captainamerica.cp.fyre.ibm.com
+62m         Normal    AddedInterface                    pod/content-navigator-watcher-65fdf5f5b9-9j9c6                        Add eth0 [10.254.21.100/22] from ovn-kubernetes
+62m         Normal    Pulling                           pod/content-navigator-watcher-65fdf5f5b9-9j9c6                        Pulling image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd"
+62m         Normal    Pulled                            pod/content-navigator-watcher-65fdf5f5b9-9j9c6                        Successfully pulled image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd" in 877ms (878ms including waiting)
+62m         Normal    Created                           pod/content-navigator-watcher-65fdf5f5b9-9j9c6                        Created container folder-prepare-container
+62m         Normal    Started                           pod/content-navigator-watcher-65fdf5f5b9-9j9c6                        Started container folder-prepare-container
+62m         Normal    Pulling                           pod/content-navigator-watcher-65fdf5f5b9-9j9c6                        Pulling image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd"
+62m         Normal    Pulled                            pod/content-navigator-watcher-65fdf5f5b9-9j9c6                        Successfully pulled image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd" in 836ms (836ms including waiting)
+62m         Normal    Created                           pod/content-navigator-watcher-65fdf5f5b9-9j9c6                        Created container ban-watcher
+62m         Normal    Started                           pod/content-navigator-watcher-65fdf5f5b9-9j9c6                        Started container ban-watcher
+16m         Normal    Killing                           pod/content-navigator-watcher-65fdf5f5b9-9j9c6                        Stopping container ban-watcher
+168m        Normal    Scheduled                         pod/content-navigator-watcher-65fdf5f5b9-ttghn                        Successfully assigned cp2400/content-navigator-watcher-65fdf5f5b9-ttghn to worker0.captainamerica.cp.fyre.ibm.com
+168m        Normal    AddedInterface                    pod/content-navigator-watcher-65fdf5f5b9-ttghn                        Add eth0 [10.254.21.98/22] from ovn-kubernetes
+168m        Normal    Pulling                           pod/content-navigator-watcher-65fdf5f5b9-ttghn                        Pulling image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd"
+168m        Normal    Pulled                            pod/content-navigator-watcher-65fdf5f5b9-ttghn                        Successfully pulled image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd" in 933ms (933ms including waiting)
+168m        Normal    Created                           pod/content-navigator-watcher-65fdf5f5b9-ttghn                        Created container folder-prepare-container
+168m        Normal    Started                           pod/content-navigator-watcher-65fdf5f5b9-ttghn                        Started container folder-prepare-container
+168m        Normal    Pulling                           pod/content-navigator-watcher-65fdf5f5b9-ttghn                        Pulling image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd"
+168m        Normal    Pulled                            pod/content-navigator-watcher-65fdf5f5b9-ttghn                        Successfully pulled image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd" in 836ms (836ms including waiting)
+168m        Normal    Created                           pod/content-navigator-watcher-65fdf5f5b9-ttghn                        Created container ban-watcher
+168m        Normal    Started                           pod/content-navigator-watcher-65fdf5f5b9-ttghn                        Started container ban-watcher
+138m        Normal    Killing                           pod/content-navigator-watcher-65fdf5f5b9-ttghn                        Stopping container ban-watcher
+168m        Normal    SuccessfulCreate                  replicaset/content-navigator-watcher-65fdf5f5b9                       Created pod: content-navigator-watcher-65fdf5f5b9-ttghn
+138m        Normal    SuccessfulDelete                  replicaset/content-navigator-watcher-65fdf5f5b9                       Deleted pod: content-navigator-watcher-65fdf5f5b9-ttghn
+62m         Normal    SuccessfulCreate                  replicaset/content-navigator-watcher-65fdf5f5b9                       Created pod: content-navigator-watcher-65fdf5f5b9-9j9c6
+16m         Normal    SuccessfulDelete                  replicaset/content-navigator-watcher-65fdf5f5b9                       Deleted pod: content-navigator-watcher-65fdf5f5b9-9j9c6
+138m        Normal    Scheduled                         pod/content-navigator-watcher-76c966c9d5-ksrl7                        Successfully assigned cp2400/content-navigator-watcher-76c966c9d5-ksrl7 to worker0.captainamerica.cp.fyre.ibm.com
+138m        Normal    AddedInterface                    pod/content-navigator-watcher-76c966c9d5-ksrl7                        Add eth0 [10.254.21.99/22] from ovn-kubernetes
+138m        Normal    Pulling                           pod/content-navigator-watcher-76c966c9d5-ksrl7                        Pulling image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd"
+138m        Normal    Pulled                            pod/content-navigator-watcher-76c966c9d5-ksrl7                        Successfully pulled image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd" in 823ms (823ms including waiting)
+138m        Normal    Created                           pod/content-navigator-watcher-76c966c9d5-ksrl7                        Created container folder-prepare-container
+138m        Normal    Started                           pod/content-navigator-watcher-76c966c9d5-ksrl7                        Started container folder-prepare-container
+138m        Normal    Pulling                           pod/content-navigator-watcher-76c966c9d5-ksrl7                        Pulling image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd"
+138m        Normal    Pulled                            pod/content-navigator-watcher-76c966c9d5-ksrl7                        Successfully pulled image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd" in 883ms (883ms including waiting)
+138m        Normal    Created                           pod/content-navigator-watcher-76c966c9d5-ksrl7                        Created container ban-watcher
+138m        Normal    Started                           pod/content-navigator-watcher-76c966c9d5-ksrl7                        Started container ban-watcher
+62m         Normal    Killing                           pod/content-navigator-watcher-76c966c9d5-ksrl7                        Stopping container ban-watcher
+168m        Normal    Killing                           pod/content-navigator-watcher-76c966c9d5-lgmwj                        Stopping container ban-watcher
+101s        Normal    Scheduled                         pod/content-navigator-watcher-76c966c9d5-r8xtd                        Successfully assigned cp2400/content-navigator-watcher-76c966c9d5-r8xtd to worker0.captainamerica.cp.fyre.ibm.com
+100s        Normal    AddedInterface                    pod/content-navigator-watcher-76c966c9d5-r8xtd                        Add eth0 [10.254.21.102/22] from ovn-kubernetes
+100s        Normal    Pulling                           pod/content-navigator-watcher-76c966c9d5-r8xtd                        Pulling image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd"
+99s         Normal    Pulled                            pod/content-navigator-watcher-76c966c9d5-r8xtd                        Successfully pulled image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd" in 876ms (876ms including waiting)
+98s         Normal    Created                           pod/content-navigator-watcher-76c966c9d5-r8xtd                        Created container folder-prepare-container
+98s         Normal    Started                           pod/content-navigator-watcher-76c966c9d5-r8xtd                        Started container folder-prepare-container
+91s         Normal    Pulling                           pod/content-navigator-watcher-76c966c9d5-r8xtd                        Pulling image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd"
+89s         Normal    Pulled                            pod/content-navigator-watcher-76c966c9d5-r8xtd                        Successfully pulled image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd" in 1.886s (1.886s including waiting)
+88s         Normal    Created                           pod/content-navigator-watcher-76c966c9d5-r8xtd                        Created container ban-watcher
+88s         Normal    Started                           pod/content-navigator-watcher-76c966c9d5-r8xtd                        Started container ban-watcher
+168m        Normal    SuccessfulDelete                  replicaset/content-navigator-watcher-76c966c9d5                       Deleted pod: content-navigator-watcher-76c966c9d5-lgmwj
+138m        Normal    SuccessfulCreate                  replicaset/content-navigator-watcher-76c966c9d5                       Created pod: content-navigator-watcher-76c966c9d5-ksrl7
+62m         Normal    SuccessfulDelete                  replicaset/content-navigator-watcher-76c966c9d5                       Deleted pod: content-navigator-watcher-76c966c9d5-ksrl7
+101s        Normal    SuccessfulCreate                  replicaset/content-navigator-watcher-76c966c9d5                       Created pod: content-navigator-watcher-76c966c9d5-r8xtd
+17m         Normal    Scheduled                         pod/content-navigator-watcher-bb8d7dd9-bvrpv                          Successfully assigned cp2400/content-navigator-watcher-bb8d7dd9-bvrpv to worker0.captainamerica.cp.fyre.ibm.com
+17m         Normal    AddedInterface                    pod/content-navigator-watcher-bb8d7dd9-bvrpv                          Add eth0 [10.254.21.101/22] from ovn-kubernetes
+17m         Normal    Pulling                           pod/content-navigator-watcher-bb8d7dd9-bvrpv                          Pulling image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd"
+17m         Normal    Pulled                            pod/content-navigator-watcher-bb8d7dd9-bvrpv                          Successfully pulled image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd" in 885ms (885ms including waiting)
+17m         Normal    Created                           pod/content-navigator-watcher-bb8d7dd9-bvrpv                          Created container folder-prepare-container
+17m         Normal    Started                           pod/content-navigator-watcher-bb8d7dd9-bvrpv                          Started container folder-prepare-container
+16m         Normal    Pulling                           pod/content-navigator-watcher-bb8d7dd9-bvrpv                          Pulling image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd"
+16m         Normal    Pulled                            pod/content-navigator-watcher-bb8d7dd9-bvrpv                          Successfully pulled image "icr.io/cpopen/icp4a-content-operator@sha256:f39a66c95c3c7339eb4278743315414662fa22cc5caddfe39441c8b17ffbaecd" in 897ms (897ms including waiting)
+16m         Normal    Created                           pod/content-navigator-watcher-bb8d7dd9-bvrpv                          Created container ban-watcher
+16m         Normal    Started                           pod/content-navigator-watcher-bb8d7dd9-bvrpv                          Started container ban-watcher
+87s         Normal    Killing                           pod/content-navigator-watcher-bb8d7dd9-bvrpv                          Stopping container ban-watcher
+17m         Normal    SuccessfulCreate                  replicaset/content-navigator-watcher-bb8d7dd9                         Created pod: content-navigator-watcher-bb8d7dd9-bvrpv
+87s         Normal    SuccessfulDelete                  replicaset/content-navigator-watcher-bb8d7dd9                         Deleted pod: content-navigator-watcher-bb8d7dd9-bvrpv
+62m         Normal    ScalingReplicaSet                 deployment/content-navigator-watcher                                  Scaled down replica set content-navigator-watcher-76c966c9d5 to 0 from 1
+16m         Normal    ScalingReplicaSet                 deployment/content-navigator-watcher                                  Scaled down replica set content-navigator-watcher-65fdf5f5b9 to 0 from 1
+62m         Normal    ScalingReplicaSet                 deployment/content-navigator-watcher                                  Scaled up replica set content-navigator-watcher-65fdf5f5b9 to 1 from 0
+87s         Normal    ScalingReplicaSet                 deployment/content-navigator-watcher                                  Scaled down replica set content-navigator-watcher-bb8d7dd9 to 0 from 1
+101s        Normal    ScalingReplicaSet                 deployment/content-navigator-watcher                                  Scaled up replica set content-navigator-watcher-76c966c9d5 to 1 from 0
+17m         Normal    ScalingReplicaSet                 deployment/content-navigator-watcher                                  Scaled up replica set content-navigator-watcher-bb8d7dd9 to 1 from 0
+178m        Normal    Scheduled                         pod/content-rr-backup-28724385-nqffk                                  Successfully assigned cp2400/content-rr-backup-28724385-nqffk to worker2.captainamerica.cp.fyre.ibm.com
+178m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724385-nqffk                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+178m        Normal    AddedInterface                    pod/content-rr-backup-28724385-nqffk                                  Add eth0 [10.254.19.103/22] from ovn-kubernetes
+178m        Normal    Pulled                            pod/content-rr-backup-28724385-nqffk                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+178m        Normal    Created                           pod/content-rr-backup-28724385-nqffk                                  Created container etcd
+178m        Normal    Started                           pod/content-rr-backup-28724385-nqffk                                  Started container etcd
+178m        Normal    SuccessfulCreate                  job/content-rr-backup-28724385                                        Created pod: content-rr-backup-28724385-nqffk
+178m        Normal    Completed                         job/content-rr-backup-28724385                                        Job completed
+173m        Normal    Scheduled                         pod/content-rr-backup-28724390-7q565                                  Successfully assigned cp2400/content-rr-backup-28724390-7q565 to worker2.captainamerica.cp.fyre.ibm.com
+173m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724390-7q565                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+173m        Normal    AddedInterface                    pod/content-rr-backup-28724390-7q565                                  Add eth0 [10.254.19.104/22] from ovn-kubernetes
+173m        Normal    Pulled                            pod/content-rr-backup-28724390-7q565                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+173m        Normal    Created                           pod/content-rr-backup-28724390-7q565                                  Created container etcd
+173m        Normal    Started                           pod/content-rr-backup-28724390-7q565                                  Started container etcd
+173m        Normal    SuccessfulCreate                  job/content-rr-backup-28724390                                        Created pod: content-rr-backup-28724390-7q565
+173m        Normal    Completed                         job/content-rr-backup-28724390                                        Job completed
+168m        Normal    Scheduled                         pod/content-rr-backup-28724395-7dnqr                                  Successfully assigned cp2400/content-rr-backup-28724395-7dnqr to worker2.captainamerica.cp.fyre.ibm.com
+168m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724395-7dnqr                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+168m        Normal    AddedInterface                    pod/content-rr-backup-28724395-7dnqr                                  Add eth0 [10.254.19.105/22] from ovn-kubernetes
+168m        Normal    Pulled                            pod/content-rr-backup-28724395-7dnqr                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+168m        Normal    Created                           pod/content-rr-backup-28724395-7dnqr                                  Created container etcd
+168m        Normal    Started                           pod/content-rr-backup-28724395-7dnqr                                  Started container etcd
+168m        Normal    SuccessfulCreate                  job/content-rr-backup-28724395                                        Created pod: content-rr-backup-28724395-7dnqr
+168m        Normal    Completed                         job/content-rr-backup-28724395                                        Job completed
+163m        Normal    Scheduled                         pod/content-rr-backup-28724400-jxtpw                                  Successfully assigned cp2400/content-rr-backup-28724400-jxtpw to worker1.captainamerica.cp.fyre.ibm.com
+163m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724400-jxtpw                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+163m        Normal    AddedInterface                    pod/content-rr-backup-28724400-jxtpw                                  Add eth0 [10.254.13.121/22] from ovn-kubernetes
+163m        Normal    Pulled                            pod/content-rr-backup-28724400-jxtpw                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+163m        Normal    Created                           pod/content-rr-backup-28724400-jxtpw                                  Created container etcd
+163m        Normal    Started                           pod/content-rr-backup-28724400-jxtpw                                  Started container etcd
+163m        Normal    SuccessfulCreate                  job/content-rr-backup-28724400                                        Created pod: content-rr-backup-28724400-jxtpw
+163m        Normal    Completed                         job/content-rr-backup-28724400                                        Job completed
+158m        Normal    Scheduled                         pod/content-rr-backup-28724405-rjxhc                                  Successfully assigned cp2400/content-rr-backup-28724405-rjxhc to worker2.captainamerica.cp.fyre.ibm.com
+158m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724405-rjxhc                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+158m        Normal    AddedInterface                    pod/content-rr-backup-28724405-rjxhc                                  Add eth0 [10.254.19.108/22] from ovn-kubernetes
+158m        Normal    Pulled                            pod/content-rr-backup-28724405-rjxhc                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+158m        Normal    Created                           pod/content-rr-backup-28724405-rjxhc                                  Created container etcd
+158m        Normal    Started                           pod/content-rr-backup-28724405-rjxhc                                  Started container etcd
+158m        Normal    SuccessfulCreate                  job/content-rr-backup-28724405                                        Created pod: content-rr-backup-28724405-rjxhc
+158m        Normal    Completed                         job/content-rr-backup-28724405                                        Job completed
+153m        Normal    Scheduled                         pod/content-rr-backup-28724410-5h4b5                                  Successfully assigned cp2400/content-rr-backup-28724410-5h4b5 to worker2.captainamerica.cp.fyre.ibm.com
+153m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724410-5h4b5                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+153m        Normal    AddedInterface                    pod/content-rr-backup-28724410-5h4b5                                  Add eth0 [10.254.19.110/22] from ovn-kubernetes
+153m        Normal    Pulled                            pod/content-rr-backup-28724410-5h4b5                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+153m        Normal    Created                           pod/content-rr-backup-28724410-5h4b5                                  Created container etcd
+153m        Normal    Started                           pod/content-rr-backup-28724410-5h4b5                                  Started container etcd
+153m        Normal    SuccessfulCreate                  job/content-rr-backup-28724410                                        Created pod: content-rr-backup-28724410-5h4b5
+153m        Normal    Completed                         job/content-rr-backup-28724410                                        Job completed
+148m        Normal    Scheduled                         pod/content-rr-backup-28724415-q9mh8                                  Successfully assigned cp2400/content-rr-backup-28724415-q9mh8 to worker2.captainamerica.cp.fyre.ibm.com
+148m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724415-q9mh8                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+148m        Normal    AddedInterface                    pod/content-rr-backup-28724415-q9mh8                                  Add eth0 [10.254.19.117/22] from ovn-kubernetes
+148m        Normal    Pulled                            pod/content-rr-backup-28724415-q9mh8                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+148m        Normal    Created                           pod/content-rr-backup-28724415-q9mh8                                  Created container etcd
+148m        Normal    Started                           pod/content-rr-backup-28724415-q9mh8                                  Started container etcd
+148m        Normal    SuccessfulCreate                  job/content-rr-backup-28724415                                        Created pod: content-rr-backup-28724415-q9mh8
+148m        Normal    Completed                         job/content-rr-backup-28724415                                        Job completed
+143m        Normal    Scheduled                         pod/content-rr-backup-28724420-nbcq6                                  Successfully assigned cp2400/content-rr-backup-28724420-nbcq6 to worker2.captainamerica.cp.fyre.ibm.com
+143m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724420-nbcq6                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+143m        Normal    AddedInterface                    pod/content-rr-backup-28724420-nbcq6                                  Add eth0 [10.254.19.118/22] from ovn-kubernetes
+143m        Normal    Pulled                            pod/content-rr-backup-28724420-nbcq6                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+143m        Normal    Created                           pod/content-rr-backup-28724420-nbcq6                                  Created container etcd
+143m        Normal    Started                           pod/content-rr-backup-28724420-nbcq6                                  Started container etcd
+143m        Normal    SuccessfulCreate                  job/content-rr-backup-28724420                                        Created pod: content-rr-backup-28724420-nbcq6
+143m        Normal    Completed                         job/content-rr-backup-28724420                                        Job completed
+138m        Normal    Scheduled                         pod/content-rr-backup-28724425-cj7m6                                  Successfully assigned cp2400/content-rr-backup-28724425-cj7m6 to worker2.captainamerica.cp.fyre.ibm.com
+138m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724425-cj7m6                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+138m        Normal    AddedInterface                    pod/content-rr-backup-28724425-cj7m6                                  Add eth0 [10.254.19.119/22] from ovn-kubernetes
+138m        Normal    Pulled                            pod/content-rr-backup-28724425-cj7m6                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+138m        Normal    Created                           pod/content-rr-backup-28724425-cj7m6                                  Created container etcd
+138m        Normal    Started                           pod/content-rr-backup-28724425-cj7m6                                  Started container etcd
+138m        Normal    SuccessfulCreate                  job/content-rr-backup-28724425                                        Created pod: content-rr-backup-28724425-cj7m6
+138m        Normal    Completed                         job/content-rr-backup-28724425                                        Job completed
+133m        Normal    Scheduled                         pod/content-rr-backup-28724430-z9475                                  Successfully assigned cp2400/content-rr-backup-28724430-z9475 to worker2.captainamerica.cp.fyre.ibm.com
+133m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724430-z9475                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+133m        Normal    AddedInterface                    pod/content-rr-backup-28724430-z9475                                  Add eth0 [10.254.19.121/22] from ovn-kubernetes
+133m        Normal    Pulled                            pod/content-rr-backup-28724430-z9475                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+133m        Normal    Created                           pod/content-rr-backup-28724430-z9475                                  Created container etcd
+133m        Normal    Started                           pod/content-rr-backup-28724430-z9475                                  Started container etcd
+133m        Normal    SuccessfulCreate                  job/content-rr-backup-28724430                                        Created pod: content-rr-backup-28724430-z9475
+133m        Normal    Completed                         job/content-rr-backup-28724430                                        Job completed
+128m        Normal    Scheduled                         pod/content-rr-backup-28724435-qwg8d                                  Successfully assigned cp2400/content-rr-backup-28724435-qwg8d to worker2.captainamerica.cp.fyre.ibm.com
+128m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724435-qwg8d                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+128m        Normal    AddedInterface                    pod/content-rr-backup-28724435-qwg8d                                  Add eth0 [10.254.19.122/22] from ovn-kubernetes
+128m        Normal    Pulled                            pod/content-rr-backup-28724435-qwg8d                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+128m        Normal    Created                           pod/content-rr-backup-28724435-qwg8d                                  Created container etcd
+128m        Normal    Started                           pod/content-rr-backup-28724435-qwg8d                                  Started container etcd
+128m        Normal    SuccessfulCreate                  job/content-rr-backup-28724435                                        Created pod: content-rr-backup-28724435-qwg8d
+128m        Normal    Completed                         job/content-rr-backup-28724435                                        Job completed
+123m        Normal    Scheduled                         pod/content-rr-backup-28724440-dtmpf                                  Successfully assigned cp2400/content-rr-backup-28724440-dtmpf to worker2.captainamerica.cp.fyre.ibm.com
+123m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724440-dtmpf                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+123m        Normal    AddedInterface                    pod/content-rr-backup-28724440-dtmpf                                  Add eth0 [10.254.19.123/22] from ovn-kubernetes
+123m        Normal    Pulled                            pod/content-rr-backup-28724440-dtmpf                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+123m        Normal    Created                           pod/content-rr-backup-28724440-dtmpf                                  Created container etcd
+123m        Normal    Started                           pod/content-rr-backup-28724440-dtmpf                                  Started container etcd
+123m        Normal    SuccessfulCreate                  job/content-rr-backup-28724440                                        Created pod: content-rr-backup-28724440-dtmpf
+123m        Normal    Completed                         job/content-rr-backup-28724440                                        Job completed
+118m        Normal    Scheduled                         pod/content-rr-backup-28724445-nm2mp                                  Successfully assigned cp2400/content-rr-backup-28724445-nm2mp to worker1.captainamerica.cp.fyre.ibm.com
+118m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724445-nm2mp                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+118m        Normal    AddedInterface                    pod/content-rr-backup-28724445-nm2mp                                  Add eth0 [10.254.13.127/22] from ovn-kubernetes
+118m        Normal    Pulled                            pod/content-rr-backup-28724445-nm2mp                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+118m        Normal    Created                           pod/content-rr-backup-28724445-nm2mp                                  Created container etcd
+118m        Normal    Started                           pod/content-rr-backup-28724445-nm2mp                                  Started container etcd
+118m        Normal    SuccessfulCreate                  job/content-rr-backup-28724445                                        Created pod: content-rr-backup-28724445-nm2mp
+118m        Normal    Completed                         job/content-rr-backup-28724445                                        Job completed
+113m        Normal    Scheduled                         pod/content-rr-backup-28724450-28qqj                                  Successfully assigned cp2400/content-rr-backup-28724450-28qqj to worker2.captainamerica.cp.fyre.ibm.com
+113m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724450-28qqj                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+113m        Normal    AddedInterface                    pod/content-rr-backup-28724450-28qqj                                  Add eth0 [10.254.19.125/22] from ovn-kubernetes
+113m        Normal    Pulled                            pod/content-rr-backup-28724450-28qqj                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+113m        Normal    Created                           pod/content-rr-backup-28724450-28qqj                                  Created container etcd
+113m        Normal    Started                           pod/content-rr-backup-28724450-28qqj                                  Started container etcd
+113m        Normal    SuccessfulCreate                  job/content-rr-backup-28724450                                        Created pod: content-rr-backup-28724450-28qqj
+113m        Normal    Completed                         job/content-rr-backup-28724450                                        Job completed
+108m        Normal    Scheduled                         pod/content-rr-backup-28724455-gbdgv                                  Successfully assigned cp2400/content-rr-backup-28724455-gbdgv to worker2.captainamerica.cp.fyre.ibm.com
+108m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724455-gbdgv                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+108m        Normal    AddedInterface                    pod/content-rr-backup-28724455-gbdgv                                  Add eth0 [10.254.19.126/22] from ovn-kubernetes
+108m        Normal    Pulled                            pod/content-rr-backup-28724455-gbdgv                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+108m        Normal    Created                           pod/content-rr-backup-28724455-gbdgv                                  Created container etcd
+108m        Normal    Started                           pod/content-rr-backup-28724455-gbdgv                                  Started container etcd
+108m        Normal    SuccessfulCreate                  job/content-rr-backup-28724455                                        Created pod: content-rr-backup-28724455-gbdgv
+108m        Normal    Completed                         job/content-rr-backup-28724455                                        Job completed
+103m        Normal    Scheduled                         pod/content-rr-backup-28724460-2262h                                  Successfully assigned cp2400/content-rr-backup-28724460-2262h to worker2.captainamerica.cp.fyre.ibm.com
+103m        Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724460-2262h                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+103m        Normal    AddedInterface                    pod/content-rr-backup-28724460-2262h                                  Add eth0 [10.254.19.131/22] from ovn-kubernetes
+103m        Normal    Pulled                            pod/content-rr-backup-28724460-2262h                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+103m        Normal    Created                           pod/content-rr-backup-28724460-2262h                                  Created container etcd
+103m        Normal    Started                           pod/content-rr-backup-28724460-2262h                                  Started container etcd
+103m        Normal    SuccessfulCreate                  job/content-rr-backup-28724460                                        Created pod: content-rr-backup-28724460-2262h
+103m        Normal    Completed                         job/content-rr-backup-28724460                                        Job completed
+98m         Normal    Scheduled                         pod/content-rr-backup-28724465-7g6v7                                  Successfully assigned cp2400/content-rr-backup-28724465-7g6v7 to worker2.captainamerica.cp.fyre.ibm.com
+98m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724465-7g6v7                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+98m         Normal    AddedInterface                    pod/content-rr-backup-28724465-7g6v7                                  Add eth0 [10.254.19.132/22] from ovn-kubernetes
+98m         Normal    Pulled                            pod/content-rr-backup-28724465-7g6v7                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+98m         Normal    Created                           pod/content-rr-backup-28724465-7g6v7                                  Created container etcd
+98m         Normal    Started                           pod/content-rr-backup-28724465-7g6v7                                  Started container etcd
+98m         Normal    SuccessfulCreate                  job/content-rr-backup-28724465                                        Created pod: content-rr-backup-28724465-7g6v7
+98m         Normal    Completed                         job/content-rr-backup-28724465                                        Job completed
+93m         Normal    Scheduled                         pod/content-rr-backup-28724470-6d2wc                                  Successfully assigned cp2400/content-rr-backup-28724470-6d2wc to worker2.captainamerica.cp.fyre.ibm.com
+93m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724470-6d2wc                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+93m         Normal    AddedInterface                    pod/content-rr-backup-28724470-6d2wc                                  Add eth0 [10.254.19.133/22] from ovn-kubernetes
+93m         Normal    Pulled                            pod/content-rr-backup-28724470-6d2wc                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+93m         Normal    Created                           pod/content-rr-backup-28724470-6d2wc                                  Created container etcd
+93m         Normal    Started                           pod/content-rr-backup-28724470-6d2wc                                  Started container etcd
+93m         Normal    SuccessfulCreate                  job/content-rr-backup-28724470                                        Created pod: content-rr-backup-28724470-6d2wc
+93m         Normal    Completed                         job/content-rr-backup-28724470                                        Job completed
+88m         Normal    Scheduled                         pod/content-rr-backup-28724475-hw8wr                                  Successfully assigned cp2400/content-rr-backup-28724475-hw8wr to worker2.captainamerica.cp.fyre.ibm.com
+88m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724475-hw8wr                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+88m         Normal    AddedInterface                    pod/content-rr-backup-28724475-hw8wr                                  Add eth0 [10.254.19.134/22] from ovn-kubernetes
+88m         Normal    Pulled                            pod/content-rr-backup-28724475-hw8wr                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+88m         Normal    Created                           pod/content-rr-backup-28724475-hw8wr                                  Created container etcd
+88m         Normal    Started                           pod/content-rr-backup-28724475-hw8wr                                  Started container etcd
+88m         Normal    SuccessfulCreate                  job/content-rr-backup-28724475                                        Created pod: content-rr-backup-28724475-hw8wr
+88m         Normal    Completed                         job/content-rr-backup-28724475                                        Job completed
+83m         Normal    Scheduled                         pod/content-rr-backup-28724480-bp8fr                                  Successfully assigned cp2400/content-rr-backup-28724480-bp8fr to worker2.captainamerica.cp.fyre.ibm.com
+83m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724480-bp8fr                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+83m         Normal    AddedInterface                    pod/content-rr-backup-28724480-bp8fr                                  Add eth0 [10.254.19.135/22] from ovn-kubernetes
+83m         Normal    Pulled                            pod/content-rr-backup-28724480-bp8fr                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+83m         Normal    Created                           pod/content-rr-backup-28724480-bp8fr                                  Created container etcd
+83m         Normal    Started                           pod/content-rr-backup-28724480-bp8fr                                  Started container etcd
+83m         Normal    SuccessfulCreate                  job/content-rr-backup-28724480                                        Created pod: content-rr-backup-28724480-bp8fr
+83m         Normal    Completed                         job/content-rr-backup-28724480                                        Job completed
+78m         Normal    Scheduled                         pod/content-rr-backup-28724485-gl9t5                                  Successfully assigned cp2400/content-rr-backup-28724485-gl9t5 to worker2.captainamerica.cp.fyre.ibm.com
+78m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724485-gl9t5                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+78m         Normal    AddedInterface                    pod/content-rr-backup-28724485-gl9t5                                  Add eth0 [10.254.19.136/22] from ovn-kubernetes
+78m         Normal    Pulled                            pod/content-rr-backup-28724485-gl9t5                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+78m         Normal    Created                           pod/content-rr-backup-28724485-gl9t5                                  Created container etcd
+78m         Normal    Started                           pod/content-rr-backup-28724485-gl9t5                                  Started container etcd
+78m         Normal    SuccessfulCreate                  job/content-rr-backup-28724485                                        Created pod: content-rr-backup-28724485-gl9t5
+78m         Normal    Completed                         job/content-rr-backup-28724485                                        Job completed
+73m         Normal    Scheduled                         pod/content-rr-backup-28724490-7th25                                  Successfully assigned cp2400/content-rr-backup-28724490-7th25 to worker1.captainamerica.cp.fyre.ibm.com
+73m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724490-7th25                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+73m         Normal    AddedInterface                    pod/content-rr-backup-28724490-7th25                                  Add eth0 [10.254.13.138/22] from ovn-kubernetes
+73m         Normal    Pulled                            pod/content-rr-backup-28724490-7th25                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+73m         Normal    Created                           pod/content-rr-backup-28724490-7th25                                  Created container etcd
+73m         Normal    Started                           pod/content-rr-backup-28724490-7th25                                  Started container etcd
+73m         Normal    SuccessfulCreate                  job/content-rr-backup-28724490                                        Created pod: content-rr-backup-28724490-7th25
+73m         Normal    Completed                         job/content-rr-backup-28724490                                        Job completed
+68m         Normal    Scheduled                         pod/content-rr-backup-28724495-wgrqp                                  Successfully assigned cp2400/content-rr-backup-28724495-wgrqp to worker2.captainamerica.cp.fyre.ibm.com
+68m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724495-wgrqp                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+68m         Normal    AddedInterface                    pod/content-rr-backup-28724495-wgrqp                                  Add eth0 [10.254.19.139/22] from ovn-kubernetes
+68m         Normal    Pulled                            pod/content-rr-backup-28724495-wgrqp                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+68m         Normal    Created                           pod/content-rr-backup-28724495-wgrqp                                  Created container etcd
+68m         Normal    Started                           pod/content-rr-backup-28724495-wgrqp                                  Started container etcd
+68m         Normal    SuccessfulCreate                  job/content-rr-backup-28724495                                        Created pod: content-rr-backup-28724495-wgrqp
+68m         Normal    Completed                         job/content-rr-backup-28724495                                        Job completed
+63m         Normal    Scheduled                         pod/content-rr-backup-28724500-kllz4                                  Successfully assigned cp2400/content-rr-backup-28724500-kllz4 to worker2.captainamerica.cp.fyre.ibm.com
+63m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724500-kllz4                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+63m         Normal    AddedInterface                    pod/content-rr-backup-28724500-kllz4                                  Add eth0 [10.254.19.142/22] from ovn-kubernetes
+63m         Normal    Pulled                            pod/content-rr-backup-28724500-kllz4                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+63m         Normal    Created                           pod/content-rr-backup-28724500-kllz4                                  Created container etcd
+63m         Normal    Started                           pod/content-rr-backup-28724500-kllz4                                  Started container etcd
+63m         Normal    SuccessfulCreate                  job/content-rr-backup-28724500                                        Created pod: content-rr-backup-28724500-kllz4
+63m         Normal    Completed                         job/content-rr-backup-28724500                                        Job completed
+58m         Normal    Scheduled                         pod/content-rr-backup-28724505-p4zkp                                  Successfully assigned cp2400/content-rr-backup-28724505-p4zkp to worker2.captainamerica.cp.fyre.ibm.com
+58m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724505-p4zkp                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+58m         Normal    AddedInterface                    pod/content-rr-backup-28724505-p4zkp                                  Add eth0 [10.254.19.147/22] from ovn-kubernetes
+58m         Normal    Pulled                            pod/content-rr-backup-28724505-p4zkp                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+58m         Normal    Created                           pod/content-rr-backup-28724505-p4zkp                                  Created container etcd
+58m         Normal    Started                           pod/content-rr-backup-28724505-p4zkp                                  Started container etcd
+58m         Normal    SuccessfulCreate                  job/content-rr-backup-28724505                                        Created pod: content-rr-backup-28724505-p4zkp
+58m         Normal    Completed                         job/content-rr-backup-28724505                                        Job completed
+53m         Normal    Scheduled                         pod/content-rr-backup-28724510-7qwrm                                  Successfully assigned cp2400/content-rr-backup-28724510-7qwrm to worker2.captainamerica.cp.fyre.ibm.com
+53m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724510-7qwrm                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+53m         Normal    AddedInterface                    pod/content-rr-backup-28724510-7qwrm                                  Add eth0 [10.254.19.149/22] from ovn-kubernetes
+53m         Normal    Pulled                            pod/content-rr-backup-28724510-7qwrm                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+53m         Normal    Created                           pod/content-rr-backup-28724510-7qwrm                                  Created container etcd
+53m         Normal    Started                           pod/content-rr-backup-28724510-7qwrm                                  Started container etcd
+53m         Normal    SuccessfulCreate                  job/content-rr-backup-28724510                                        Created pod: content-rr-backup-28724510-7qwrm
+53m         Normal    Completed                         job/content-rr-backup-28724510                                        Job completed
+48m         Normal    Scheduled                         pod/content-rr-backup-28724515-dlm72                                  Successfully assigned cp2400/content-rr-backup-28724515-dlm72 to worker2.captainamerica.cp.fyre.ibm.com
+48m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724515-dlm72                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+48m         Normal    AddedInterface                    pod/content-rr-backup-28724515-dlm72                                  Add eth0 [10.254.19.150/22] from ovn-kubernetes
+48m         Normal    Pulled                            pod/content-rr-backup-28724515-dlm72                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+48m         Normal    Created                           pod/content-rr-backup-28724515-dlm72                                  Created container etcd
+48m         Normal    Started                           pod/content-rr-backup-28724515-dlm72                                  Started container etcd
+48m         Normal    SuccessfulCreate                  job/content-rr-backup-28724515                                        Created pod: content-rr-backup-28724515-dlm72
+48m         Normal    Completed                         job/content-rr-backup-28724515                                        Job completed
+43m         Normal    Scheduled                         pod/content-rr-backup-28724520-kbtph                                  Successfully assigned cp2400/content-rr-backup-28724520-kbtph to worker2.captainamerica.cp.fyre.ibm.com
+43m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724520-kbtph                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+43m         Normal    AddedInterface                    pod/content-rr-backup-28724520-kbtph                                  Add eth0 [10.254.19.151/22] from ovn-kubernetes
+43m         Normal    Pulled                            pod/content-rr-backup-28724520-kbtph                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+43m         Normal    Created                           pod/content-rr-backup-28724520-kbtph                                  Created container etcd
+43m         Normal    Started                           pod/content-rr-backup-28724520-kbtph                                  Started container etcd
+43m         Normal    SuccessfulCreate                  job/content-rr-backup-28724520                                        Created pod: content-rr-backup-28724520-kbtph
+43m         Normal    Completed                         job/content-rr-backup-28724520                                        Job completed
+38m         Normal    Scheduled                         pod/content-rr-backup-28724525-wpzq5                                  Successfully assigned cp2400/content-rr-backup-28724525-wpzq5 to worker2.captainamerica.cp.fyre.ibm.com
+38m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724525-wpzq5                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+38m         Normal    AddedInterface                    pod/content-rr-backup-28724525-wpzq5                                  Add eth0 [10.254.19.152/22] from ovn-kubernetes
+38m         Normal    Pulled                            pod/content-rr-backup-28724525-wpzq5                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+38m         Normal    Created                           pod/content-rr-backup-28724525-wpzq5                                  Created container etcd
+38m         Normal    Started                           pod/content-rr-backup-28724525-wpzq5                                  Started container etcd
+38m         Normal    SuccessfulCreate                  job/content-rr-backup-28724525                                        Created pod: content-rr-backup-28724525-wpzq5
+38m         Normal    Completed                         job/content-rr-backup-28724525                                        Job completed
+33m         Normal    Scheduled                         pod/content-rr-backup-28724530-sfs5c                                  Successfully assigned cp2400/content-rr-backup-28724530-sfs5c to worker2.captainamerica.cp.fyre.ibm.com
+33m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724530-sfs5c                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+33m         Normal    AddedInterface                    pod/content-rr-backup-28724530-sfs5c                                  Add eth0 [10.254.19.153/22] from ovn-kubernetes
+33m         Normal    Pulled                            pod/content-rr-backup-28724530-sfs5c                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+33m         Normal    Created                           pod/content-rr-backup-28724530-sfs5c                                  Created container etcd
+33m         Normal    Started                           pod/content-rr-backup-28724530-sfs5c                                  Started container etcd
+33m         Normal    SuccessfulCreate                  job/content-rr-backup-28724530                                        Created pod: content-rr-backup-28724530-sfs5c
+33m         Normal    Completed                         job/content-rr-backup-28724530                                        Job completed
+28m         Normal    Scheduled                         pod/content-rr-backup-28724535-j28vz                                  Successfully assigned cp2400/content-rr-backup-28724535-j28vz to worker2.captainamerica.cp.fyre.ibm.com
+28m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724535-j28vz                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+28m         Normal    AddedInterface                    pod/content-rr-backup-28724535-j28vz                                  Add eth0 [10.254.19.155/22] from ovn-kubernetes
+28m         Normal    Pulled                            pod/content-rr-backup-28724535-j28vz                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+28m         Normal    Created                           pod/content-rr-backup-28724535-j28vz                                  Created container etcd
+28m         Normal    Started                           pod/content-rr-backup-28724535-j28vz                                  Started container etcd
+28m         Normal    SuccessfulCreate                  job/content-rr-backup-28724535                                        Created pod: content-rr-backup-28724535-j28vz
+28m         Normal    Completed                         job/content-rr-backup-28724535                                        Job completed
+23m         Normal    Scheduled                         pod/content-rr-backup-28724540-r9qp4                                  Successfully assigned cp2400/content-rr-backup-28724540-r9qp4 to worker2.captainamerica.cp.fyre.ibm.com
+23m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724540-r9qp4                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+23m         Normal    AddedInterface                    pod/content-rr-backup-28724540-r9qp4                                  Add eth0 [10.254.19.157/22] from ovn-kubernetes
+23m         Normal    Pulled                            pod/content-rr-backup-28724540-r9qp4                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+23m         Normal    Created                           pod/content-rr-backup-28724540-r9qp4                                  Created container etcd
+23m         Normal    Started                           pod/content-rr-backup-28724540-r9qp4                                  Started container etcd
+23m         Normal    SuccessfulCreate                  job/content-rr-backup-28724540                                        Created pod: content-rr-backup-28724540-r9qp4
+23m         Normal    Completed                         job/content-rr-backup-28724540                                        Job completed
+18m         Normal    Scheduled                         pod/content-rr-backup-28724545-rjkfs                                  Successfully assigned cp2400/content-rr-backup-28724545-rjkfs to worker2.captainamerica.cp.fyre.ibm.com
+18m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724545-rjkfs                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+18m         Normal    AddedInterface                    pod/content-rr-backup-28724545-rjkfs                                  Add eth0 [10.254.19.160/22] from ovn-kubernetes
+18m         Normal    Pulled                            pod/content-rr-backup-28724545-rjkfs                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+18m         Normal    Created                           pod/content-rr-backup-28724545-rjkfs                                  Created container etcd
+18m         Normal    Started                           pod/content-rr-backup-28724545-rjkfs                                  Started container etcd
+18m         Normal    SuccessfulCreate                  job/content-rr-backup-28724545                                        Created pod: content-rr-backup-28724545-rjkfs
+18m         Normal    Completed                         job/content-rr-backup-28724545                                        Job completed
+13m         Normal    Scheduled                         pod/content-rr-backup-28724550-j9gh8                                  Successfully assigned cp2400/content-rr-backup-28724550-j9gh8 to worker2.captainamerica.cp.fyre.ibm.com
+13m         Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724550-j9gh8                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+13m         Normal    AddedInterface                    pod/content-rr-backup-28724550-j9gh8                                  Add eth0 [10.254.19.164/22] from ovn-kubernetes
+13m         Normal    Pulled                            pod/content-rr-backup-28724550-j9gh8                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+13m         Normal    Created                           pod/content-rr-backup-28724550-j9gh8                                  Created container etcd
+13m         Normal    Started                           pod/content-rr-backup-28724550-j9gh8                                  Started container etcd
+13m         Normal    SuccessfulCreate                  job/content-rr-backup-28724550                                        Created pod: content-rr-backup-28724550-j9gh8
+13m         Normal    Completed                         job/content-rr-backup-28724550                                        Job completed
+8m34s       Normal    Scheduled                         pod/content-rr-backup-28724555-4lr89                                  Successfully assigned cp2400/content-rr-backup-28724555-4lr89 to worker2.captainamerica.cp.fyre.ibm.com
+8m31s       Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724555-4lr89                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+8m33s       Normal    AddedInterface                    pod/content-rr-backup-28724555-4lr89                                  Add eth0 [10.254.19.165/22] from ovn-kubernetes
+8m33s       Normal    Pulled                            pod/content-rr-backup-28724555-4lr89                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+8m33s       Normal    Created                           pod/content-rr-backup-28724555-4lr89                                  Created container etcd
+8m33s       Normal    Started                           pod/content-rr-backup-28724555-4lr89                                  Started container etcd
+8m34s       Normal    SuccessfulCreate                  job/content-rr-backup-28724555                                        Created pod: content-rr-backup-28724555-4lr89
+8m28s       Normal    Completed                         job/content-rr-backup-28724555                                        Job completed
+3m34s       Normal    Scheduled                         pod/content-rr-backup-28724560-n4th7                                  Successfully assigned cp2400/content-rr-backup-28724560-n4th7 to worker2.captainamerica.cp.fyre.ibm.com
+3m31s       Warning   FailedToRetrieveImagePullSecret   pod/content-rr-backup-28724560-n4th7                                  Unable to retrieve some image pull secrets (admin.registrykey, sa-cp2400); attempting to pull the image may not succeed.
+3m33s       Normal    AddedInterface                    pod/content-rr-backup-28724560-n4th7                                  Add eth0 [10.254.19.166/22] from ovn-kubernetes
+3m33s       Normal    Pulled                            pod/content-rr-backup-28724560-n4th7                                  Container image "cp.icr.io/cp/cp4a/aae/dba-etcd@sha256:0601bb5130014714adbed991f97a58fbdee670580266716149dc43977b8b09cf" already present on machine
+3m33s       Normal    Created                           pod/content-rr-backup-28724560-n4th7                                  Created container etcd
+3m33s       Normal    Started                           pod/content-rr-backup-28724560-n4th7                                  Started container etcd
+3m34s       Normal    SuccessfulCreate                  job/content-rr-backup-28724560                                        Created pod: content-rr-backup-28724560-n4th7
+3m27s       Normal    Completed                         job/content-rr-backup-28724560                                        Job completed
+3m34s       Normal    SuccessfulCreate                  cronjob/content-rr-backup                                             (combined from similar events): Created job content-rr-backup-28724560
+93s         Warning   FailedToRetrieveImagePullSecret   pod/ibm-bts-cnpg-cp2400-cp4ba-bts-1                                   Unable to retrieve some image pull secrets (admin.registrykey); attempting to pull the image may not succeed.
+14s         Warning   FailedToRetrieveImagePullSecret   pod/ibm-bts-cnpg-cp2400-cp4ba-bts-2                                   Unable to retrieve some image pull secrets (admin.registrykey); attempting to pull the image may not succeed.
+4s          Warning   FailedToRetrieveImagePullSecret   pod/ibm-bts-cp4ba-bts-316-deployment-5dd85d4f98-8r4nl                 Unable to retrieve some image pull secrets (admin.registrykey); attempting to pull the image may not succeed.
+41s         Warning   FailedToRetrieveImagePullSecret   pod/ibm-bts-cp4ba-bts-316-deployment-5dd85d4f98-hc6lh                 Unable to retrieve some image pull secrets (admin.registrykey); attempting to pull the image may not succeed.
+16m         Normal    Scheduled                         pod/ibm-cp4a-operator-catalog-2tpw2                                   Successfully assigned cp2400/ibm-cp4a-operator-catalog-2tpw2 to worker1.captainamerica.cp.fyre.ibm.com
+16m         Normal    AddedInterface                    pod/ibm-cp4a-operator-catalog-2tpw2                                   Add eth0 [10.254.13.149/22] from ovn-kubernetes
+16m         Normal    Pulled                            pod/ibm-cp4a-operator-catalog-2tpw2                                   Container image "icr.io/cpopen/ibm-cp-automation-catalog@sha256:8b838c40d6acdcade0452e06b769d64f881440a8739b5d34f8756600b3da0ec3" already present on machine
+16m         Normal    Created                           pod/ibm-cp4a-operator-catalog-2tpw2                                   Created container registry-server
+16m         Normal    Started                           pod/ibm-cp4a-operator-catalog-2tpw2                                   Started container registry-server
+16m         Normal    Killing                           pod/ibm-cp4a-operator-catalog-2tpw2                                   Stopping container registry-server
+151m        Normal    Scheduled                         pod/ibm-cp4a-operator-catalog-jklqr                                   Successfully assigned cp2400/ibm-cp4a-operator-catalog-jklqr to worker2.captainamerica.cp.fyre.ibm.com
+151m        Normal    AddedInterface                    pod/ibm-cp4a-operator-catalog-jklqr                                   Add eth0 [10.254.19.114/22] from ovn-kubernetes
+151m        Normal    Pulled                            pod/ibm-cp4a-operator-catalog-jklqr                                   Container image "icr.io/cpopen/ibm-cp-automation-catalog@sha256:8b838c40d6acdcade0452e06b769d64f881440a8739b5d34f8756600b3da0ec3" already present on machine
+151m        Normal    Created                           pod/ibm-cp4a-operator-catalog-jklqr                                   Created container registry-server
+151m        Normal    Started                           pod/ibm-cp4a-operator-catalog-jklqr                                   Started container registry-server
+151m        Normal    Killing                           pod/ibm-cp4a-operator-catalog-jklqr                                   Stopping container registry-server
+61m         Normal    Scheduled                         pod/ibm-cp4a-operator-catalog-kzpzs                                   Successfully assigned cp2400/ibm-cp4a-operator-catalog-kzpzs to worker2.captainamerica.cp.fyre.ibm.com
+61m         Normal    AddedInterface                    pod/ibm-cp4a-operator-catalog-kzpzs                                   Add eth0 [10.254.19.145/22] from ovn-kubernetes
+61m         Normal    Pulled                            pod/ibm-cp4a-operator-catalog-kzpzs                                   Container image "icr.io/cpopen/ibm-cp-automation-catalog@sha256:8b838c40d6acdcade0452e06b769d64f881440a8739b5d34f8756600b3da0ec3" already present on machine
+61m         Normal    Created                           pod/ibm-cp4a-operator-catalog-kzpzs                                   Created container registry-server
+61m         Normal    Started                           pod/ibm-cp4a-operator-catalog-kzpzs                                   Started container registry-server
+61m         Normal    Killing                           pod/ibm-cp4a-operator-catalog-kzpzs                                   Stopping container registry-server
+106m        Normal    Scheduled                         pod/ibm-cp4a-operator-catalog-pfvft                                   Successfully assigned cp2400/ibm-cp4a-operator-catalog-pfvft to worker2.captainamerica.cp.fyre.ibm.com
+106m        Normal    AddedInterface                    pod/ibm-cp4a-operator-catalog-pfvft                                   Add eth0 [10.254.19.130/22] from ovn-kubernetes
+106m        Normal    Pulled                            pod/ibm-cp4a-operator-catalog-pfvft                                   Container image "icr.io/cpopen/ibm-cp-automation-catalog@sha256:8b838c40d6acdcade0452e06b769d64f881440a8739b5d34f8756600b3da0ec3" already present on machine
+106m        Normal    Created                           pod/ibm-cp4a-operator-catalog-pfvft                                   Created container registry-server
+106m        Normal    Started                           pod/ibm-cp4a-operator-catalog-pfvft                                   Started container registry-server
+106m        Normal    Killing                           pod/ibm-cp4a-operator-catalog-pfvft                                   Stopping container registry-server
+15m         Normal    Scheduled                         pod/ibm-cs-install-catalog-v4-6-4-lt6nj                               Successfully assigned cp2400/ibm-cs-install-catalog-v4-6-4-lt6nj to worker1.captainamerica.cp.fyre.ibm.com
+15m         Normal    AddedInterface                    pod/ibm-cs-install-catalog-v4-6-4-lt6nj                               Add eth0 [10.254.13.150/22] from ovn-kubernetes
+15m         Normal    Pulled                            pod/ibm-cs-install-catalog-v4-6-4-lt6nj                               Container image "icr.io/cpopen/ibm-cs-install-catalog@sha256:962de7ca63e3cd8fab9f37a1c830cbe0db91f9d799bbded4911f6af011eeef6f" already present on machine
+15m         Normal    Created                           pod/ibm-cs-install-catalog-v4-6-4-lt6nj                               Created container registry-server
+15m         Normal    Started                           pod/ibm-cs-install-catalog-v4-6-4-lt6nj                               Started container registry-server
+15m         Normal    Killing                           pod/ibm-cs-install-catalog-v4-6-4-lt6nj                               Stopping container registry-server
+60m         Normal    Scheduled                         pod/ibm-cs-install-catalog-v4-6-4-tqbcn                               Successfully assigned cp2400/ibm-cs-install-catalog-v4-6-4-tqbcn to worker1.captainamerica.cp.fyre.ibm.com
+60m         Normal    AddedInterface                    pod/ibm-cs-install-catalog-v4-6-4-tqbcn                               Add eth0 [10.254.13.143/22] from ovn-kubernetes
+60m         Normal    Pulled                            pod/ibm-cs-install-catalog-v4-6-4-tqbcn                               Container image "icr.io/cpopen/ibm-cs-install-catalog@sha256:962de7ca63e3cd8fab9f37a1c830cbe0db91f9d799bbded4911f6af011eeef6f" already present on machine
+60m         Normal    Created                           pod/ibm-cs-install-catalog-v4-6-4-tqbcn                               Created container registry-server
+60m         Normal    Started                           pod/ibm-cs-install-catalog-v4-6-4-tqbcn                               Started container registry-server
+60m         Normal    Killing                           pod/ibm-cs-install-catalog-v4-6-4-tqbcn                               Stopping container registry-server
+105m        Normal    Scheduled                         pod/ibm-cs-install-catalog-v4-6-4-w5pcn                               Successfully assigned cp2400/ibm-cs-install-catalog-v4-6-4-w5pcn to worker1.captainamerica.cp.fyre.ibm.com
+105m        Normal    AddedInterface                    pod/ibm-cs-install-catalog-v4-6-4-w5pcn                               Add eth0 [10.254.13.134/22] from ovn-kubernetes
+105m        Normal    Pulled                            pod/ibm-cs-install-catalog-v4-6-4-w5pcn                               Container image "icr.io/cpopen/ibm-cs-install-catalog@sha256:962de7ca63e3cd8fab9f37a1c830cbe0db91f9d799bbded4911f6af011eeef6f" already present on machine
+105m        Normal    Created                           pod/ibm-cs-install-catalog-v4-6-4-w5pcn                               Created container registry-server
+105m        Normal    Started                           pod/ibm-cs-install-catalog-v4-6-4-w5pcn                               Started container registry-server
+105m        Normal    Killing                           pod/ibm-cs-install-catalog-v4-6-4-w5pcn                               Stopping container registry-server
+150m        Normal    Scheduled                         pod/ibm-cs-install-catalog-v4-6-4-zg4dq                               Successfully assigned cp2400/ibm-cs-install-catalog-v4-6-4-zg4dq to worker2.captainamerica.cp.fyre.ibm.com
+150m        Normal    AddedInterface                    pod/ibm-cs-install-catalog-v4-6-4-zg4dq                               Add eth0 [10.254.19.116/22] from ovn-kubernetes
+150m        Normal    Pulled                            pod/ibm-cs-install-catalog-v4-6-4-zg4dq                               Container image "icr.io/cpopen/ibm-cs-install-catalog@sha256:962de7ca63e3cd8fab9f37a1c830cbe0db91f9d799bbded4911f6af011eeef6f" already present on machine
+150m        Normal    Created                           pod/ibm-cs-install-catalog-v4-6-4-zg4dq                               Created container registry-server
+150m        Normal    Started                           pod/ibm-cs-install-catalog-v4-6-4-zg4dq                               Started container registry-server
+150m        Normal    Killing                           pod/ibm-cs-install-catalog-v4-6-4-zg4dq                               Stopping container registry-server
+116m        Normal    Scheduled                         pod/ibm-cs-opensearch-catalog-c8d98                                   Successfully assigned cp2400/ibm-cs-opensearch-catalog-c8d98 to worker1.captainamerica.cp.fyre.ibm.com
+116m        Normal    AddedInterface                    pod/ibm-cs-opensearch-catalog-c8d98                                   Add eth0 [10.254.13.128/22] from ovn-kubernetes
+116m        Normal    Pulled                            pod/ibm-cs-opensearch-catalog-c8d98                                   Container image "icr.io/cpopen/opencontent-elasticsearch-operator-catalog@sha256:947c8d3ea4c281fb81e53ee1f1051c1d25fcb807d3e1466d430f6bfaa81a406c" already present on machine
+116m        Normal    Created                           pod/ibm-cs-opensearch-catalog-c8d98                                   Created container registry-server
+116m        Normal    Started                           pod/ibm-cs-opensearch-catalog-c8d98                                   Started container registry-server
+116m        Normal    Killing                           pod/ibm-cs-opensearch-catalog-c8d98                                   Stopping container registry-server
+71m         Normal    Scheduled                         pod/ibm-cs-opensearch-catalog-ftsdb                                   Successfully assigned cp2400/ibm-cs-opensearch-catalog-ftsdb to worker2.captainamerica.cp.fyre.ibm.com
+71m         Normal    AddedInterface                    pod/ibm-cs-opensearch-catalog-ftsdb                                   Add eth0 [10.254.19.138/22] from ovn-kubernetes
+71m         Normal    Pulled                            pod/ibm-cs-opensearch-catalog-ftsdb                                   Container image "icr.io/cpopen/opencontent-elasticsearch-operator-catalog@sha256:947c8d3ea4c281fb81e53ee1f1051c1d25fcb807d3e1466d430f6bfaa81a406c" already present on machine
+71m         Normal    Created                           pod/ibm-cs-opensearch-catalog-ftsdb                                   Created container registry-server
+71m         Normal    Started                           pod/ibm-cs-opensearch-catalog-ftsdb                                   Started container registry-server
+71m         Normal    Killing                           pod/ibm-cs-opensearch-catalog-ftsdb                                   Stopping container registry-server
+161m        Normal    Scheduled                         pod/ibm-cs-opensearch-catalog-m4qlz                                   Successfully assigned cp2400/ibm-cs-opensearch-catalog-m4qlz to worker2.captainamerica.cp.fyre.ibm.com
+161m        Normal    AddedInterface                    pod/ibm-cs-opensearch-catalog-m4qlz                                   Add eth0 [10.254.19.107/22] from ovn-kubernetes
+161m        Normal    Pulled                            pod/ibm-cs-opensearch-catalog-m4qlz                                   Container image "icr.io/cpopen/opencontent-elasticsearch-operator-catalog@sha256:947c8d3ea4c281fb81e53ee1f1051c1d25fcb807d3e1466d430f6bfaa81a406c" already present on machine
+161m        Normal    Created                           pod/ibm-cs-opensearch-catalog-m4qlz                                   Created container registry-server
+161m        Normal    Started                           pod/ibm-cs-opensearch-catalog-m4qlz                                   Started container registry-server
+161m        Normal    Killing                           pod/ibm-cs-opensearch-catalog-m4qlz                                   Stopping container registry-server
+26m         Normal    Scheduled                         pod/ibm-cs-opensearch-catalog-tcx48                                   Successfully assigned cp2400/ibm-cs-opensearch-catalog-tcx48 to worker2.captainamerica.cp.fyre.ibm.com
+26m         Normal    AddedInterface                    pod/ibm-cs-opensearch-catalog-tcx48                                   Add eth0 [10.254.19.156/22] from ovn-kubernetes
+26m         Normal    Pulled                            pod/ibm-cs-opensearch-catalog-tcx48                                   Container image "icr.io/cpopen/opencontent-elasticsearch-operator-catalog@sha256:947c8d3ea4c281fb81e53ee1f1051c1d25fcb807d3e1466d430f6bfaa81a406c" already present on machine
+26m         Normal    Created                           pod/ibm-cs-opensearch-catalog-tcx48                                   Created container registry-server
+26m         Normal    Started                           pod/ibm-cs-opensearch-catalog-tcx48                                   Started container registry-server
+26m         Normal    Killing                           pod/ibm-cs-opensearch-catalog-tcx48                                   Stopping container registry-server
+64m         Normal    Scheduled                         pod/ibm-events-operator-catalog-l8hpr                                 Successfully assigned cp2400/ibm-events-operator-catalog-l8hpr to worker2.captainamerica.cp.fyre.ibm.com
+64m         Normal    AddedInterface                    pod/ibm-events-operator-catalog-l8hpr                                 Add eth0 [10.254.19.141/22] from ovn-kubernetes
+64m         Normal    Pulled                            pod/ibm-events-operator-catalog-l8hpr                                 Container image "icr.io/cpopen/ibm-events-operator-catalog@sha256:4cd92e1a78b080cc94beae89c257078314a6a0fae66e8a14512953b1c4004c09" already present on machine
+64m         Normal    Created                           pod/ibm-events-operator-catalog-l8hpr                                 Created container registry-server
+64m         Normal    Started                           pod/ibm-events-operator-catalog-l8hpr                                 Started container registry-server
+64m         Normal    Killing                           pod/ibm-events-operator-catalog-l8hpr                                 Stopping container registry-server
+19m         Normal    Scheduled                         pod/ibm-events-operator-catalog-qd7ss                                 Successfully assigned cp2400/ibm-events-operator-catalog-qd7ss to worker2.captainamerica.cp.fyre.ibm.com
+19m         Normal    AddedInterface                    pod/ibm-events-operator-catalog-qd7ss                                 Add eth0 [10.254.19.159/22] from ovn-kubernetes
+19m         Normal    Pulled                            pod/ibm-events-operator-catalog-qd7ss                                 Container image "icr.io/cpopen/ibm-events-operator-catalog@sha256:4cd92e1a78b080cc94beae89c257078314a6a0fae66e8a14512953b1c4004c09" already present on machine
+19m         Normal    Created                           pod/ibm-events-operator-catalog-qd7ss                                 Created container registry-server
+19m         Normal    Started                           pod/ibm-events-operator-catalog-qd7ss                                 Started container registry-server
+19m         Normal    Killing                           pod/ibm-events-operator-catalog-qd7ss                                 Stopping container registry-server
+155m        Normal    Scheduled                         pod/ibm-events-operator-catalog-qlqm4                                 Successfully assigned cp2400/ibm-events-operator-catalog-qlqm4 to worker2.captainamerica.cp.fyre.ibm.com
+154m        Normal    AddedInterface                    pod/ibm-events-operator-catalog-qlqm4                                 Add eth0 [10.254.19.109/22] from ovn-kubernetes
+154m        Normal    Pulled                            pod/ibm-events-operator-catalog-qlqm4                                 Container image "icr.io/cpopen/ibm-events-operator-catalog@sha256:4cd92e1a78b080cc94beae89c257078314a6a0fae66e8a14512953b1c4004c09" already present on machine
+154m        Normal    Created                           pod/ibm-events-operator-catalog-qlqm4                                 Created container registry-server
+154m        Normal    Started                           pod/ibm-events-operator-catalog-qlqm4                                 Started container registry-server
+154m        Normal    Killing                           pod/ibm-events-operator-catalog-qlqm4                                 Stopping container registry-server
+109m        Normal    Scheduled                         pod/ibm-events-operator-catalog-qrbpl                                 Successfully assigned cp2400/ibm-events-operator-catalog-qrbpl to worker1.captainamerica.cp.fyre.ibm.com
+109m        Normal    AddedInterface                    pod/ibm-events-operator-catalog-qrbpl                                 Add eth0 [10.254.13.131/22] from ovn-kubernetes
+109m        Normal    Pulled                            pod/ibm-events-operator-catalog-qrbpl                                 Container image "icr.io/cpopen/ibm-events-operator-catalog@sha256:4cd92e1a78b080cc94beae89c257078314a6a0fae66e8a14512953b1c4004c09" already present on machine
+109m        Normal    Created                           pod/ibm-events-operator-catalog-qrbpl                                 Created container registry-server
+109m        Normal    Started                           pod/ibm-events-operator-catalog-qrbpl                                 Started container registry-server
+109m        Normal    Killing                           pod/ibm-events-operator-catalog-qrbpl                                 Stopping container registry-server
+21m         Normal    Scheduled                         pod/ibm-fncm-operator-catalog-5qnpk                                   Successfully assigned cp2400/ibm-fncm-operator-catalog-5qnpk to worker2.captainamerica.cp.fyre.ibm.com
+21m         Normal    AddedInterface                    pod/ibm-fncm-operator-catalog-5qnpk                                   Add eth0 [10.254.19.158/22] from ovn-kubernetes
+21m         Normal    Pulled                            pod/ibm-fncm-operator-catalog-5qnpk                                   Container image "icr.io/cpopen/ibm-fncm-catalog@sha256:9dd34128b6b0d961b01d89260b276830452f0d1c8180855e8f9d42cca9bd5cf8" already present on machine
+21m         Normal    Created                           pod/ibm-fncm-operator-catalog-5qnpk                                   Created container registry-server
+21m         Normal    Started                           pod/ibm-fncm-operator-catalog-5qnpk                                   Started container registry-server
+21m         Normal    Killing                           pod/ibm-fncm-operator-catalog-5qnpk                                   Stopping container registry-server
+66m         Normal    Scheduled                         pod/ibm-fncm-operator-catalog-7hlkx                                   Successfully assigned cp2400/ibm-fncm-operator-catalog-7hlkx to worker2.captainamerica.cp.fyre.ibm.com
+66m         Normal    AddedInterface                    pod/ibm-fncm-operator-catalog-7hlkx                                   Add eth0 [10.254.19.140/22] from ovn-kubernetes
+66m         Normal    Pulled                            pod/ibm-fncm-operator-catalog-7hlkx                                   Container image "icr.io/cpopen/ibm-fncm-catalog@sha256:9dd34128b6b0d961b01d89260b276830452f0d1c8180855e8f9d42cca9bd5cf8" already present on machine
+66m         Normal    Created                           pod/ibm-fncm-operator-catalog-7hlkx                                   Created container registry-server
+66m         Normal    Started                           pod/ibm-fncm-operator-catalog-7hlkx                                   Started container registry-server
+66m         Normal    Killing                           pod/ibm-fncm-operator-catalog-7hlkx                                   Stopping container registry-server
+111m        Normal    Scheduled                         pod/ibm-fncm-operator-catalog-jxbwp                                   Successfully assigned cp2400/ibm-fncm-operator-catalog-jxbwp to worker1.captainamerica.cp.fyre.ibm.com
+111m        Normal    AddedInterface                    pod/ibm-fncm-operator-catalog-jxbwp                                   Add eth0 [10.254.13.130/22] from ovn-kubernetes
+111m        Normal    Pulled                            pod/ibm-fncm-operator-catalog-jxbwp                                   Container image "icr.io/cpopen/ibm-fncm-catalog@sha256:9dd34128b6b0d961b01d89260b276830452f0d1c8180855e8f9d42cca9bd5cf8" already present on machine
+111m        Normal    Created                           pod/ibm-fncm-operator-catalog-jxbwp                                   Created container registry-server
+111m        Normal    Started                           pod/ibm-fncm-operator-catalog-jxbwp                                   Started container registry-server
+111m        Normal    Killing                           pod/ibm-fncm-operator-catalog-jxbwp                                   Stopping container registry-server
+156m        Normal    Scheduled                         pod/ibm-fncm-operator-catalog-trbtq                                   Successfully assigned cp2400/ibm-fncm-operator-catalog-trbtq to worker1.captainamerica.cp.fyre.ibm.com
+156m        Normal    AddedInterface                    pod/ibm-fncm-operator-catalog-trbtq                                   Add eth0 [10.254.13.123/22] from ovn-kubernetes
+156m        Normal    Pulled                            pod/ibm-fncm-operator-catalog-trbtq                                   Container image "icr.io/cpopen/ibm-fncm-catalog@sha256:9dd34128b6b0d961b01d89260b276830452f0d1c8180855e8f9d42cca9bd5cf8" already present on machine
+156m        Normal    Created                           pod/ibm-fncm-operator-catalog-trbtq                                   Created container registry-server
+156m        Normal    Started                           pod/ibm-fncm-operator-catalog-trbtq                                   Started container registry-server
+156m        Normal    Killing                           pod/ibm-fncm-operator-catalog-trbtq                                   Stopping container registry-server
+60m         Normal    Scheduled                         pod/ibm-iam-operator-catalog-2c7sh                                    Successfully assigned cp2400/ibm-iam-operator-catalog-2c7sh to worker2.captainamerica.cp.fyre.ibm.com
+60m         Normal    AddedInterface                    pod/ibm-iam-operator-catalog-2c7sh                                    Add eth0 [10.254.19.146/22] from ovn-kubernetes
+60m         Normal    Pulled                            pod/ibm-iam-operator-catalog-2c7sh                                    Container image "icr.io/cpopen/ibm-iam-operator-catalog@sha256:74b3d678c8c3b20cd38d3adbad033f48061f09d84b2cf192c26aa278e9515d77" already present on machine
+60m         Normal    Created                           pod/ibm-iam-operator-catalog-2c7sh                                    Created container registry-server
+60m         Normal    Started                           pod/ibm-iam-operator-catalog-2c7sh                                    Started container registry-server
+60m         Normal    Killing                           pod/ibm-iam-operator-catalog-2c7sh                                    Stopping container registry-server
+15m         Normal    Scheduled                         pod/ibm-iam-operator-catalog-ld8gb                                    Successfully assigned cp2400/ibm-iam-operator-catalog-ld8gb to worker1.captainamerica.cp.fyre.ibm.com
+15m         Normal    AddedInterface                    pod/ibm-iam-operator-catalog-ld8gb                                    Add eth0 [10.254.13.151/22] from ovn-kubernetes
+15m         Normal    Pulled                            pod/ibm-iam-operator-catalog-ld8gb                                    Container image "icr.io/cpopen/ibm-iam-operator-catalog@sha256:74b3d678c8c3b20cd38d3adbad033f48061f09d84b2cf192c26aa278e9515d77" already present on machine
+15m         Normal    Created                           pod/ibm-iam-operator-catalog-ld8gb                                    Created container registry-server
+15m         Normal    Started                           pod/ibm-iam-operator-catalog-ld8gb                                    Started container registry-server
+15m         Normal    Killing                           pod/ibm-iam-operator-catalog-ld8gb                                    Stopping container registry-server
+105m        Normal    Scheduled                         pod/ibm-iam-operator-catalog-vdzmk                                    Successfully assigned cp2400/ibm-iam-operator-catalog-vdzmk to worker1.captainamerica.cp.fyre.ibm.com
+105m        Normal    AddedInterface                    pod/ibm-iam-operator-catalog-vdzmk                                    Add eth0 [10.254.13.135/22] from ovn-kubernetes
+105m        Normal    Pulled                            pod/ibm-iam-operator-catalog-vdzmk                                    Container image "icr.io/cpopen/ibm-iam-operator-catalog@sha256:74b3d678c8c3b20cd38d3adbad033f48061f09d84b2cf192c26aa278e9515d77" already present on machine
+105m        Normal    Created                           pod/ibm-iam-operator-catalog-vdzmk                                    Created container registry-server
+105m        Normal    Started                           pod/ibm-iam-operator-catalog-vdzmk                                    Started container registry-server
+105m        Normal    Killing                           pod/ibm-iam-operator-catalog-vdzmk                                    Stopping container registry-server
+150m        Normal    Scheduled                         pod/ibm-iam-operator-catalog-xsvwd                                    Successfully assigned cp2400/ibm-iam-operator-catalog-xsvwd to worker1.captainamerica.cp.fyre.ibm.com
+150m        Normal    AddedInterface                    pod/ibm-iam-operator-catalog-xsvwd                                    Add eth0 [10.254.13.125/22] from ovn-kubernetes
+150m        Normal    Pulled                            pod/ibm-iam-operator-catalog-xsvwd                                    Container image "icr.io/cpopen/ibm-iam-operator-catalog@sha256:74b3d678c8c3b20cd38d3adbad033f48061f09d84b2cf192c26aa278e9515d77" already present on machine
+150m        Normal    Created                           pod/ibm-iam-operator-catalog-xsvwd                                    Created container registry-server
+150m        Normal    Started                           pod/ibm-iam-operator-catalog-xsvwd                                    Started container registry-server
+150m        Normal    Killing                           pod/ibm-iam-operator-catalog-xsvwd                                    Stopping container registry-server
+62m         Normal    Scheduled                         pod/ibm-opencontent-flink-95vc9                                       Successfully assigned cp2400/ibm-opencontent-flink-95vc9 to worker2.captainamerica.cp.fyre.ibm.com
+62m         Normal    AddedInterface                    pod/ibm-opencontent-flink-95vc9                                       Add eth0 [10.254.19.143/22] from ovn-kubernetes
+62m         Normal    Pulled                            pod/ibm-opencontent-flink-95vc9                                       Container image "icr.io/cpopen/ibm-opencontent-flink-operator-catalog@sha256:5424ad1252456bf2399c353703626faaaf739fedf6aad17e5485203671fbf245" already present on machine
+62m         Normal    Created                           pod/ibm-opencontent-flink-95vc9                                       Created container registry-server
+62m         Normal    Started                           pod/ibm-opencontent-flink-95vc9                                       Started container registry-server
+62m         Normal    Killing                           pod/ibm-opencontent-flink-95vc9                                       Stopping container registry-server
+17m         Normal    Scheduled                         pod/ibm-opencontent-flink-fnr5q                                       Successfully assigned cp2400/ibm-opencontent-flink-fnr5q to worker2.captainamerica.cp.fyre.ibm.com
+17m         Normal    AddedInterface                    pod/ibm-opencontent-flink-fnr5q                                       Add eth0 [10.254.19.161/22] from ovn-kubernetes
+17m         Normal    Pulled                            pod/ibm-opencontent-flink-fnr5q                                       Container image "icr.io/cpopen/ibm-opencontent-flink-operator-catalog@sha256:5424ad1252456bf2399c353703626faaaf739fedf6aad17e5485203671fbf245" already present on machine
+17m         Normal    Created                           pod/ibm-opencontent-flink-fnr5q                                       Created container registry-server
+17m         Normal    Started                           pod/ibm-opencontent-flink-fnr5q                                       Started container registry-server
+17m         Normal    Killing                           pod/ibm-opencontent-flink-fnr5q                                       Stopping container registry-server
+107m        Normal    Scheduled                         pod/ibm-opencontent-flink-pn62w                                       Successfully assigned cp2400/ibm-opencontent-flink-pn62w to worker2.captainamerica.cp.fyre.ibm.com
+107m        Normal    AddedInterface                    pod/ibm-opencontent-flink-pn62w                                       Add eth0 [10.254.19.128/22] from ovn-kubernetes
+107m        Normal    Pulled                            pod/ibm-opencontent-flink-pn62w                                       Container image "icr.io/cpopen/ibm-opencontent-flink-operator-catalog@sha256:5424ad1252456bf2399c353703626faaaf739fedf6aad17e5485203671fbf245" already present on machine
+107m        Normal    Created                           pod/ibm-opencontent-flink-pn62w                                       Created container registry-server
+107m        Normal    Started                           pod/ibm-opencontent-flink-pn62w                                       Started container registry-server
+107m        Normal    Killing                           pod/ibm-opencontent-flink-pn62w                                       Stopping container registry-server
+152m        Normal    Scheduled                         pod/ibm-opencontent-flink-qzpzt                                       Successfully assigned cp2400/ibm-opencontent-flink-qzpzt to worker2.captainamerica.cp.fyre.ibm.com
+152m        Normal    AddedInterface                    pod/ibm-opencontent-flink-qzpzt                                       Add eth0 [10.254.19.112/22] from ovn-kubernetes
+152m        Normal    Pulled                            pod/ibm-opencontent-flink-qzpzt                                       Container image "icr.io/cpopen/ibm-opencontent-flink-operator-catalog@sha256:5424ad1252456bf2399c353703626faaaf739fedf6aad17e5485203671fbf245" already present on machine
+152m        Normal    Created                           pod/ibm-opencontent-flink-qzpzt                                       Created container registry-server
+152m        Normal    Started                           pod/ibm-opencontent-flink-qzpzt                                       Started container registry-server
+152m        Normal    Killing                           pod/ibm-opencontent-flink-qzpzt                                       Stopping container registry-server
+112m        Normal    Scheduled                         pod/ibm-zen-operator-catalog-8lv9c                                    Successfully assigned cp2400/ibm-zen-operator-catalog-8lv9c to worker1.captainamerica.cp.fyre.ibm.com
+112m        Normal    AddedInterface                    pod/ibm-zen-operator-catalog-8lv9c                                    Add eth0 [10.254.13.129/22] from ovn-kubernetes
+112m        Normal    Pulled                            pod/ibm-zen-operator-catalog-8lv9c                                    Container image "icr.io/cpopen/ibm-zen-operator-catalog@sha256:62f99d0f1e2f45873659f184842d7c0311703d12a0c55d6c6fd7756dc6f77fdd" already present on machine
+112m        Normal    Created                           pod/ibm-zen-operator-catalog-8lv9c                                    Created container registry-server
+112m        Normal    Started                           pod/ibm-zen-operator-catalog-8lv9c                                    Started container registry-server
+112m        Normal    Killing                           pod/ibm-zen-operator-catalog-8lv9c                                    Stopping container registry-server
+67m         Normal    Scheduled                         pod/ibm-zen-operator-catalog-g5wlj                                    Successfully assigned cp2400/ibm-zen-operator-catalog-g5wlj to worker1.captainamerica.cp.fyre.ibm.com
+67m         Normal    AddedInterface                    pod/ibm-zen-operator-catalog-g5wlj                                    Add eth0 [10.254.13.139/22] from ovn-kubernetes
+67m         Normal    Pulled                            pod/ibm-zen-operator-catalog-g5wlj                                    Container image "icr.io/cpopen/ibm-zen-operator-catalog@sha256:62f99d0f1e2f45873659f184842d7c0311703d12a0c55d6c6fd7756dc6f77fdd" already present on machine
+67m         Normal    Created                           pod/ibm-zen-operator-catalog-g5wlj                                    Created container registry-server
+67m         Normal    Started                           pod/ibm-zen-operator-catalog-g5wlj                                    Started container registry-server
+67m         Normal    Killing                           pod/ibm-zen-operator-catalog-g5wlj                                    Stopping container registry-server
+22m         Normal    Scheduled                         pod/ibm-zen-operator-catalog-rqgnb                                    Successfully assigned cp2400/ibm-zen-operator-catalog-rqgnb to worker1.captainamerica.cp.fyre.ibm.com
+22m         Normal    AddedInterface                    pod/ibm-zen-operator-catalog-rqgnb                                    Add eth0 [10.254.13.145/22] from ovn-kubernetes
+22m         Normal    Pulled                            pod/ibm-zen-operator-catalog-rqgnb                                    Container image "icr.io/cpopen/ibm-zen-operator-catalog@sha256:62f99d0f1e2f45873659f184842d7c0311703d12a0c55d6c6fd7756dc6f77fdd" already present on machine
+22m         Normal    Created                           pod/ibm-zen-operator-catalog-rqgnb                                    Created container registry-server
+22m         Normal    Started                           pod/ibm-zen-operator-catalog-rqgnb                                    Started container registry-server
+22m         Normal    Killing                           pod/ibm-zen-operator-catalog-rqgnb                                    Stopping container registry-server
+157m        Normal    Scheduled                         pod/ibm-zen-operator-catalog-z2vlx                                    Successfully assigned cp2400/ibm-zen-operator-catalog-z2vlx to worker1.captainamerica.cp.fyre.ibm.com
+157m        Normal    AddedInterface                    pod/ibm-zen-operator-catalog-z2vlx                                    Add eth0 [10.254.13.122/22] from ovn-kubernetes
+157m        Normal    Pulled                            pod/ibm-zen-operator-catalog-z2vlx                                    Container image "icr.io/cpopen/ibm-zen-operator-catalog@sha256:62f99d0f1e2f45873659f184842d7c0311703d12a0c55d6c6fd7756dc6f77fdd" already present on machine
+157m        Normal    Created                           pod/ibm-zen-operator-catalog-z2vlx                                    Created container registry-server
+157m        Normal    Started                           pod/ibm-zen-operator-catalog-z2vlx                                    Started container registry-server
+157m        Normal    Killing                           pod/ibm-zen-operator-catalog-z2vlx                                    Stopping container registry-server
+110s        Warning   FailedToRetrieveImagePullSecret   pod/postgresql-operator-controller-manager-1-18-12-797c4dcb48-c5sc7   Unable to retrieve some image pull secrets (postgresql-operator-pull-secret); attempting to pull the image may not succeed.
+
+2024-08-12 07:43:34,157 - log - INFO - util.py:38 - run_oc_command - oc command oc get events executed successfully
+2024-08-12 07:43:34,158 - log - INFO - util.py:86 - verify_results - All the expected values: ['pod/content-navigator-watcher', ' pod/ibm-cp4a-operator-catalog', ' pod/ibm-cs-opensearch-catalog', ' pod/ibm-events-operator-catalog', ' pod/ibm-fncm-operator-catalog', ' pod/ibm-zen-operator-catalog'] are present in the OC command output
+2024-08-12 07:43:34,158 - log - INFO - util.py:144 - verify_partial_result - oc command oc get events verified sucessfully
+2024-08-12 07:43:34,158 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:34,158 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get pod -n cp2400
+2024-08-12 07:43:34,571 - log - INFO - util.py:25 - run_oc_command - oc command oc get pod -n cp2400 output: 
+NAME                                                              READY   STATUS      RESTARTS       AGE
+0467c78ebaf6218ba131a1942caceeb69033b79a257d18ec50e034f70dgm7vn   0/1     Completed   0              7d5h
+10a11985bf08fde623858029910085440c4150afe65518882e4e5833485cz6m   0/1     Completed   0              7d8h
+121d665877763381d0b48934e752a3a2acff6e7f002db86f1f34b3b2242cdh6   0/1     Completed   0              7d8h
+1d411101649eb92d32b9d5941e468b19a86171a732e7f2f261d25dcca6clmsm   0/1     Completed   0              7d7h
+2b26d04f39d9a1473fde88037690ea6cc09c9ad1b2bdd07b63ab8906c95twch   0/1     Completed   0              7d6h
+443c20faecbab7c5a8e7f23942d9f55ae79bf8da250adb93e20e4916f97bcr7   0/1     Completed   0              7d8h
+4f145cb1e57046a2a0f93470b8dbd354489ca6d1ae0ed9d076573bee949hmg5   0/1     Completed   0              7d5h
+5a499cdb4f5022b0af9e24e84e20583194a07e7bbada1906fba2d9f3c8wj74d   0/1     Completed   0              7d6h
+63dd2f580fe202d84b38c050de635c04558e08b7d6e31f1166a11f5cf4d4b7k   0/1     Completed   0              7d8h
+66233eca84af60b3c1dccd87ed648508de5fce8ee93e031fe5e26653captqk9   0/1     Completed   0              7d6h
+67522edc283b6f53527f75171ba16d92206427565b1c68e1515d765aedgnz8c   0/1     Completed   0              7d8h
+70cce0658a826db2345578c2b48b42f34cfd41d19c2649242c817739a4fvqgk   0/1     Completed   0              7d8h
+7c04f5a4d95fee0184bdc450177b8c3380e1af57941f82e66f5a02c28efjb5b   0/1     Completed   0              7d8h
+8ad0992f05b12e517fb97147886b9cfdc6b4672b66504803fe5743f607jsrtb   0/1     Completed   0              7d6h
+91a4720a56aabd41138177a8c0ab0be8a9f7ea2b4e491fec404b0df41fp7djw   0/1     Completed   0              7d8h
+b4b8add50476bf4ae6cdd06d0894bd3a3647ecdd4a19ddc648c60ee372qvnwc   0/1     Completed   0              7d8h
+bb2122a3dedc1a682893ea20d28de4d0f2c09dfd798b86154e0f12316dzhk6w   0/1     Completed   0              7d8h
+bts-operator-5sn6g                                                1/1     Running     0              7d8h
+cloud-native-postgresql-catalog-pqbmf                             1/1     Running     0              7d8h
+common-service-db-1                                               1/1     Running     0              7d6h
+common-web-ui-86d4cc4658-dbj68                                    1/1     Running     0              7d6h
+content-bai-content-p428z                                         0/1     Completed   0              7d4h
+content-bai-navigator-92cb2                                       0/1     Completed   0              7d4h
+content-bai-setup-dccpn                                           0/1     Completed   0              7d4h
+content-cmis-deploy-56d548fb9f-xm8tq                              1/1     Running     1 (7d4h ago)   7d4h
+content-cpe-deploy-d594d7fff-vhswf                                1/1     Running     0              7d5h
+content-cpe-watcher-66cd75c847-wqsbx                              1/1     Running     0              36h
+content-css-deploy-1-cdb6bd85f-mmpj5                              1/1     Running     0              7d4h
+content-dba-rr-2b6d3469fe                                         1/1     Running     0              7d6h
+content-graphql-deploy-67d889c666-zjb6p                           1/1     Running     0              7d4h
+content-iccsap-deploy-7bff7d6974-kvgdv                            1/1     Running     0              7d3h
+content-ier-deploy-86d5f5c86c-mtx9f                               1/1     Running     0              7d3h
+content-insights-engine-application-setup-ctc99                   0/1     Completed   0              7d5h
+content-insights-engine-cockpit-6575667b84-j7jxx                  1/1     Running     0              7d5h
+content-insights-engine-flink-6ffb5b6c4f-8sx2m                    2/2     Running     0              7d5h
+content-insights-engine-flink-taskmanager-757cfb64d6-hd5n8        1/1     Running     0              7d5h
+content-insights-engine-flink-taskmanager-757cfb64d6-kmfx8        1/1     Running     0              7d5h
+content-insights-engine-management-5b6f5b7b58-s44rc               2/2     Running     0              7d5h
+content-navigator-deploy-5c668699dd-j9vcx                         1/1     Running     1 (7d4h ago)   7d4h
+content-navigator-watcher-76c966c9d5-r8xtd                        1/1     Running     0              101s
+content-rr-backup-28724560-n4th7                                  0/1     Completed   0              3m34s
+content-rr-setup-pod                                              0/1     Completed   0              7d6h
+content-tm-deploy-5447c46998-lqlrm                                1/1     Running     0              7d4h
+create-postgres-license-config-hkvks                              0/1     Completed   0              5d20h
+create-secrets-job-8wtlv                                          0/1     Completed   0              7d6h
+e52d2a756cf01f341d6906922323669729b9729babd303f0aedb441debfmr5x   0/1     Completed   0              7d8h
+ee98a817434dacb7eb286981bee6cfd80e700099b1b75e350b9a6adcc1dc2xk   0/1     Completed   0              7d6h
+fb5f29fd668b1ea8d2611511de95533de17aa8b4a4d3c54a6a4d1086e3jnmhw   0/1     Completed   0              7d8h
+flink-kubernetes-operator-7f9b88f8b4-ptcst                        2/2     Running     0              7d5h
+iaf-system-entity-operator-58c85bf6-7dtp4                         2/2     Running     0              7d7h
+iaf-system-kafka-0                                                1/1     Running     0              7d7h
+iaf-system-zookeeper-0                                            1/1     Running     0              7d7h
+iam-config-job-g9qh2                                              0/1     Completed   0              7d6h
+ibm-ads-operator-65ffd9d74f-cxmhm                                 1/1     Running     0              7d8h
+ibm-bts-cnpg-cp2400-cp4ba-bts-1                                   1/1     Running     0              7d5h
+ibm-bts-cnpg-cp2400-cp4ba-bts-2                                   1/1     Running     0              7d5h
+ibm-bts-cp4ba-bts-316-deployment-5dd85d4f98-8r4nl                 1/1     Running     0              7d5h
+ibm-bts-cp4ba-bts-316-deployment-5dd85d4f98-hc6lh                 1/1     Running     0              7d5h
+ibm-bts-operator-controller-manager-75fcf649f7-n56bb              1/1     Running     0              7d5h
+ibm-common-service-operator-5464495655-bglkb                      1/1     Running     0              7d8h
+ibm-commonui-operator-789497f77b-g67md                            1/1     Running     0              7d6h
+ibm-content-operator-98f789b7d-8wgw4                              1/1     Running     0              7d5h
+ibm-cp4a-operator-5d95f67867-bgh4j                                1/1     Running     0              7d5h
+ibm-cp4a-operator-catalog-lfzbv                                   1/1     Running     0              7d8h
+ibm-cp4a-wfps-operator-8588f67546-whv6k                           1/1     Running     0              7d8h
+ibm-cs-install-catalog-v4-6-4-hmx48                               1/1     Running     0              7d8h
+ibm-cs-opensearch-catalog-6fnnx                                   1/1     Running     0              7d8h
+ibm-dpe-operator-86f494c68f-clrml                                 1/1     Running     0              7d8h
+ibm-elasticsearch-operator-ibm-es-controller-manager-658c6ps9cz   1/1     Running     0              7d6h
+ibm-events-operator-catalog-sslvh                                 1/1     Running     0              7d8h
+ibm-events-operator-v5.0.1-c5898f7c-9fhs2                         1/1     Running     0              7d7h
+ibm-fncm-operator-catalog-nh5ll                                   1/1     Running     0              7d8h
+ibm-iam-operator-5f7895ffcf-x8t8r                                 1/1     Running     0              7d6h
+ibm-iam-operator-catalog-q2vx8                                    1/1     Running     0              7d8h
+ibm-insights-engine-operator-d6bcdd9bd-fwnc6                      1/1     Running     0              7d8h
+ibm-nginx-f7cf5ffd4-84crz                                         2/2     Running     0              7d6h
+ibm-nginx-f7cf5ffd4-tmrjt                                         2/2     Running     0              7d6h
+ibm-nginx-tester-56dcddcdd4-7d4pd                                 2/2     Running     0              7d6h
+ibm-odm-operator-5fbd966dd5-7g87w                                 1/1     Running     0              7d8h
+ibm-opencontent-flink-l7gv7                                       1/1     Running     0              7d8h
+ibm-pfs-operator-b77b88d6c-qfj5h                                  1/1     Running     0              7d8h
+ibm-workflow-operator-558fd5b44-42rql                             1/1     Running     0              7d8h
+ibm-zen-operator-897f68cc5-njlcd                                  1/1     Running     0              7d6h
+ibm-zen-operator-catalog-mzsp5                                    1/1     Running     0              7d8h
+icp4a-foundation-operator-5b86cc6c9d-q4zzh                        1/1     Running     0              7d8h
+meta-api-deploy-7fd7c5b486-rl982                                  1/1     Running     0              7d6h
+oidc-client-registration-tj9fl                                    0/1     Completed   0              7d6h
+opensearch-ib-6fb9-es-server-all-0                                2/2     Running     0              5d20h
+opensearch-ib-6fb9-es-server-all-1                                2/2     Running     0              5d20h
+opensearch-ib-6fb9-es-server-all-2                                2/2     Running     0              5d20h
+opensearch-ibm-elasticsearch-create-snapshot-repo-job-qm26l       0/1     Completed   0              6h31m
+operand-deployment-lifecycle-manager-84b674544d-chlhf             1/1     Running     0              7d8h
+platform-auth-service-6679478f68-9wqjw                            1/1     Running     0              7d5h
+platform-identity-management-66c66fdb87-pqlgs                     1/1     Running     0              7d6h
+platform-identity-provider-54cdccdf4f-jvt2m                       1/1     Running     0              7d6h
+postgresql-operator-controller-manager-1-18-12-797c4dcb48-c5sc7   1/1     Running     0              5d20h
+setup-job-92tvq                                                   0/1     Completed   0              7d6h
+usermgmt-79c6d5b74c-khfnf                                         1/1     Running     0              7d5h
+usermgmt-79c6d5b74c-pnzcz                                         1/1     Running     0              7d5h
+usermgmt-ensure-tables-job-qrwgc                                  0/1     Completed   0              7d6h
+zen-audit-f7574485f-5spdn                                         1/1     Running     0              7d6h
+zen-core-65584f74d9-4gj8d                                         2/2     Running     0              7d6h
+zen-core-65584f74d9-dr7rk                                         2/2     Running     0              7d6h
+zen-core-api-7c7f9c995-47bnc                                      2/2     Running     0              7d6h
+zen-core-api-7c7f9c995-6x6j7                                      2/2     Running     1 (29h ago)    7d6h
+zen-core-create-tables-job-h9gtk                                  0/1     Completed   0              7d6h
+zen-core-pre-requisite-job-6j7hw                                  0/1     Completed   0              7d6h
+zen-metastore-backup-cron-job-28723200-jwppb                      0/1     Completed   0              22h
+zen-metastore-backup-cron-job-28723680-89qh5                      0/1     Completed   0              14h
+zen-metastore-backup-cron-job-28724160-rtw9s                      0/1     Completed   0              6h43m
+zen-metastore-edb-1                                               1/1     Running     0              7d6h
+zen-metastore-edb-2                                               1/1     Running     0              7d6h
+zen-metastore-weekly-backup-cron-job-28715100-zcqq9               0/1     Completed   0              6d13h
+zen-minio-0                                                       1/1     Running     0              7d6h
+zen-minio-1                                                       1/1     Running     0              7d6h
+zen-minio-2                                                       1/1     Running     0              7d6h
+zen-minio-create-buckets-job-8fspp                                0/1     Completed   0              7d6h
+zen-pre-requisite-job-fvs8p                                       0/1     Completed   0              7d6h
+zen-watcher-786f54cb44-c922b                                      2/2     Running     0              7d6h
+
+2024-08-12 07:43:34,572 - log - INFO - util.py:38 - run_oc_command - oc command oc get pod -n cp2400 executed successfully
+2024-08-12 07:43:34,572 - log - INFO - util.py:86 - verify_results - All the expected values: ['ibm-common-service-operator', ' ibm-content-operator', ' ibm-cp4a-operator', ' ibm-cp4a-operator-catalog', ' ibm-events-operator-catalog', ' ibm-events-operator', ' ibm-fncm-operator-catalog', ' ibm-iam-operator', ' ibm-iam-operator-catalog', ' ibm-insights-engine-operator', ' ibm-odm-operator', ' icp4a-foundation-operator'] are present in the OC command output
+2024-08-12 07:43:34,572 - log - INFO - util.py:144 - verify_partial_result - oc command oc get pod -n cp2400 verified sucessfully
+2024-08-12 07:43:34,572 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:34,572 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get storageclass
+2024-08-12 07:43:34,752 - log - INFO - util.py:25 - run_oc_command - oc command oc get storageclass output: 
+NAME                  PROVISIONER                                   RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+managed-nfs-storage   k8s-sigs.io/nfs-subdir-external-provisioner   Delete          Immediate           false                  145d
+
+2024-08-12 07:43:34,752 - log - INFO - util.py:38 - run_oc_command - oc command oc get storageclass executed successfully
+2024-08-12 07:43:34,752 - log - INFO - util.py:86 - verify_results - All the expected values: ['managed-nfs-storage'] are present in the OC command output
+2024-08-12 07:43:34,752 - log - INFO - util.py:144 - verify_partial_result - oc command oc get storageclass verified sucessfully
+2024-08-12 07:43:34,752 - log - INFO - util.py:131 - verify_partial_result - ---------------------------------------------------------------------------------------------------------------------------
+2024-08-12 07:43:34,752 - log - INFO - util.py:23 - run_oc_command - Executing oc command: oc get route cpd -n cp2400
+2024-08-12 07:43:34,927 - log - INFO - util.py:25 - run_oc_command - oc command oc get route cpd -n cp2400 output: 
+NAME   HOST/PORT                                        PATH   SERVICES        PORT                   TERMINATION          WILDCARD
+cpd    cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com          ibm-nginx-svc   ibm-nginx-https-port   reencrypt/Redirect   None
+
+2024-08-12 07:43:34,927 - log - INFO - util.py:38 - run_oc_command - oc command oc get route cpd -n cp2400 executed successfully
+2024-08-12 07:43:34,927 - log - INFO - util.py:86 - verify_results - All the expected values: ['cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com', 'cpd-cp2400.apps.captainamerica.cp.fyre.ibm.com', ' ibm-nginx-svc', ' bm-nginx-https-port'] are present in the OC command output
+2024-08-12 07:43:34,928 - log - INFO - util.py:144 - verify_partial_result - oc command oc get route cpd -n cp2400 verified sucessfully
+2024-08-12 07:43:34,928 - log - INFO - Test_case.py:218 - verify_result - *****************************************All OC commands executed successfully**********************************************

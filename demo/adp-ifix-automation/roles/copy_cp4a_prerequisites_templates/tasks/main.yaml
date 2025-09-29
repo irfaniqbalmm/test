@@ -1,0 +1,5 @@
+- name: "Copy designated cp4ba-prerequisites templates to /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/ directory"
+  ansible.builtin.copy:
+    src: ./cp4a-prerequisites-property/deployment_cluster/cp4ba-prerequisites
+    dest: /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/
+

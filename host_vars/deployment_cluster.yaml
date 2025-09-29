@@ -1,0 +1,7 @@
+ansible_host: cp4ba-auto1.fyre.ibm.com
+ansible_connection: ssh
+ansible_user: root
+ansible_ssh_pass: Admin@123123123
+ocp_cluster: api.ocp412-emer.cp.fyre.ibm.com
+ocp_username: kubeadmin
+ocp_password: KigNZ-jdsuk-vmF5e-goEg9

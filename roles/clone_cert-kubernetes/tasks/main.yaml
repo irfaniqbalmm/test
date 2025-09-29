@@ -1,0 +1,12 @@
+
+- name: "Create local project directory to clone files to"
+  file:
+    path: /opt/{{ adpVars.deploymentNamespace }}
+    state: directory
+
+- name: "Clone cert-kubernetes repo"
+  ansible.builtin.git:
+    repo: 'git@github.ibm.com:dba/cert-kubernetes.git'
+    dest: /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes
+    version: "{{ adpVars.iFixVersion }}"
+    clone: yes

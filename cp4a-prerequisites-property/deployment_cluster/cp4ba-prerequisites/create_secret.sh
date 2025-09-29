@@ -1,0 +1,48 @@
+echo "****************************************************************************"
+echo "******************************* START **************************************"
+echo "[INFO] Applying YAML template file:/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/ibm-ldap-bind-secret.yaml"
+kubectl apply -f "/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/ibm-ldap-bind-secret.yaml"
+echo "******************************** END ***************************************"
+echo "****************************************************************************"
+printf "\n"
+
+echo "****************************************************************************"
+echo "******************************* START **************************************"
+echo "[INFO] Applying YAML template file:/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/fncm/ibm-fncm-secret.yaml"
+kubectl apply -f "/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/fncm/ibm-fncm-secret.yaml"
+echo "******************************** END ***************************************"
+echo "****************************************************************************"
+printf "\n"
+
+echo "****************************************************************************"
+echo "******************************* START **************************************"
+echo "[INFO] Applying YAML template file:/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/fncm/ibm-fncm-icc-secret.yaml"
+kubectl apply -f "/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/fncm/ibm-fncm-icc-secret.yaml"
+echo "******************************** END ***************************************"
+echo "****************************************************************************"
+printf "\n"
+
+echo "****************************************************************************"
+echo "******************************* START **************************************"
+echo "[INFO] Applying YAML template file:/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/ban/ibm-ban-secret.yaml"
+kubectl apply -f "/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/ban/ibm-ban-secret.yaml"
+echo "******************************** END ***************************************"
+echo "****************************************************************************"
+printf "\n"
+
+echo "****************************************************************************"
+echo "******************************* START **************************************"
+echo "[INFO] Executing shell script:/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/cp4ba_db_ssl_secret/sql/ibm-cp4ba-db-ssl-cert-secret-for-sql.sh"
+/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/cp4ba_db_ssl_secret/sql/ibm-cp4ba-db-ssl-cert-secret-for-sql.sh
+echo "******************************** END ***************************************"
+echo "****************************************************************************"
+printf "\n"
+
+echo "****************************************************************************"
+echo "******************************* START **************************************"
+echo "[INFO] Executing shell script:/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/cp4ba_ldap_ssl_secret/ibm-cp4ba-ldap-ssl-cert-secret.sh"
+/opt/cp2103/cert-kubernetes/scripts/cp4ba-prerequisites/secret_template/cp4ba_ldap_ssl_secret/ibm-cp4ba-ldap-ssl-cert-secret.sh
+echo "******************************** END ***************************************"
+echo "****************************************************************************"
+printf "\n"
+

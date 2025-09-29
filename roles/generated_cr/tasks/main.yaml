@@ -1,0 +1,12 @@
+- name: "Create generated-cr directory in local project directory"
+  file:
+    path: /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/generated_cr/
+    state: directory
+
+- name: "Copy generated CR template to local generated-cr directory"
+  ansible.builtin.copy:
+    src: ./cp4a-prerequisites-property/deployment_cluster/generated_cr/ibm_cp4a_cr_final.yaml
+    dest: /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/generated_cr/
+
+- name: "Apply generated-cr"
+  ansible.builtin.command: oc create -f /opt/{{ adpVars.deploymentNamespace }}/cert-kubernetes/scripts/generated_cr/ibm_cp4a_cr_final.yaml

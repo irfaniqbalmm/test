@@ -1,0 +1,34 @@
+- name: "Login via openshift client to OCP Cluster"
+  ansible.builtin.command: oc login -u {{ hostvars['deployment_cluster']['ocp_username'] }} -p {{ hostvars['deployment_cluster']['ocp_password'] }} -n {{ adpVars.deploymentNamespace }} --server=https://{{ hostvars['deployment_cluster']['ocp_cluster'] }}:6443 --insecure-skip-tls-verify
+
+- name: "Check current project logged in as"
+  ansible.builtin.shell: 'oc project -q'
+  register: oc_project
+
+  ########################
+- name: Debug oc_project variable
+  ansible.builtin.debug:
+    var: oc_project
+
+- name: Debug adpVars.deploymentNamespace variable
+  ansible.builtin.debug:
+    var: adpVars.deploymentNamespace
+
+  ########################
+
+- name: "Fail if oc_project does not match project in adpVars.deploymentNamespace"
+  fail:
+    msg: "Current OCP project you are logged in as does not match the project specified in adpVars. Fail."
+  when: oc_project.stdout != adpVars.deploymentNamespace
+
+- name: "Make uninstall-cs-cp4ba-iaf-dedicated-cs.sh executable"
+  file:
+    dest: util_scripts/uninstall-cs-cp4ba-iaf-dedicated-cs.sh
+    mode: a+x
+
+- name: "Last check if oc_project == adpVars.deploymentNamespace, run clean up script. Else, task will be skipped"
+  when: oc_project.stdout == adpVars.deploymentNamespace
+  ansible.builtin.shell:
+    ./uninstall-cs-cp4ba-iaf-dedicated-cs.sh
+  args:
+    chdir: util_scripts

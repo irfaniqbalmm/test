@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ report_title }}</title>
+        <style>
+            @media print {
+                body {
+                    margin: 0;
+                    padding: 0;
+                    page-break-inside: avoid;
+                }
+
+                .page-break {
+                    page-break-inside: avoid;
+                }
+            }
+            body {
+                padding: 10px;
+                page-break-inside: avoid;
+            }
+            img {
+                width: 80%; /* Adjust the width as needed */
+                height: auto; /* Maintain aspect ratio */
+            }
+            .component_results h4, .component_results p {
+                display: inline;
+            }
+            .component_results div {
+                margin-bottom: 10px;
+            }
+            .status {
+                background-color: #f2f2f2;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+            }
+            .status .category {
+                font-weight: bold;
+                /* margin-bottom: 10px; */
+            }
+            .status .service span {
+                display: inline-block;
+            }
+            .status .service .colon {
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>{{ report_title }}</h1>
+        <div class="summary">
+            <h2>SUMMARY</h2>
+            <div class="results">
+                <h3>Results :</h3>
+                {% if 'FAILED' in [BAI_Content_Dashboard, BAI_Navigator_Dashboard, ICCSAP, CMIS_CP4BA, CMIS_OCP, TM, IER, IER_Plugin, OCP_installed_operators, OCP_access_configmaps, OCP_init_configmap, OCP_verify_configmap, CPE_index_area, CPE_ICN_Object_store, CPE_ObjectStore_Tablespaces_Creation, CSS_search, CPE_Health_Page, CPE_Ping_page, CPE_P8BPMREST, FileNet_Process_Services_ping_page, FileNet_Process_Services_details_page, FileNet_P8_Content_Engine_Web_Service_page, FileNet_Process_Engine_Web_Service_page, Content_Search_Services_health_check, CPE_Stateless_Health_Page, CPE_Stateless_Ping_Page, Stateless_FileNet_Process_Services_ping_page, Stateless_FileNet_Process_Services_details_page, Stateless_FileNet_P8_Content_Engine_Web_Service_page, Stateless_FileNet_Process_Engine_Web_Service_page, Stateless_Content_Search_Services_health_check, Opensearch, Navigator_desktops, Navigator_Second, CMOD, CM8, Graphql, JVM_Custom_Options] %}
+                    <p style="color: RED; text-decoration: double;">FAILED</p>
+                {% elif 'Not executed' in [BAI_Content_Dashboard, BAI_Navigator_Dashboard, ICCSAP, CMIS_CP4BA, CMIS_OCP, TM, IER, IER_Plugin, OCP_installed_operators, OCP_access_configmaps, OCP_init_configmap, OCP_verify_configmap, CPE_index_area, CPE_ICN_Object_store, CPE_ObjectStore_Tablespaces_Creation, CSS_search, CPE_Health_Page, CPE_Ping_page, CPE_P8BPMREST, FileNet_Process_Services_ping_page, FileNet_Process_Services_details_page, FileNet_P8_Content_Engine_Web_Service_page, FileNet_Process_Engine_Web_Service_page, Content_Search_Services_health_check, CPE_Stateless_Health_Page, CPE_Stateless_Ping_Page, Stateless_FileNet_Process_Services_ping_page, Stateless_FileNet_Process_Services_details_page, Stateless_FileNet_P8_Content_Engine_Web_Service_page, Stateless_FileNet_Process_Engine_Web_Service_page, Stateless_Content_Search_Services_health_check, Opensearch, Navigator_desktops, Navigator_Second, CMOD, CM8, Graphql, JVM_Custom_Options] %}
+                    <p style="color: green; text-decoration: double;">PASSED</p>
+                {% else %}
+                    <p style="color: green; text-decoration: double;">PASSED</p>
+                {% endif %}
+                <div class="component_results">
+                    <div><h3>Component Results</h3></div>
+                    <div><h4>Operator Logs Status : </h4>
+                        {% if Logs == 'No errors present in logs!' %}
+                            <p style="color: green">{{ Logs }}</p>
+                        {% elif Logs == 'Not executed' %}
+                            <p style="color: blue">{{ Logs }}</p>
+                        {% else %}
+                            <p style="color: RED">{{ Logs }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>BAI Content Dashboard : </h4> 
+                        {% if 'FAILED' in BAI_Content_Dashboard %}
+                            <p style="color: RED">{{ BAI_Content_Dashboard }}</p>
+                        {% elif BAI_Content_Dashboard == 'Not executed' %}
+                            <p style="color: blue">{{ BAI_Content_Dashboard }}</p>
+                        {% elif BAI_Content_Dashboard == 'N/A' %}
+                            <p style="color: purple">{{ BAI_Content_Dashboard }}</p>
+                        {% else %}
+                            <p style="color: green">{{ BAI_Content_Dashboard }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>BAI Navigator Dashboard : </h4> 
+                        {% if 'FAILED' in BAI_Navigator_Dashboard %}
+                            <p style="color: RED">{{ BAI_Navigator_Dashboard }}</p>
+                        {% elif BAI_Navigator_Dashboard == 'Not executed' %}
+                            <p style="color: blue">{{ BAI_Navigator_Dashboard }}</p>
+                        {% elif BAI_Navigator_Dashboard == 'N/A' %}
+                            <p style="color: purple">{{ BAI_Navigator_Dashboard }}</p>
+                        {% else %}
+                            <p style="color: green">{{ BAI_Navigator_Dashboard }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>ICCSAP : </h4> 
+                        {% if ICCSAP == 'FAILED' %}
+                            <p style="color: RED">{{ ICCSAP }}</p>
+                        {% elif ICCSAP == 'Not executed' %}
+                            <p style="color: blue">{{ ICCSAP }}</p>
+                        {% elif ICCSAP == 'N/A' %}
+                            <p style="color: purple">{{ ICCSAP }}</p>
+                        {% else %}
+                            <p style="color: green">{{ ICCSAP }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>CMIS CP4BA : </h4> 
+                        {% if CMIS_CP4BA == 'FAILED' %}
+                            <p style="color: RED">{{ CMIS_CP4BA }}</p>
+                        {% elif CMIS_CP4BA == 'Not executed' %}
+                            <p style="color: blue">{{ CMIS_CP4BA }}</p>
+                        {% elif CMIS_CP4BA == 'N/A' %}
+                            <p style="color: purple">{{ CMIS_CP4BA }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CMIS_CP4BA }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>CMIS OCP (Legacy route): </h4> 
+                        {% if CMIS_OCP == 'FAILED' %}
+                            <p style="color: RED">{{ CMIS_OCP }}</p>
+                        {% elif CMIS_OCP == 'Not executed' %}
+                            <p style="color: blue">{{ CMIS_OCP }}</p>
+                        {% elif CMIS_OCP == 'N/A' %}
+                            <p style="color: purple">{{ CMIS_OCP }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CMIS_OCP }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>TM : </h4> 
+                        {% if TM == 'FAILED' %}
+                            <p style="color: RED">{{ TM }}</p>
+                        {% elif TM == 'Not executed' %}
+                            <p style="color: blue">{{ TM }}</p>
+                        {% elif TM == 'N/A' %}
+                            <p style="color: purple">{{ TM }}</p>
+                        {% else %}
+                            <p style="color: green">{{ TM }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>IER : </h4> 
+                        {% if IER == 'FAILED' %}
+                            <p style="color: RED">{{ IER }}</p>
+                        {% elif IER == 'Not executed' %}
+                            <p style="color: blue">{{ IER }}</p>
+                        {% elif IER == 'N/A' %}
+                            <p style="color: purple">{{ IER }}</p>
+                        {% else %}
+                            <p style="color: green">{{ IER }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>IER Plugin : </h4> 
+                        {% if IER_Plugin == 'FAILED' %}
+                            <p style="color: RED">{{ IER_Plugin }}</p>
+                        {% elif IER_Plugin == 'Not executed' %}
+                            <p style="color: blue">{{ IER_Plugin }}</p>
+                        {% elif IER_Plugin == 'N/A' %}
+                            <p style="color: purple">{{ IER_Plugin }}</p>
+                        {% else %}
+                            <p style="color: green">{{ IER_Plugin }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>OCP installed operators : </h4>
+                        {% if OCP_installed_operators == 'FAILED' %}
+                            <p style="color: RED">{{ OCP_installed_operators }}</p>
+                        {% elif OCP_installed_operators == 'Not executed' %}
+                            <p style="color: blue">{{ OCP_installed_operators }}</p>
+                        {% elif OCP_installed_operators == 'N/A' %}
+                            <p style="color: purple">{{ OCP_installed_operators }}</p>
+                        {% else %}
+                            <p style="color: green">{{ OCP_installed_operators }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>OCP access configmaps : </h4> 
+                        {% if OCP_access_configmaps == 'FAILED' %}
+                            <p style="color: RED">{{ OCP_access_configmaps }}</p>
+                        {% elif OCP_access_configmaps == 'Not executed' %}
+                            <p style="color: blue">{{ OCP_access_configmaps }}</p>
+                        {% elif OCP_access_configmaps == 'N/A' %}
+                            <p style="color: purple">{{ OCP_access_configmaps }}</p>
+                        {% else %}
+                            <p style="color: green">{{ OCP_access_configmaps }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>OCP init configmaps : </h4> 
+                        {% if OCP_init_configmap == 'FAILED' %}
+                            <p style="color: RED">{{ OCP_init_configmap }}</p>
+                        {% elif OCP_init_configmap == 'Not executed' %}
+                            <p style="color: blue">{{ OCP_init_configmap }}</p>
+                        {% elif OCP_init_configmap == 'N/A' %}
+                            <p style="color: purple">{{ OCP_init_configmap }}</p>
+                        {% else %}
+                            <p style="color: green">{{ OCP_init_configmap }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>OCP verify configmaps : </h4> 
+                        {% if OCP_verify_configmap == 'FAILED' %}
+                            <p style="color: RED">{{ OCP_verify_configmap }}</p>
+                        {% elif OCP_verify_configmap == 'Not executed' %}
+                            <p style="color: blue">{{ OCP_verify_configmap }}</p>
+                        {% elif OCP_verify_configmap == 'N/A' %}
+                            <p style="color: purple">{{ OCP_verify_configmap }}</p>
+                        {% else %}
+                            <p style="color: green">{{ OCP_verify_configmap }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>CPE index area : </h4> 
+                        {% if CPE_index_area == 'FAILED' %}
+                            <p style="color: RED">{{ CPE_index_area }}</p>
+                        {% elif CPE_index_area == 'Not executed' %}
+                            <p style="color: blue">{{ CPE_index_area }}</p>
+                        {% elif CPE_index_area == 'N/A' %}
+                            <p style="color: purple">{{ CPE_index_area }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CPE_index_area }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>CPE_ICN_Object_store : </h4> 
+                        {% if CPE_ICN_Object_store == 'FAILED' %}
+                            <p style="color: RED">{{ CPE_ICN_Object_store }}</p>
+                        {% elif CPE_ICN_Object_store == 'Not executed' %}
+                            <p style="color: blue">{{ CPE_ICN_Object_store }}</p>
+                        {% elif CPE_ICN_Object_store == 'N/A' %}
+                            <p style="color: purple">{{ CPE_ICN_Object_store }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CPE_ICN_Object_store }}</p>
+                        {% endif %}
+                    </div>
+                    {% if "Not executed" not in CPE_ObjectStore_Tablespaces_Creation %}
+                    <div><h4>CPE_ObjectStore_Tablespaces_Creation : </h4> 
+                        {% if CPE_ObjectStore_Tablespaces_Creation == 'FAILED' %}
+                            <p style="color: RED">{{ CPE_ObjectStore_Tablespaces_Creation }}</p>
+                        {% elif CPE_ObjectStore_Tablespaces_Creation == 'N/A' %}
+                            <p style="color: purple">{{ CPE_ObjectStore_Tablespaces_Creation }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CPE_ObjectStore_Tablespaces_Creation }}</p>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    <div><h4>CSS_search : </h4> 
+                        {% if CSS_search == 'FAILED' %}
+                            <p style="color: RED">{{ CSS_search }}</p>
+                        {% elif CSS_search == 'Not executed' %}
+                            <p style="color: blue">{{ CSS_search }}</p>
+                        {% elif CSS_search == 'N/A' %}
+                            <p style="color: purple">{{ CSS_search }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CSS_search }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>CPE_Health_Page : </h4> 
+                        {% if CPE_Health_Page == 'FAILED' %}
+                            <p style="color: RED">{{ CPE_Health_Page }}</p>
+                        {% elif CPE_Health_Page == 'Not executed' %}
+                            <p style="color: blue">{{ CPE_Health_Page }}</p>
+                            {% elif Opensearch == 'N/A' %}
+                            <p style="color: purple">{{ Opensearch }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CPE_Health_Page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>CPE_Ping_page : </h4> 
+                        {% if CPE_Ping_page == 'FAILED' %}
+                            <p style="color: RED">{{ CPE_Ping_page }}</p>
+                        {% elif CPE_Ping_page == 'Not executed' %}
+                            <p style="color: blue">{{ CPE_Ping_page }}</p>
+                        {% elif CPE_Ping_page == 'N/A' %}
+                            <p style="color: purple">{{ CPE_Ping_page }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CPE_Ping_page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>CPE_P8BPMREST : </h4> 
+                        {% if CPE_P8BPMREST == 'FAILED' %}
+                            <p style="color: RED">{{ CPE_P8BPMREST }}</p>
+                        {% elif CPE_P8BPMREST == 'Not executed' %}
+                            <p style="color: blue">{{ CPE_P8BPMREST }}</p>
+                        {% elif CPE_P8BPMREST == 'N/A' %}
+                            <p style="color: purple">{{ CPE_P8BPMREST }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CPE_P8BPMREST }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>FileNet_Process_Services_ping_page : </h4> 
+                        {% if FileNet_Process_Services_ping_page == 'FAILED' %}
+                            <p style="color: RED">{{ FileNet_Process_Services_ping_page }}</p>
+                        {% elif FileNet_Process_Services_ping_page == 'Not executed' %}
+                            <p style="color: blue">{{ FileNet_Process_Services_ping_page }}</p>
+                        {% elif FileNet_Process_Services_ping_page == 'N/A' %}
+                            <p style="color: purple">{{ FileNet_Process_Services_ping_page }}</p>
+                        {% else %}
+                            <p style="color: green">{{ FileNet_Process_Services_ping_page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>FileNet_Process_Services_details_page : </h4> 
+                        {% if FileNet_Process_Services_details_page == 'FAILED' %}
+                            <p style="color: RED">{{ FileNet_Process_Services_details_page }}</p>
+                        {% elif FileNet_Process_Services_details_page == 'Not executed' %}
+                            <p style="color: blue">{{ FileNet_Process_Services_details_page }}</p>
+                        {% elif FileNet_Process_Services_details_page == 'N/A' %}
+                            <p style="color: purple">{{ FileNet_Process_Services_details_page }}</p>
+                        {% else %}
+                            <p style="color: green">{{ FileNet_Process_Services_details_page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>FileNet_P8_Content_Engine_Web_Service_page : </h4> 
+                        {% if FileNet_P8_Content_Engine_Web_Service_page == 'FAILED' %}
+                            <p style="color: RED">{{ FileNet_P8_Content_Engine_Web_Service_page }}</p>
+                        {% elif FileNet_P8_Content_Engine_Web_Service_page == 'Not executed' %}
+                            <p style="color: blue">{{ FileNet_P8_Content_Engine_Web_Service_page }}</p>
+                        {% elif FileNet_P8_Content_Engine_Web_Service_page == 'N/A' %}
+                            <p style="color: purple">{{ FileNet_P8_Content_Engine_Web_Service_page }}</p>
+                        {% else %}
+                            <p style="color: green">{{ FileNet_P8_Content_Engine_Web_Service_page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>FileNet_Process_Engine_Web_Service_page : </h4> 
+                        {% if FileNet_Process_Engine_Web_Service_page == 'FAILED' %}
+                            <p style="color: RED">{{ FileNet_Process_Engine_Web_Service_page }}</p>
+                        {% elif FileNet_Process_Engine_Web_Service_page == 'Not executed' %}
+                            <p style="color: blue">{{ FileNet_Process_Engine_Web_Service_page }}</p>
+                        {% elif FileNet_Process_Engine_Web_Service_page == 'N/A' %}
+                            <p style="color: purple">{{ FileNet_Process_Engine_Web_Service_page }}</p>
+                        {% else %}
+                            <p style="color: green">{{ FileNet_Process_Engine_Web_Service_page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>Content_Search_Services_health_check : </h4> 
+                        {% if Content_Search_Services_health_check == 'FAILED' %}
+                            <p style="color: RED">{{ Content_Search_Services_health_check }}</p>
+                        {% elif Content_Search_Services_health_check == 'Not executed' %}
+                            <p style="color: blue">{{ Content_Search_Services_health_check }}</p>
+                        {% elif Content_Search_Services_health_check == 'N/A' %}
+                            <p style="color: purple">{{ Content_Search_Services_health_check }}</p>
+                        {% else %}
+                            <p style="color: green">{{ Content_Search_Services_health_check }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>CPE_Legacy_Health_Page</h4> 
+                        {% if CPE_Stateless_Health_Page == 'FAILED' %}
+                            <p style="color: RED">{{ CPE_Stateless_Health_Page }}</p>
+                        {% elif CPE_Stateless_Health_Page == 'Not executed' %}
+                            <p style="color: blue">{{ CPE_Stateless_Health_Page }}</p>
+                        {% elif CPE_Legacy_Health_Page == 'N/A' %}
+                            <p style="color: purple">{{ CPE_Legacy_Health_Page }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CPE_Stateless_Health_Page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>CPE_Legacy_Ping_Page</h4> 
+                        {% if CPE_Stateless_Ping_Page == 'FAILED' %}
+                            <p style="color: RED">{{ CPE_Stateless_Ping_Page }}</p>
+                        {% elif CPE_Stateless_Ping_Page == 'Not executed' %}
+                            <p style="color: blue">{{ CPE_Stateless_Ping_Page }}</p>
+                        {% elif CPE_Stateless_Ping_Page == 'N/A' %}
+                            <p style="color: purple">{{ CPE_Stateless_Ping_Page }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CPE_Stateless_Ping_Page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>Stateless_FileNet_Process_Services_ping_page</h4> 
+                        {% if Stateless_FileNet_Process_Services_ping_page == 'FAILED' %}
+                            <p style="color: RED">{{ Stateless_FileNet_Process_Services_ping_page }}</p>
+                        {% elif Stateless_FileNet_Process_Services_ping_page == 'Not executed' %}
+                            <p style="color: blue">{{ Stateless_FileNet_Process_Services_ping_page }}</p>
+                        {% elif Stateless_FileNet_Process_Services_ping_page == 'N/A' %}
+                            <p style="color: purple">{{ Stateless_FileNet_Process_Services_ping_page }}</p>
+                        {% else %}
+                            <p style="color: green">{{ Stateless_FileNet_Process_Services_ping_page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>Stateless_FileNet_Process_Services_details_page</h4> 
+                        {% if Stateless_FileNet_Process_Services_details_page == 'FAILED' %}
+                            <p style="color: RED">{{ Stateless_FileNet_Process_Services_details_page }}</p>
+                        {% elif Stateless_FileNet_Process_Services_details_page == 'Not executed' %}
+                            <p style="color: blue">{{ Stateless_FileNet_Process_Services_details_page }}</p>
+                        {% elif Stateless_FileNet_Process_Services_details_page == 'N/A' %}
+                            <p style="color: purple">{{ Stateless_FileNet_Process_Services_details_page }}</p>
+                        {% else %}
+                            <p style="color: green">{{ Stateless_FileNet_Process_Services_details_page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>Stateless_FileNet_P8_Content_Engine_Web_Service_page</h4> 
+                        {% if Stateless_FileNet_P8_Content_Engine_Web_Service_page == 'FAILED' %}
+                            <p style="color: RED">{{ Stateless_FileNet_P8_Content_Engine_Web_Service_page }}</p>
+                        {% elif Stateless_FileNet_P8_Content_Engine_Web_Service_page == 'Not executed' %}
+                            <p style="color: blue">{{ Stateless_FileNet_P8_Content_Engine_Web_Service_page }}</p>
+                        {% elif Stateless_FileNet_P8_Content_Engine_Web_Service_page == 'N/A' %}
+                            <p style="color: purple">{{ Stateless_FileNet_P8_Content_Engine_Web_Service_page }}</p>
+                        {% else %}
+                            <p style="color: green">{{ Stateless_FileNet_P8_Content_Engine_Web_Service_page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>Stateless_FileNet_Process_Engine_Web_Service_page</h4> 
+                        {% if Stateless_FileNet_Process_Engine_Web_Service_page == 'FAILED' %}
+                            <p style="color: RED">{{ Stateless_FileNet_Process_Engine_Web_Service_page }}</p>
+                        {% elif Stateless_FileNet_Process_Engine_Web_Service_page == 'Not executed' %}
+                            <p style="color: blue">{{ Stateless_FileNet_Process_Engine_Web_Service_page }}</p>
+                        {% elif Stateless_FileNet_Process_Engine_Web_Service_page == 'N/A' %}
+                            <p style="color: purple">{{ Stateless_FileNet_Process_Engine_Web_Service_page }}</p>
+                        {% else %}
+                            <p style="color: green">{{ Stateless_FileNet_Process_Engine_Web_Service_page }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>Stateless_Content_Search_Services_health_check</h4> 
+                        {% if Stateless_Content_Search_Services_health_check == 'FAILED' %}
+                            <p style="color: RED">{{ Stateless_Content_Search_Services_health_check }}</p>
+                        {% elif Stateless_Content_Search_Services_health_check == 'Not executed' %}
+                            <p style="color: blue">{{ Stateless_Content_Search_Services_health_check }}</p>
+                        {% elif Stateless_Content_Search_Services_health_check == 'N/A' %}
+                            <p style="color: purple">{{ Stateless_Content_Search_Services_health_check }}</p>
+                        {% else %}
+                            <p style="color: green">{{ Stateless_Content_Search_Services_health_check }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>Opensearch/Elasticsearch</h4> 
+                        {% if 'FAILED' in Opensearch %}
+                            <p style="color: RED">{{ Opensearch }}</p>
+                        {% elif Opensearch == 'Not executed' %}
+                            <p style="color: blue">{{ Opensearch }}</p>
+                        {% elif Opensearch == 'N/A' %}
+                            <p style="color: purple">{{ Opensearch }}</p>
+                        {% else %}
+                            <p style="color: green">{{ Opensearch }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>Navigator_desktops : </h4> 
+                        {% if Navigator_desktops == 'FAILED' %}
+                            <p style="color: RED">{{ Navigator_desktops }}</p>
+                        {% elif Navigator_desktops == 'Not executed' %}
+                            <p style="color: blue">{{ Navigator_desktops }}</p>
+                        {% elif Navigator_desktops == 'N/A' %}
+                            <p style="color: purple">{{ Navigator_desktops }}</p>
+                        {% else %}
+                            <p style="color: green">{{ Navigator_desktops }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>Navigator Legacy route : </h4>
+                        {% if Navigator_Second == 'FAILED' %}
+                            <p style="color: RED">{{ Navigator_Second }}</p>
+                        {% elif Navigator_Second == 'Not executed' %}
+                            <p style="color: blue">{{ Navigator_Second }}</p>
+                        {% elif Navigator_Second == 'N/A' %}
+                            <p style="color: purple">{{ Navigator_Second }}</p>
+                        {% else %}
+                            <p style="color: green">{{ Navigator_Second }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>CMOD : </h4> 
+                        {% if CMOD == 'FAILED' %}
+                            <p style="color: RED">{{ CMOD }}</p>
+                        {% elif CMOD == 'Not executed' %}
+                            <p style="color: blue">{{ CMOD }}</p>
+                        {% elif CMOD == 'N/A' %}
+                            <p style="color: purple">{{ CMOD }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CMOD }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>CM8 : </h4> 
+                        {% if CM8 == 'FAILED' %}
+                            <p style="color: RED">{{ CM8 }}</p>
+                        {% elif CM8 == 'Not executed' %}
+                            <p style="color: blue">{{ CM8 }}</p>
+                        {% elif CM8 == 'N/A' %}
+                            <p style="color: purple">{{ CM8 }}</p>
+                        {% else %}
+                            <p style="color: green">{{ CM8 }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>Graphql : </h4> 
+                        {% if Graphql == 'FAILED' %}
+                            <p style="color: RED">{{ Graphql }}</p>
+                        {% elif Graphql == 'Not executed' %}
+                            <p style="color: blue">{{ Graphql }}</p>
+                        {% elif Graphql == 'N/A' %}
+                            <p style="color: purple">{{ Graphql }}</p>
+                        {% else %}
+                            <p style="color: green">{{ Graphql }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>OC Automations : </h4> 
+                        {% if OC_Automations == 'FAILED' %}
+                            <p style="color: RED">{{ OC_Automations }}</p>
+                        {% elif OC_Automations == 'Not executed' %}
+                            <p style="color: blue">{{ OC_Automations }}</p>
+                        {% else %}
+                            <p style="color: green">{{ OC_Automations }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>JVM Custom Options : </h4> 
+                        {% if JVM_Custom_Options == 'FAILED' %}
+                            <p style="color: RED">{{ JVM_Custom_Options }}</p>
+                        {% elif JVM_Custom_Options == 'Not executed' %}
+                            <p style="color: blue">{{ JVM_Custom_Options }}</p>
+                        {% elif JVM_Custom_Options == 'N/A' %}
+                            <p style="color: purple">{{ JVM_Custom_Options }}</p>
+                        {% else %}
+                            <p style="color: green">{{ JVM_Custom_Options }}</p>
+                        {% endif %}
+                    </div>
+                    <div><h4>FISMA : </h4> 
+                        {% if FISMA == 'FAILED' %}
+                            <p style="color: RED">{{ FISMA }}</p>
+                        {% elif FISMA == 'Not executed' %}
+                            <p style="color: blue">{{ FISMA }}</p>
+                        {% elif FISMA == 'N/A' %}
+                            <p style="color: purple">{{ FISMA }}</p>
+                        {% else %}
+                            <p style="color: green">{{ FISMA }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="issues">
+                <h2 id="issues">Issues</h2>
+                <p>{{ issues }}</p>
+            </div>    
+        </div>
+        
+        <p>
+            <strong>Platform:</strong> {{ platform }}
+        </p>
+        <p>
+            <strong>Project:</strong> {{ project }}
+        </p>
+
+        <p><strong>Deployment Type : </strong> {{ deployment_type }} </p> 
+        <p><strong>Liberty version : </strong> {{ liberty }}</p>
+        <p><strong>Java version :  </strong> {{ java_version }}</p>
+        <p><strong>Credentials : </strong> {{ credentials }}</p>
+        <p><strong>env :  </strong> {{ env }}</p>
+        <p><strong>console link : </strong> {{ console_link }}</p>
+        <p><strong>infra node : </strong> {{ infrastructure_node }}</p>
+        <p><strong>root credentials : </strong> {{ root_credentials }}</p>
+        <p><strong>Fips : </strong> {{ fips_status }}</p>
+        <p><strong>Egress Network Policy : </strong> {{ egress }}</p>
+        
+        <h2>Database</h2> <p>{{ database }}</p>
+
+        <h2>LDAP</h2>  <p>{{ ldap }}</p>
+
+        <h2>Products</h2>
+        <ul>
+            {% for product in products %}
+                <li>{{ product }}</li>
+            {% endfor %}
+        </ul>
+        
+        <h2>Test Cases</h2>
+        <ul>
+            {% for test_case in test_cases %}
+                <li>{{ test_case }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Scripts Tested</h2>
+        <ul>
+            {% for script in scripts_tested %}
+                <li>{{ script }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>CP4BA Deployment Status</h2><pre class="status"> {% for category, services in deployment_status.items() %}
+            <div class="service"> 
+                <span class="category">{{ category }} :</span>
+                {% for service, status in services.items() %}
+                <span>{{ service }}</span> <span class="colon">:</span> <span>{{ status }}</span>{% endfor %}
+            </div>{% endfor %}</pre>
+
+        <h2>Installed Operators</h2>
+        <img src="{{ installed_operators }}" alt="Installed Operators">
+
+        <h2>Init & Verify ConfigMaps</h2>
+        <img src="{{ init_configmaps }}" alt="Init ConfigMap">
+        <img src="{{ verify_configmaps }}" alt="Verify ConfigMap">
+
+        <h2>AccessConfigMaps</h2>
+        <img src="{{ access_configmaps }}" alt="AccessConfigMaps">
+
+        <h2>CPE</h2>
+        <h4>OS01 Index Area:</h4>
+        <img src="{{ cpe.index_area }}" alt="CPE Init/Verify Area">
+        {% if "Not executed" not in CPE_ObjectStore_Tablespaces_Creation %}
+        <h4>ACCE OS Tablespaces:</h4>
+        <img src="{{ cpe.os_tablespaces }}" alt="CPE ObjectStore Tablespaces Creation">
+        {% endif %}
+        <h4>CPE Health Page:</h4>
+        <img src="{{ cpe.health_page }}" alt="CPE Health Page">
+        <h4>CPE Ping Page:</h4>
+        <img src="{{ cpe.ping_page }}" alt="CPE Ping Page">
+        <h4>CPE P8BPMREST Endpoint:</h4>
+        <img src="{{ cpe.p8bpmrest }}" alt="CPE P8BPMREST Endpoint">
+        <h4>FileNet Process Services ping page:</h4>
+        <img src="{{ cpe.FileNet_Process_Services_ping_page }}" alt="FileNet Process Services ping page">        
+        <h4>FileNet Process Services details page:</h4>
+        <img src="{{ cpe.FileNet_Process_Services_details_page }}" alt="FileNet Process Services details page">
+        <h4>FileNet P8 Content Engine Web Service page:</h4>
+        <img src="{{ cpe.FileNet_P8_Content_Engine_Web_Service_page }}" alt="FileNet P8 Content Engine Web Service page">
+        <h4>FileNet Process Engine Web Service(PEWS) page</h4>
+        <img src="{{ cpe.FileNet_Process_Engine_Web_Service_page }}" alt="FileNet Process Engine Web Service(PEWS) page">
+        <h4>Content Search Services health check:</h4>
+        <img src="{{ cpe.Content_Search_Services_health_check }}" alt="Content Search Services health check">
+    
+        <h4>CPE Stateless Health Page:</h4>
+        <img src="{{ cpe.legacy_health_page }}" alt="Stateless CPE legacy Health Page">
+        <h4>CPE Stateless Ping Page:</h4>
+        <img src="{{ cpe.legacy_ping_page }}" alt="Stateless CPE legacy Ping Page">
+        <h4>Stateless FileNet Process Services ping page:</h4>
+        <img src="{{ cpe.Stless_FileNet_Process_Services_ping_page }}" alt="Stateless FileNet Process Services ping page">        
+        <h4>Stateless FileNet Process Services details page:</h4>
+        <img src="{{ cpe.Stless_FileNet_Process_Services_details_page }}" alt="Stateless FileNet Process Services details page">
+        <h4>Stateless FileNet P8 Content Engine Web Service page:</h4>
+        <img src="{{ cpe.Stless_FileNet_P8_Content_Engine_Web_Service_page }}" alt="Stateless FileNet P8 Content Engine Web Service page">
+        <h4>Stateless FileNet Process Engine Web Service(PEWS) page</h4>
+        <img src="{{ cpe.Stless_FileNet_Process_Engine_Web_Service_page }}" alt="Stateless FileNet Process Engine Web Service(PEWS) page">
+        <h4>Stateless Content Search Services health check:</h4>
+        <img src="{{ cpe.Stless_Content_Search_Services_health_check }}" alt="Stateless Content Search Services health check">
+    
+        <h2>CSS Search</h2>
+        <img src="{{ css_search }}" alt="CSS Search">
+
+        <h2>Opensearch Search</h2>
+        <img src="{{ opensearch }}" alt="Opensearch Search">
+
+        <h2>Navigator:</h2>
+        <h4>Init/Verify</h4>
+        <img src="{{ navigator.d1 }}" alt="Navigator 1">
+        <img src="{{ navigator.d2 }}" alt="Navigator 2">
+        <h4>CM8:</h4>
+        <img src="{{ navigator.cm8 }}" alt="Navigator CM8">
+        <h4>CMOD:</h4>
+        <img src="{{ navigator.cmod }}" alt="Navigator CMOD">
+
+        <h2>ICN Object Store Browse:</h2>
+        <img src="{{ icn_object_store_browse }}" alt="ICN Object Store Browse">
+
+        <h2>Task Manager:</h2>
+        <img src="{{ task_manager }}" alt="Task Manager">
+
+        <h2>CMIS:</h2>
+        <h4>CP4BA :</h4>
+        <img src="{{ cmis.cp4ba }}" alt="CP4BA Init/Verify">
+        <h4>CP4BA (OCP route):</h4>
+        <img src="{{ cmis.ocp_route }}" alt="CP4BA OCP Route">
+
+        <h2>GraphQL:</h2>
+            <img src="{{ graphql1 }}" alt="GraphQL">
+            <img src="{{ graphql2 }}" alt="GraphQL">
+            <img src="{{ graphql3 }}" alt="GraphQL">
+
+        <h2>IER :</h2>
+        <img src="{{ ier1 }}" alt="IER">
+        <img src="{{ ier2 }}" alt="IER">
+
+        <h2>IER Plugin Upload to Navigator:</h2>
+        <img src="{{ IER_plugin }}" alt="IER">
+
+        <h2>BAI:</h2>
+        <h3>Content Dashboard</h3>
+        <img src="{{ bai }}" alt="BAI_Content_Dashboard">
+        <h3>Navigator Dashboard</h3>
+        <img src="{{ nav_dash }}" alt="BAI_Navigator_Dashboard">
+
+        <h2>ICCSAP:</h2>
+        <img src="{{ iccsap }}" alt="ICCSAP">
+        <img src="{{ iccsap_pluggin }}" alt="ICCSAP">
+    </body>
+</html>

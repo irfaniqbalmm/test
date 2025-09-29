@@ -1,0 +1,21 @@
+GRANT "CONNECT" TO FPOS_Schema;
+GRANT "RESOURCE" TO FPOS_Schema;
+GRANT CREATE SESSION TO FPOS_Schema;
+GRANT UNLIMITED TABLESPACE TO FPOS_Schema;
+GRANT ALTER SESSION TO FPOS_Schema;
+GRANT CREATE TABLE TO FPOS_Schema;
+GRANT CREATE VIEW TO FPOS_Schema;
+GRANT CREATE SEQUENCE TO FPOS_Schema;
+GRANT SELECT on pending_trans$ TO FPOS_Schema;
+GRANT SELECT on dba_2pc_pending TO FPOS_Schema;
+GRANT SELECT on dba_pending_transactions TO FPOS_Schema;
+GRANT EXECUTE on dbms_system TO FPOS_Schema;
+GRANT EXECUTE on dbms_xa TO FPOS_Schema;
+GRANT SELECT on DUAL TO FPOS_Schema;
+GRANT SELECT on product_component_version TO FPOS_Schema;
+GRANT SELECT on USER_INDEXES TO FPOS_Schema;
+alter user FPOS_Schema quota unlimited on {DB_NAME}DATATS;
+GRANT SELECT on sys.pending_trans$ TO FPOS_Schema ;
+ALTER USER FPOS_Schema default tablespace {DB_NAME}DATATS QUOTA UNLIMITED ON {DB_NAME}DATATS;
+
+commit;

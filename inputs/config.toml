@@ -1,0 +1,66 @@
+[configurations]
+project_name = 'namespace'
+build = 'deployed build'
+ifix_version = 'deployed ifix version'
+cluster = 'cluster name'
+deployment_type = 'deployment type'
+DB = 'database type used'
+LDAP = 'ldap type used'
+user = 'kind of user to execute BVT'
+oc_verify = 'True/False'
+ocp_version = 'version of ocp'
+multildap = 'True/False'
+
+[git]
+git_user = 'git username'
+git_pwd = 'git password'
+
+[cmod]
+cmodrepositoryname = 'CMOD repository name'
+cmod_desktop_name = 'CMOD desktop name'
+u_cmodrepositoryname = 'CMOD post-upgrade repository name'
+u_cmod_desktop_name =  'CMOD post-upgrade desktop name'
+cmodreposervname = 'CMOD server name'
+cmodusername = 'CMOD server username'
+cmodpassword = 'CMOD server password'
+
+[cm8]
+cm8repositoryname = 'CM8 repository name'
+cm8_desktop_name = 'CM8 desktop name'
+u_cm8repositoryname = 'CM8 post-upgrade repository name'
+u_cm8_desktop_name = 'CM8 post-upgrade desktop name'
+cm8_Server = 'CM8 server name'
+cm8username = 'CM8 server username'
+cm8password = 'CM8 server password'
+
+[credentials]
+infra_node_uname = 'infra node username'
+infra_node_pwd = 'infra node password'
+kube_admin_username = 'kubeadmin username'
+kube_admin_password = 'kubeadmin password'
+app_login_username = 'App login username'
+app_login_password = 'App login password'
+
+[paths]
+base_path = 'base path of BVT'
+screenshot_path = 'path to screenshots folder'
+download_path = 'path to downloads folder'
+reports = 'path to reports folder'
+generated_reports_path = 'path to generated reports folder'
+report_path = 'path to html report'
+report_template_path = 'path to report template'
+cluster_file = 'path to the cluster file'
+
+[ocp_paths]
+ocp = 'ocp url'
+config_maps = 'configmaps url'
+secrets = 'ocp secrets url'
+
+[graphql]
+graphql_folder_name = 'graphql folder name'
+graphqlcmd1 = 'graphql query 1'
+graphqlcmd2 = 'graphql query 2'
+graphqlcmd3 = 'graphql query 3'
+s_graphqlcmd1 = 'graphql query 1 for starter'
+s_graphqlcmd2 = 'graphql query 2 for starter'
+s_graphqlcmd3 = 'graphql query 3 for starter'

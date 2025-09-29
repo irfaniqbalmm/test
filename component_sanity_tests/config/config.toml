@@ -1,0 +1,55 @@
+[configurations]
+project_name = 'namespace'
+build = 'deployed build'
+ifix_version = 'deployed ifix version'
+cluster = 'cluster name'
+deployment_type = 'deployment type'
+DB = 'database type used'
+LDAP = 'ldap type used'
+ocp_version = 'version of ocp'
+ier_sanity = 'True/False'
+iccsap_sanity = 'True/False'
+
+[credentials]
+infra_node_uname = 'infra node username'
+infra_node_pwd = 'infra node password'
+kube_admin_username = 'kubeadmin username'
+kube_admin_password = 'kubeadmin password'
+app_login_username = 'App login username'
+app_login_password = 'App login password'
+
+[paths]
+base_path = 'base path of BVT'
+cluster_file = 'path to the cluster file'
+
+[ocp_paths]
+ocp = 'ocp url'
+config_maps = 'configmaps url'
+secrets = 'ocp secrets url'
+
+[iccsap]
+reports = 'path to iccsap reports folder'
+screenshot_path = 'path to iccsap screenshots folder'
+generated_reports_path = 'path to iccsap generated reports folder'
+report_path = 'path to iccsap html report'
+report_template_path = 'path to iccsap report template'
+resources = 'path to iccsap resources folder'
+download_path = 'path to iccsap downloads folder'
+
+[ier]
+reports = 'path to ier reports folder'
+screenshot_path = 'path to ier screenshots folder'
+generated_reports_path = 'path to ier generated reports folder'
+report_path = 'path to ier html report'
+report_template_path = 'path to ier report template'
+resources = 'path to ier resources folder'
+download_path = 'path to ier downloads folder'
+
+[cpe]
+reports = 'path to cpe reports folder'
+screenshot_path = 'path to cpe screenshots folder'
+generated_reports_path = 'path to cpe generated reports folder'
+report_path = 'path to cpe html report'
+report_template_path = 'path to cpe report template'
+resources = 'path to cpe resources folder'
+download_path = 'path to cpe downloads folder'

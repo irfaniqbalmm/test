@@ -1,0 +1,338 @@
+{
+    "bracken": {
+        "kube_pwd": "STiUq-iJQyb-wTbf6-IMVDh",
+        "root_pwd": "Admin@123123123",
+        "version": "4.12",
+        "site": "svl"
+    },
+    "spiderman": {
+        "kube_pwd": "p4BDE-qmbjo-wMPQg-mojQr",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18",
+        "site": "svl"
+    },
+    "o1-376901": {
+        "kube_pwd": "kIcBV-SvhQh-armSg-zqgki",
+        "root_pwd": "T1iU1ClnYFQCYB3@acgc",
+        "version": "4.14",
+        "site": "svl"
+    },
+    "zbangalore": {
+        "kube_pwd": "dWef6-Fj5PV-rDEHH-kdHYU",
+        "root_pwd": "Filenet123=Filenet123=",
+        "version": "4.14",
+        "site": "svl"
+    },
+    "ocp412-emer": {
+        "kube_pwd": "KigNZ-jdsuk-vmF5e-goEg9",
+        "root_pwd": "Pass4svt123123!",
+        "version": "4.14",
+        "site": "svl"
+    },
+    "mingle": {
+        "kube_pwd": "I2YSz-t5qiX-HdfNe-y2Int",
+        "root_pwd": "Admin@123123123",
+        "version": "4.14",
+        "site": "rtp"
+    },
+    "adp-perf-mags2": {
+        "kube_pwd": "Rb9hn-j2csr-dbByE-sGZB3",
+        "root_pwd": "IRL:svt:123:098",
+        "version": "4.14",
+        "site": "svl"
+    },
+    "tacoma": {
+        "kube_pwd": "TkZtQ-A8WbU-oFRbb-g6mGJ",
+        "root_pwd": "Pass4svt",
+        "version": "4.14",
+        "site": "svl"
+    },
+    "antman": {
+        "kube_pwd": "uwH8z-jLSwC-W5yA2-yVQWg",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18",
+        "site": "svl"
+    },
+    "hulk": {
+        "kube_pwd": "d6LyH-7akv7-bD4pz-ybf4Y",
+        "root_pwd": "Admin@123123123",
+        "version": "4.15",
+        "site": "svl"
+    },
+    "nexon": {
+        "kube_pwd": "LBdoj-krYZc-s3dYg-vnLJp",
+        "root_pwd": "Admin@123123123",
+        "version": "4.19.9",
+        "site": "rtp"
+    },
+    "adpifix": {
+        "kube_pwd": "wIw5x-Xqe3R-h6UMe-tEMoE",
+        "root_pwd": "Pass4svt",
+        "version": "4.14",
+        "site": "svl"
+    },
+    "dingdong": {
+        "kube_pwd": "sap5E-imkSI-rB5b3-JuPbU",
+        "root_pwd": "Admin@123123123",
+        "version": "4.12",
+        "site": "svl"
+    },
+    "tiago": {
+        "kube_pwd": "h7xrs-597Dh-9uYMH-t5Thw",
+        "root_pwd": "Admin@123123123",
+        "version": "4.15",
+        "site": "rtp"
+    },
+    "ecm1-ipv6": {
+        "kube_pwd": "AhL6k-vX75X-e7kTA-U6SP5",
+        "root_pwd": "Pass4svtPass4svt@",
+        "version": "4.15",
+        "site": "svl"
+    },
+    "zalexa": {
+        "kube_pwd": "h5G3V-9YxfU-5njdC-DetdP",
+        "root_pwd": "Admin@123123123",
+        "version": "4.12",
+        "site": "svl"
+    },
+    "zocp": {
+        "kube_pwd": "g4Bku-BHL77-45QQm-wwvQn",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18",
+        "site": "svl"
+    },
+    "hawkeye": {
+        "kube_pwd": "6d5vD-bjBeg-QTpvf-ojbEb",
+        "root_pwd": "Admin@123123123",
+        "version": "4.16",
+        "site": "svl"
+    },
+    "whitestar": {
+        "kube_pwd": "vcH6J-Aoa5k-FTHdX-vba6z",
+        "root_pwd": "Admin@123123123",
+        "version": "4.15",
+        "site": "svl"
+    },
+    "harrison-sno-x": {
+        "kube_pwd": "CZQZ5-Ae8W4-wfaQD-x8r7g",
+        "root_pwd": "T1iU1ClnYFQCYB3@acgc",
+        "version": "4.14",
+        "site": "svl"
+    },
+    "docstrange": {
+        "kube_pwd": "kCCZm-yvuQi-uPZZP-BtWfD",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18",
+        "site": "svl"
+    },
+    "jamesbond": {
+        "kube_pwd": "7ABBW-e9fqs-yNwsR-FodoT",
+        "root_pwd": "Admin@123123123",
+        "version": "4.17",
+        "site": "svl"
+    },
+    "hanuman": {
+        "kube_pwd": "92VX5-6bFdb-zeoQv-vRNVI",
+        "root_pwd": "Admin@123123123",
+        "version": "4.17",
+        "site": "svl"
+    },
+    "bat-man": {
+        "kube_pwd": "JeGiw-sNFkC-6YHZZ-VXpk2",
+        "root_pwd": "Admin@123123123",
+        "version": "4.17",
+        "site": "svl"
+    },
+    "yellow": {
+        "kube_pwd": "Dv5d5-V5r4c-oirL7-SJPe7",
+        "root_pwd": "Admin@123123123",
+        "version": "4.12.55",
+        "site": "rtp"
+    },
+    "gold": {
+        "kube_pwd": "vPE94-8vEnP-iNHN4-QPmf7",
+        "root_pwd": "Admin@123123123",
+        "version": "4.12.55",
+        "site": "rtp"
+    },
+    "quicksilver": {
+        "kube_pwd": "7ogqb-ShiVB-gvFfn-BgxHF",
+        "root_pwd": "Admin@123123123",
+        "version": "4.17",
+        "site": "svl"
+    },
+    "donaldduck": {
+        "kube_pwd": "kvXkY-Dd9Rt-beDRf-FX6MT",
+        "root_pwd": "Admin@123123123",
+        "version": "4.19",
+        "site": "svl"
+    },
+    "avengers": {
+        "kube_pwd": "QDSeR-9dHSn-SLrDg-KBTTg",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18",
+        "site": "svl"
+    },
+    "flash": {
+        "kube_pwd": "5ZfGS-UjrKq-n8Smr-7PSGM",
+        "root_pwd": "Admin@123123123",
+        "version": "4.17",
+        "site": "svl"
+    },
+    "sakura": {
+        "kube_pwd": "W9wVV-MaKsK-vvtaM-xK3fI",
+        "root_pwd": "Admin@123123123",
+        "version": "4.14",
+        "site": "rtp"
+    },
+    "krishna": {
+        "kube_pwd": "5wWYp-s4vgm-Luzbm-HGnXN",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18",
+        "site": "svl"
+    },
+    "kochi": {
+        "kube_pwd": "DCHUY-79eWB-9Uabn-mS35Z",
+        "root_pwd": "Admin@123123123",
+        "version": "4.14",
+        "site": "rtp"
+    },
+    "cucumber": {
+        "kube_pwd": "N52pQ-9GJgU-XpbQm-fVF5u",
+        "root_pwd": "Admin@123123123",
+        "version": "4.17",
+        "site": "rtp"
+    },
+    "prayer": {
+        "kube_pwd": "pCQQc-B5ShD-dSVUx-ESRQG",
+        "root_pwd": "Admin@123123123",
+        "version": "4.12",
+        "site": "rtp"
+    },
+    "captainmarvel": {
+        "kube_pwd": "9PRyd-6YdPV-P9LeJ-rmzLA",
+        "root_pwd": "Admin@123123123",
+        "version": "4.12",
+        "site": "svl"
+    },
+    "gardens": {
+        "kube_pwd": "8Jq64-Rgcce-Kjj2j-XNdJt",
+        "root_pwd": "Pass4svt",
+        "version": "4.15",
+        "site": "svl"
+    },
+    "super-man": {
+        "kube_pwd": "4pCvd-JDZUr-VerRK-SKZGN",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18",
+        "site": "svl"
+    },
+    "falcon": {
+        "kube_pwd": "sSRjP-gqf7P-fQw6x-9FYFx",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18",
+        "site": "svl"
+    },
+    "panther": {
+        "kube_pwd": "unnIg-amiwB-Kfk2t-SaCyd",
+        "root_pwd": "Admin@123123123",
+        "version": "4.19",
+        "site": "svl"
+    },
+    "greenish": {
+        "kube_pwd": "gLLoB-WkcGj-DG37C-iYkvx",
+        "root_pwd": "Admin@123123123",
+        "version": "4.12.71",
+        "site": "svl"
+    },
+    "bluish": {
+        "kube_pwd": "AyQVJ-y3wfP-3uQ63-AJmnf",
+        "root_pwd": "Admin@123123123",
+        "version": "4.14.50",
+        "site": "svl"
+    },
+    "nimbora": {
+        "kube_pwd": "gMqTS-wZwCe-VF29N-yTZwW",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18.15",
+        "site": "svl"
+    },
+    "white": {
+        "kube_pwd": "ccCnj-2SSo8-qdZVT-9fjr7",
+        "root_pwd": "Admin@123123123",
+        "version": "4.14",
+        "site": "rtp"
+    },
+    "narutto": {
+        "kube_pwd": "fitXG-CmcV3-MPic2-nZS4m",
+        "root_pwd": "Admin@123123123",
+        "version": "4.19.0",
+        "site": "svl"
+    },
+    "violet": {
+        "kube_pwd": "NoIEn-P2HYj-4DINU-ibR3K",
+        "root_pwd": "Admin@123123123",
+        "version": "4.17.0",
+        "site": "rtp"
+    },
+    "horizon2": {
+        "kube_pwd": "2rFfa-WIiUm-IG6s4-Vr3GW",
+        "root_pwd": "Pwk12s7j!777777",
+        "version": "4.18.15",
+        "site": "svl"
+    },
+    "orochimaru": {
+        "kube_pwd": "vYRag-s5XH4-skDRM-Q3vDh",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18.21",
+        "site": "rtp"
+    },
+    "test": {
+        "kube_pwd": "cwVUH-TFuVo-zVedz-PgMay",
+        "root_pwd": "Iccfes@12345678",
+        "version": "4.19.7",
+        "site": "svl"
+    },
+    "lion": {
+        "kube_pwd": "DbeXi-3NN5K-niNEs-keFwb",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18.22",
+        "site": "rtp"
+    },
+    "tigor": {
+        "kube_pwd": "Fcj9F-QBks7-DE8uD-cvQPd",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18.22",
+        "site": "rtp"
+    },
+    "loki": {
+        "kube_pwd": "fE4ba-RRTog-ghLuf-7u7fd",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18",
+        "site": "rtp"
+    },
+    "blackish": {
+        "kube_pwd": "ZsZxt-fKJSy-MigWH-47FUK",
+        "root_pwd": "Admin@123123123",
+        "version": "4.19.10",
+        "site": "svl"
+    },
+    "cp4bavault": {
+        "kube_pwd": "v7q3F-zLaKU-e7wQH-LZze7",
+        "root_pwd": "Admin@123123123",
+        "version": "4.19.10",
+        "site": "svl"
+    },
+    "falcon": {
+        "kube_pwd": "22Utx-uEyNU-5smUt-kxLcy",
+        "root_pwd": "Admin@123123123",
+        "version": "4.18.23",
+        "site": "svl"
+    },
+    "tulips": {
+        "kube_pwd": "xzUMK-Z8WyW-ye2j6-nrfkp",
+        "root_pwd": "Filenet6000Icm!",
+        "version": "4.19.7",
+        "site": "svl"
+    }
+}

@@ -1,0 +1,24 @@
+{"24.0.0": 
+    {"ibm-cert-manager-operator": "v4.2.6",
+    "cloud-native-postgresql" : "v1.18.12",
+    "ibm-ads-operator":"v24.0.1",
+    "ibm-bts-operator":"v3.33.1",
+    "ibm-common-service-operator":"v4.6.4",
+    "ibm-commonui-operator":"v4.4.3",
+    "ibm-content-operator":"v24.0.1",
+    "ibm-cp4a-operator":"v24.0.1",
+    "ibm-cp4a-wfps-operator":"v24.0.1",
+    "ibm-dpe-operator":"v24.0.1",
+    "ibm-elasticsearch-operator":"v1.1.2213",
+    "ibm-events-operator":"v5.0.1",
+    "ibm-iam-operator":"v4.5.3",
+    "ibm-insights-engine-operator":"v24.0.1",
+    "ibm-odm-operator":"v24.0.1",
+    "ibm-opencontent-flink":"v2.0.2",
+    "ibm-pfs-operator":"v24.0.1",
+    "ibm-workflow-operator":"v24.0.1",
+    "ibm-zen-operator":"v5.1.6",
+    "icp4a-foundation-operator":"v24.0.1",
+    "operand-deployment-lifecycle-manager":"v4.3.3"
+}
+}

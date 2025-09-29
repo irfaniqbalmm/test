@@ -1,0 +1,11 @@
+configobj
+ruamel.yaml
+pexpect
+pandas
+gitpython
+pyodbc
+requests
+configparser
+gitpython
+pyyaml
+yq

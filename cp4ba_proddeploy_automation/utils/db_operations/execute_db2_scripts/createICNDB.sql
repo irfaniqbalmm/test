@@ -1,0 +1,19 @@
+-- Creating DB named: ICN_DB2
+CREATE DATABASE ICN_DB2 AUTOMATIC STORAGE YES USING CODESET UTF-8 TERRITORY US PAGESIZE 32 K;
+CONNECT TO ICN_DB2;
+CREATE Bufferpool ICN_DB2_BP IMMEDIATE SIZE AUTOMATIC PAGESIZE 32K;
+CREATE Bufferpool ICN_DB2_TEMPBP IMMEDIATE SIZE 200 PAGESIZE 32K;
+
+-- The default table space name is "ICNDB".
+-- If use default table space name "ICNDB", you do not need to input the value for spec.navigator_configuration.icn_production_setting.icn_table_space.
+-- If change table space name, you need to use same value for spec.navigator_configuration.icn_production_setting.icn_table_space in custom resource.
+CREATE REGULAR TABLESPACE ICNDB PAGESIZE 32 K MANAGED BY AUTOMATIC STORAGE AUTORESIZE YES INITIALSIZE 20 M INCREASESIZE 20 M BUFFERPOOL ICN_DB2_BP;
+GRANT USE OF TABLESPACE ICNDB TO user db2inst1;
+
+CREATE USER TEMPORARY TABLESPACE ICN_DB2_TEMP PAGESIZE 32K MANAGED BY AUTOMATIC STORAGE BUFFERPOOL ICN_DB2_TEMPBP;
+GRANT USE OF TABLESPACE ICN_DB2_TEMP TO user db2inst1;
+
+GRANT CONNECT ON DATABASE TO USER db2inst1; 
+CREATE SCHEMA db2inst1 AUTHORIZATION db2inst1;
+
+CONNECT RESET;
